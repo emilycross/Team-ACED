@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */; };
+		C1520BC01DCBC55600CBC741 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBF1DCBC55600CBC741 /* RootViewController.swift */; };
+		C1520BC21DCBC55600CBC741 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BC11DCBC55600CBC741 /* DataViewController.swift */; };
+		C1520BC41DCBC55600CBC741 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BC31DCBC55600CBC741 /* ModelController.swift */; };
+		C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC51DCBC55600CBC741 /* Main.storyboard */; };
+		C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC81DCBC55600CBC741 /* Assets.xcassets */; };
+		C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BCA1DCBC55600CBC741 /* LaunchScreen.storyboard */; };
+		C1520BD71DCBC55600CBC741 /* JognJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BD61DCBC55600CBC741 /* JognJamTests.swift */; };
+		C1520BE21DCBC55600CBC741 /* JognJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C1520BD31DCBC55600CBC741 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1520BB21DCBC55600CBC741 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1520BB91DCBC55600CBC741;
+			remoteInfo = JognJam;
+		};
+		C1520BDE1DCBC55600CBC741 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1520BB21DCBC55600CBC741 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1520BB91DCBC55600CBC741;
+			remoteInfo = JognJam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C1520BBA1DCBC55600CBC741 /* JognJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JognJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C1520BBF1DCBC55600CBC741 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		C1520BC11DCBC55600CBC741 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		C1520BC31DCBC55600CBC741 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		C1520BC61DCBC55600CBC741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1520BC81DCBC55600CBC741 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1520BCB1DCBC55600CBC741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1520BCD1DCBC55600CBC741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1520BD21DCBC55600CBC741 /* JognJamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JognJamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1520BD61DCBC55600CBC741 /* JognJamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JognJamTests.swift; sourceTree = "<group>"; };
+		C1520BD81DCBC55600CBC741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1520BDD1DCBC55600CBC741 /* JognJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JognJamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JognJamUITests.swift; sourceTree = "<group>"; };
+		C1520BE31DCBC55600CBC741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1520BB71DCBC55600CBC741 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1520BCF1DCBC55600CBC741 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1520BDA1DCBC55600CBC741 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1520BB11DCBC55600CBC741 = {
+			isa = PBXGroup;
+			children = (
+				C1520BBC1DCBC55600CBC741 /* JognJam */,
+				C1520BD51DCBC55600CBC741 /* JognJamTests */,
+				C1520BE01DCBC55600CBC741 /* JognJamUITests */,
+				C1520BBB1DCBC55600CBC741 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1520BBB1DCBC55600CBC741 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1520BBA1DCBC55600CBC741 /* JognJam.app */,
+				C1520BD21DCBC55600CBC741 /* JognJamTests.xctest */,
+				C1520BDD1DCBC55600CBC741 /* JognJamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
+			isa = PBXGroup;
+			children = (
+				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
+				C1520BBF1DCBC55600CBC741 /* RootViewController.swift */,
+				C1520BC11DCBC55600CBC741 /* DataViewController.swift */,
+				C1520BC31DCBC55600CBC741 /* ModelController.swift */,
+				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
+				C1520BC81DCBC55600CBC741 /* Assets.xcassets */,
+				C1520BCA1DCBC55600CBC741 /* LaunchScreen.storyboard */,
+				C1520BCD1DCBC55600CBC741 /* Info.plist */,
+			);
+			path = JognJam;
+			sourceTree = "<group>";
+		};
+		C1520BD51DCBC55600CBC741 /* JognJamTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1520BD61DCBC55600CBC741 /* JognJamTests.swift */,
+				C1520BD81DCBC55600CBC741 /* Info.plist */,
+			);
+			path = JognJamTests;
+			sourceTree = "<group>";
+		};
+		C1520BE01DCBC55600CBC741 /* JognJamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */,
+				C1520BE31DCBC55600CBC741 /* Info.plist */,
+			);
+			path = JognJamUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1520BB91DCBC55600CBC741 /* JognJam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1520BE61DCBC55600CBC741 /* Build configuration list for PBXNativeTarget "JognJam" */;
+			buildPhases = (
+				C1520BB61DCBC55600CBC741 /* Sources */,
+				C1520BB71DCBC55600CBC741 /* Frameworks */,
+				C1520BB81DCBC55600CBC741 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JognJam;
+			productName = JognJam;
+			productReference = C1520BBA1DCBC55600CBC741 /* JognJam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1520BD11DCBC55600CBC741 /* JognJamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1520BE91DCBC55600CBC741 /* Build configuration list for PBXNativeTarget "JognJamTests" */;
+			buildPhases = (
+				C1520BCE1DCBC55600CBC741 /* Sources */,
+				C1520BCF1DCBC55600CBC741 /* Frameworks */,
+				C1520BD01DCBC55600CBC741 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1520BD41DCBC55600CBC741 /* PBXTargetDependency */,
+			);
+			name = JognJamTests;
+			productName = JognJamTests;
+			productReference = C1520BD21DCBC55600CBC741 /* JognJamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C1520BDC1DCBC55600CBC741 /* JognJamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1520BEC1DCBC55600CBC741 /* Build configuration list for PBXNativeTarget "JognJamUITests" */;
+			buildPhases = (
+				C1520BD91DCBC55600CBC741 /* Sources */,
+				C1520BDA1DCBC55600CBC741 /* Frameworks */,
+				C1520BDB1DCBC55600CBC741 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1520BDF1DCBC55600CBC741 /* PBXTargetDependency */,
+			);
+			name = JognJamUITests;
+			productName = JognJamUITests;
+			productReference = C1520BDD1DCBC55600CBC741 /* JognJamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1520BB21DCBC55600CBC741 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Team ACED";
+				TargetAttributes = {
+					C1520BB91DCBC55600CBC741 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					C1520BD11DCBC55600CBC741 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = C1520BB91DCBC55600CBC741;
+					};
+					C1520BDC1DCBC55600CBC741 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = C1520BB91DCBC55600CBC741;
+					};
+				};
+			};
+			buildConfigurationList = C1520BB51DCBC55600CBC741 /* Build configuration list for PBXProject "JognJam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1520BB11DCBC55600CBC741;
+			productRefGroup = C1520BBB1DCBC55600CBC741 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1520BB91DCBC55600CBC741 /* JognJam */,
+				C1520BD11DCBC55600CBC741 /* JognJamTests */,
+				C1520BDC1DCBC55600CBC741 /* JognJamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1520BB81DCBC55600CBC741 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
+				C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */,
+				C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1520BD01DCBC55600CBC741 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1520BDB1DCBC55600CBC741 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1520BB61DCBC55600CBC741 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1520BC01DCBC55600CBC741 /* RootViewController.swift in Sources */,
+				C1520BC41DCBC55600CBC741 /* ModelController.swift in Sources */,
+				C1520BC21DCBC55600CBC741 /* DataViewController.swift in Sources */,
+				C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1520BCE1DCBC55600CBC741 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1520BD71DCBC55600CBC741 /* JognJamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1520BD91DCBC55600CBC741 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1520BE21DCBC55600CBC741 /* JognJamUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1520BD41DCBC55600CBC741 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1520BB91DCBC55600CBC741 /* JognJam */;
+			targetProxy = C1520BD31DCBC55600CBC741 /* PBXContainerItemProxy */;
+		};
+		C1520BDF1DCBC55600CBC741 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1520BB91DCBC55600CBC741 /* JognJam */;
+			targetProxy = C1520BDE1DCBC55600CBC741 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C1520BC51DCBC55600CBC741 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1520BC61DCBC55600CBC741 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C1520BCA1DCBC55600CBC741 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1520BCB1DCBC55600CBC741 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C1520BE41DCBC55600CBC741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1520BE51DCBC55600CBC741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1520BE71DCBC55600CBC741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JognJam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C1520BE81DCBC55600CBC741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JognJam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C1520BEA1DCBC55600CBC741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JognJamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JognJam.app/JognJam";
+			};
+			name = Debug;
+		};
+		C1520BEB1DCBC55600CBC741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JognJamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JognJam.app/JognJam";
+			};
+			name = Release;
+		};
+		C1520BED1DCBC55600CBC741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JognJamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JognJam;
+			};
+			name = Debug;
+		};
+		C1520BEE1DCBC55600CBC741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JognJamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JognJam;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1520BB51DCBC55600CBC741 /* Build configuration list for PBXProject "JognJam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1520BE41DCBC55600CBC741 /* Debug */,
+				C1520BE51DCBC55600CBC741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1520BE61DCBC55600CBC741 /* Build configuration list for PBXNativeTarget "JognJam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1520BE71DCBC55600CBC741 /* Debug */,
+				C1520BE81DCBC55600CBC741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C1520BE91DCBC55600CBC741 /* Build configuration list for PBXNativeTarget "JognJamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1520BEA1DCBC55600CBC741 /* Debug */,
+				C1520BEB1DCBC55600CBC741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C1520BEC1DCBC55600CBC741 /* Build configuration list for PBXNativeTarget "JognJamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1520BED1DCBC55600CBC741 /* Debug */,
+				C1520BEE1DCBC55600CBC741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1520BB21DCBC55600CBC741 /* Project object */;
+}
