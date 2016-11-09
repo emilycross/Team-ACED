@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */; };
-		C1520BC01DCBC55600CBC741 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBF1DCBC55600CBC741 /* RootViewController.swift */; };
 		C1520BC21DCBC55600CBC741 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BC11DCBC55600CBC741 /* DataViewController.swift */; };
 		C1520BC41DCBC55600CBC741 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BC31DCBC55600CBC741 /* ModelController.swift */; };
 		C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC51DCBC55600CBC741 /* Main.storyboard */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		C1520BBA1DCBC55600CBC741 /* JognJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JognJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1520BBF1DCBC55600CBC741 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C1520BC11DCBC55600CBC741 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		C1520BC31DCBC55600CBC741 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		C1520BC61DCBC55600CBC741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
-				C1520BBF1DCBC55600CBC741 /* RootViewController.swift */,
 				C1520BC11DCBC55600CBC741 /* DataViewController.swift */,
 				C1520BC31DCBC55600CBC741 /* ModelController.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
@@ -273,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1520BC01DCBC55600CBC741 /* RootViewController.swift in Sources */,
 				C1520BC41DCBC55600CBC741 /* ModelController.swift in Sources */,
 				C1520BC21DCBC55600CBC741 /* DataViewController.swift in Sources */,
 				C16FEC731DD3B50700136830 /* LoginViewController.swift in Sources */,
