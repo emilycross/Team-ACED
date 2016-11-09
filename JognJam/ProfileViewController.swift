@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     var currentSpeed = 0 //will change with accelerometer
-    var highestSpeed = 0 //will change with accelerometer
+    var highestSpeed = 1 //will change with accelerometer
     @IBOutlet weak var currentSpeedLabel: UILabel!
     @IBOutlet weak var highestSpeedLabel: UILabel!
     
