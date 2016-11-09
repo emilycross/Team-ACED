@@ -34,7 +34,7 @@
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.97826086960000003" green="0.25247624602625468" blue="0.20138767299342866" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.45118497189536277" green="0.97826086960000003" blue="0.32846811027215034" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
