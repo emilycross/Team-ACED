@@ -10,18 +10,38 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var logo: UIImageView!
     
-    let path = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Logo2", ofType: "png")!)
+    var counter = 0;
+    var timeInterval = NSTimer()
+    
+    @IBOutlet weak var logo: UIButton!
+    let image1 = UIImage(named: "Logo1.png")
+    let image2 = UIImage(named: "Logo2.png")
+    
+    
+    func incrementTimer() {
+        if (counter%2 == 0) {
+            logo.setImage(image1, forState: UIControlState.Normal)
+        }
+        
+        else {
+            logo.setImage(image2, forState: UIControlState.Normal)
+            
+        }
+        counter += 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let image = NSData(contentsOfURL:path)
+        
+        logo.layer.cornerRadius = logo.frame.size.width/2
+        
+        logo.clipsToBounds = true
+        
+        timeInterval = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(incrementTimer), userInfo: nil, repeats: true)
 
-        logo.image = UIImage(data:image!)
-        logo.contentMode = .ScaleAspectFit
-
-        // Do any additional setup after loading the view.
+        
+        // Do any additional setup after loading the view.*/
     }
 
     override func didReceiveMemoryWarning() {
