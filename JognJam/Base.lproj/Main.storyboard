@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcM-bs-qZg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcM-bs-qZg">
                                 <rect key="frame" x="274" y="248" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28f-04-iDz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28f-04-iDz">
                                 <rect key="frame" x="274" y="248" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -101,24 +102,24 @@
                                 <exclude reference="gDz-Mk-uho"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Wkd-Ah-H7m"/>
+                                <exclude reference="glR-78-5iL"/>
+                                <exclude reference="sQB-1E-zNf"/>
+                                <exclude reference="7df-CV-p7A"/>
+                                <exclude reference="RNP-1h-O5L"/>
+                                <exclude reference="Vc7-QY-KPC"/>
+                                <exclude reference="PU1-G2-gx1"/>
+                                <exclude reference="dbm-hX-8tk"/>
                                 <exclude reference="9W5-dR-0dq"/>
                                 <exclude reference="Auo-Bs-QRW"/>
                                 <exclude reference="CEn-dD-azV"/>
                                 <exclude reference="vhJ-kx-soj"/>
-                                <exclude reference="7df-CV-p7A"/>
-                                <exclude reference="RNP-1h-O5L"/>
-                                <exclude reference="Vc7-QY-KPC"/>
+                                <exclude reference="A2r-rU-dL6"/>
                                 <exclude reference="1wo-KC-9XJ"/>
                                 <exclude reference="Fst-we-BbW"/>
                                 <exclude reference="g0i-vb-NQM"/>
                                 <exclude reference="ju8-z0-K5A"/>
                                 <exclude reference="qsa-iR-3Pv"/>
-                                <exclude reference="PU1-G2-gx1"/>
-                                <exclude reference="dbm-hX-8tk"/>
-                                <exclude reference="A2r-rU-dL6"/>
-                                <exclude reference="sQB-1E-zNf"/>
-                                <exclude reference="Wkd-Ah-H7m"/>
-                                <exclude reference="glR-78-5iL"/>
                                 <exclude reference="Hks-AK-OYd"/>
                             </mask>
                         </variation>
@@ -132,24 +133,24 @@
                                 <include reference="gDz-Mk-uho"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Wkd-Ah-H7m"/>
+                                <include reference="glR-78-5iL"/>
+                                <include reference="sQB-1E-zNf"/>
+                                <include reference="7df-CV-p7A"/>
+                                <include reference="RNP-1h-O5L"/>
+                                <include reference="Vc7-QY-KPC"/>
+                                <include reference="PU1-G2-gx1"/>
+                                <include reference="dbm-hX-8tk"/>
                                 <include reference="9W5-dR-0dq"/>
                                 <include reference="Auo-Bs-QRW"/>
                                 <include reference="CEn-dD-azV"/>
                                 <include reference="vhJ-kx-soj"/>
-                                <include reference="7df-CV-p7A"/>
-                                <include reference="RNP-1h-O5L"/>
-                                <include reference="Vc7-QY-KPC"/>
+                                <include reference="A2r-rU-dL6"/>
                                 <include reference="1wo-KC-9XJ"/>
                                 <include reference="Fst-we-BbW"/>
                                 <include reference="g0i-vb-NQM"/>
                                 <include reference="ju8-z0-K5A"/>
                                 <include reference="qsa-iR-3Pv"/>
-                                <include reference="PU1-G2-gx1"/>
-                                <include reference="dbm-hX-8tk"/>
-                                <include reference="A2r-rU-dL6"/>
-                                <include reference="sQB-1E-zNf"/>
-                                <include reference="Wkd-Ah-H7m"/>
-                                <include reference="glR-78-5iL"/>
                                 <include reference="Hks-AK-OYd"/>
                             </mask>
                         </variation>
