@@ -9,10 +9,17 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var songTitleLabel: UILabel!
-    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var currentSongLabel: UILabel!
     var songTitle = ""
     var artist = ""
+    
+    @IBOutlet weak var currentSpeedLabel: UILabel!
+    var currentSpeed = 0 //Get data from accelerometer
+    
+    @IBOutlet weak var suggestedSongLabel: UILabel!
+    var suggestSongTitle = ""
+    var suggestedArtist = ""
+    
     //boolean to show that music is playing and the play button is the pause image
     var isPlayingMusic = false
     @IBOutlet weak var playButton: UIButton!
@@ -22,8 +29,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        songTitleLabel.text = songTitle
-        artistLabel.text = artist
+        currentSongLabel.text = songTitle + " - " + artist
+        currentSpeedLabel.text = String(currentSpeed) + " km/h"
+        suggestedSongLabel.text = suggestSongTitle + " - " + suggestedArtist
     }
 
     override func didReceiveMemoryWarning() {
