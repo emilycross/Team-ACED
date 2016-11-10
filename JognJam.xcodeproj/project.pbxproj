@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294111D1DD3C077001B1DBB /* ProfileViewController.swift */; };
 		329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329411211DD3CC38001B1DBB /* MainViewController.swift */; };
-		329411241DD3CEB0001B1DBB /* Settings button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 329411231DD3CEB0001B1DBB /* Settings button.gif */; };
-		329411291DD3D71A001B1DBB /* nextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329411251DD3D71A001B1DBB /* nextButton.png */; };
-		3294112A1DD3D71A001B1DBB /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329411261DD3D71A001B1DBB /* pauseButton.png */; };
-		3294112B1DD3D71A001B1DBB /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329411271DD3D71A001B1DBB /* playButton.png */; };
-		3294112C1DD3D71A001B1DBB /* prevButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329411281DD3D71A001B1DBB /* prevButton.png */; };
+		329D06D21DD52D0400717938 /* nextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06CD1DD52D0400717938 /* nextButton.png */; };
+		329D06D31DD52D0400717938 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06CE1DD52D0400717938 /* pauseButton.png */; };
+		329D06D41DD52D0400717938 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06CF1DD52D0400717938 /* playButton.png */; };
+		329D06D51DD52D0400717938 /* prevButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D01DD52D0400717938 /* prevButton.png */; };
+		329D06D61DD52D0400717938 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D11DD52D0400717938 /* settingsButton.png */; };
 		C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */; };
 		C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC51DCBC55600CBC741 /* Main.storyboard */; };
 		C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC81DCBC55600CBC741 /* Assets.xcassets */; };
@@ -45,11 +45,11 @@
 /* Begin PBXFileReference section */
 		3294111D1DD3C077001B1DBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		329411211DD3CC38001B1DBB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		329411231DD3CEB0001B1DBB /* Settings button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Settings button.gif"; path = "../../Settings button.gif"; sourceTree = "<group>"; };
-		329411251DD3D71A001B1DBB /* nextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextButton.png; path = ../../nextButton.png; sourceTree = "<group>"; };
-		329411261DD3D71A001B1DBB /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauseButton.png; path = ../../pauseButton.png; sourceTree = "<group>"; };
-		329411271DD3D71A001B1DBB /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playButton.png; path = ../../playButton.png; sourceTree = "<group>"; };
-		329411281DD3D71A001B1DBB /* prevButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prevButton.png; path = ../../prevButton.png; sourceTree = "<group>"; };
+		329D06CD1DD52D0400717938 /* nextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextButton.png; path = JognJam/nextButton.png; sourceTree = SOURCE_ROOT; };
+		329D06CE1DD52D0400717938 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauseButton.png; path = JognJam/pauseButton.png; sourceTree = SOURCE_ROOT; };
+		329D06CF1DD52D0400717938 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playButton.png; path = JognJam/playButton.png; sourceTree = SOURCE_ROOT; };
+		329D06D01DD52D0400717938 /* prevButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prevButton.png; path = JognJam/prevButton.png; sourceTree = SOURCE_ROOT; };
+		329D06D11DD52D0400717938 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsButton.png; path = JognJam/settingsButton.png; sourceTree = SOURCE_ROOT; };
 		C1520BBA1DCBC55600CBC741 /* JognJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JognJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1520BC61DCBC55600CBC741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,11 +115,11 @@
 		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
 			isa = PBXGroup;
 			children = (
-				329411251DD3D71A001B1DBB /* nextButton.png */,
-				329411261DD3D71A001B1DBB /* pauseButton.png */,
-				329411271DD3D71A001B1DBB /* playButton.png */,
-				329411281DD3D71A001B1DBB /* prevButton.png */,
-				329411231DD3CEB0001B1DBB /* Settings button.gif */,
+				329D06CD1DD52D0400717938 /* nextButton.png */,
+				329D06CE1DD52D0400717938 /* pauseButton.png */,
+				329D06CF1DD52D0400717938 /* playButton.png */,
+				329D06D01DD52D0400717938 /* prevButton.png */,
+				329D06D11DD52D0400717938 /* settingsButton.png */,
 				3294111D1DD3C077001B1DBB /* ProfileViewController.swift */,
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
@@ -256,15 +256,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				329411241DD3CEB0001B1DBB /* Settings button.gif in Resources */,
+				329D06D31DD52D0400717938 /* pauseButton.png in Resources */,
+				329D06D21DD52D0400717938 /* nextButton.png in Resources */,
+				329D06D61DD52D0400717938 /* settingsButton.png in Resources */,
 				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
-				3294112C1DD3D71A001B1DBB /* prevButton.png in Resources */,
-				329411291DD3D71A001B1DBB /* nextButton.png in Resources */,
+				329D06D41DD52D0400717938 /* playButton.png in Resources */,
 				C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */,
-				3294112A1DD3D71A001B1DBB /* pauseButton.png in Resources */,
 				C16FEC771DD3B5AB00136830 /* Logo2.png in Resources */,
+				329D06D51DD52D0400717938 /* prevButton.png in Resources */,
 				C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */,
-				3294112B1DD3D71A001B1DBB /* playButton.png in Resources */,
 				C16FEC761DD3B5AB00136830 /* Logo1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

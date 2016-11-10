@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -224,20 +226,20 @@
                                 <exclude reference="GdI-aZ-Bv8"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0sn-0Y-Khj"/>
-                                <exclude reference="cIE-Om-D62"/>
-                                <exclude reference="sfa-U0-Sbq"/>
-                                <exclude reference="MsA-ol-2RG"/>
-                                <exclude reference="Nag-55-hCy"/>
-                                <exclude reference="sIx-eJ-oge"/>
-                                <exclude reference="yc5-GE-T7v"/>
-                                <exclude reference="l8r-n9-cmA"/>
-                                <exclude reference="vZs-ZY-jkJ"/>
+                                <exclude reference="7aT-6B-lc2"/>
                                 <exclude reference="1Vx-w1-dKo"/>
                                 <exclude reference="Poh-y7-eHF"/>
                                 <exclude reference="sey-Tg-lI8"/>
                                 <exclude reference="svg-SC-h9W"/>
-                                <exclude reference="7aT-6B-lc2"/>
+                                <exclude reference="0sn-0Y-Khj"/>
+                                <exclude reference="cIE-Om-D62"/>
+                                <exclude reference="sfa-U0-Sbq"/>
+                                <exclude reference="yc5-GE-T7v"/>
+                                <exclude reference="l8r-n9-cmA"/>
+                                <exclude reference="vZs-ZY-jkJ"/>
+                                <exclude reference="MsA-ol-2RG"/>
+                                <exclude reference="Nag-55-hCy"/>
+                                <exclude reference="sIx-eJ-oge"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -250,20 +252,20 @@
                                 <include reference="GdI-aZ-Bv8"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0sn-0Y-Khj"/>
-                                <include reference="cIE-Om-D62"/>
-                                <include reference="sfa-U0-Sbq"/>
-                                <include reference="MsA-ol-2RG"/>
-                                <include reference="Nag-55-hCy"/>
-                                <include reference="sIx-eJ-oge"/>
-                                <include reference="yc5-GE-T7v"/>
-                                <include reference="l8r-n9-cmA"/>
-                                <include reference="vZs-ZY-jkJ"/>
+                                <include reference="7aT-6B-lc2"/>
                                 <include reference="1Vx-w1-dKo"/>
                                 <include reference="Poh-y7-eHF"/>
                                 <include reference="sey-Tg-lI8"/>
                                 <include reference="svg-SC-h9W"/>
-                                <include reference="7aT-6B-lc2"/>
+                                <include reference="0sn-0Y-Khj"/>
+                                <include reference="cIE-Om-D62"/>
+                                <include reference="sfa-U0-Sbq"/>
+                                <include reference="yc5-GE-T7v"/>
+                                <include reference="l8r-n9-cmA"/>
+                                <include reference="vZs-ZY-jkJ"/>
+                                <include reference="MsA-ol-2RG"/>
+                                <include reference="Nag-55-hCy"/>
+                                <include reference="sIx-eJ-oge"/>
                             </mask>
                         </variation>
                     </view>
@@ -284,6 +286,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LHR-Du-bJv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="t05-GD-GHW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paw-iQ-rDk">
@@ -419,24 +422,24 @@
                                 <exclude reference="qfa-CL-iiK"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="96p-8Q-yDf"/>
+                                <exclude reference="Fkb-ud-scN"/>
+                                <exclude reference="LFX-YC-6FT"/>
+                                <exclude reference="P6A-LW-jHq"/>
+                                <exclude reference="lIX-RK-w54"/>
+                                <exclude reference="KBG-Iv-qpU"/>
                                 <exclude reference="0AT-cm-9sb"/>
                                 <exclude reference="cBf-MN-33g"/>
                                 <exclude reference="vh0-im-Hzv"/>
+                                <exclude reference="Iba-sT-6PK"/>
+                                <exclude reference="XYg-Y8-ulE"/>
+                                <exclude reference="lRo-ea-vAT"/>
                                 <exclude reference="13g-uO-gGt"/>
                                 <exclude reference="18j-H6-qip"/>
                                 <exclude reference="3y8-ee-72F"/>
                                 <exclude reference="O0Z-WA-mIu"/>
-                                <exclude reference="S2L-op-kTq"/>
-                                <exclude reference="Iba-sT-6PK"/>
-                                <exclude reference="XYg-Y8-ulE"/>
-                                <exclude reference="lRo-ea-vAT"/>
                                 <exclude reference="vZB-PL-YGo"/>
-                                <exclude reference="P6A-LW-jHq"/>
-                                <exclude reference="lIX-RK-w54"/>
-                                <exclude reference="KBG-Iv-qpU"/>
-                                <exclude reference="96p-8Q-yDf"/>
-                                <exclude reference="Fkb-ud-scN"/>
-                                <exclude reference="LFX-YC-6FT"/>
+                                <exclude reference="S2L-op-kTq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -451,24 +454,24 @@
                                 <include reference="qfa-CL-iiK"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="96p-8Q-yDf"/>
+                                <include reference="Fkb-ud-scN"/>
+                                <include reference="LFX-YC-6FT"/>
+                                <include reference="P6A-LW-jHq"/>
+                                <include reference="lIX-RK-w54"/>
+                                <include reference="KBG-Iv-qpU"/>
                                 <include reference="0AT-cm-9sb"/>
                                 <include reference="cBf-MN-33g"/>
                                 <include reference="vh0-im-Hzv"/>
+                                <include reference="Iba-sT-6PK"/>
+                                <include reference="XYg-Y8-ulE"/>
+                                <include reference="lRo-ea-vAT"/>
                                 <include reference="13g-uO-gGt"/>
                                 <include reference="18j-H6-qip"/>
                                 <include reference="3y8-ee-72F"/>
                                 <include reference="O0Z-WA-mIu"/>
-                                <include reference="S2L-op-kTq"/>
-                                <include reference="Iba-sT-6PK"/>
-                                <include reference="XYg-Y8-ulE"/>
-                                <include reference="lRo-ea-vAT"/>
                                 <include reference="vZB-PL-YGo"/>
-                                <include reference="P6A-LW-jHq"/>
-                                <include reference="lIX-RK-w54"/>
-                                <include reference="KBG-Iv-qpU"/>
-                                <include reference="96p-8Q-yDf"/>
-                                <include reference="Fkb-ud-scN"/>
-                                <include reference="LFX-YC-6FT"/>
+                                <include reference="S2L-op-kTq"/>
                             </mask>
                         </variation>
                     </view>
@@ -484,9 +487,5 @@
     </scenes>
     <resources>
         <image name="Logo1.png" width="107" height="135"/>
-        <image name="Settings button.gif" width="89" height="81"/>
-        <image name="nextButton.png" width="99" height="99"/>
-        <image name="playButton.png" width="193" height="182"/>
-        <image name="prevButton.png" width="98" height="97"/>
     </resources>
 </document>
