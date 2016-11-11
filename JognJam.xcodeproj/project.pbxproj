@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		328513E91DD56A1400A92AE0 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 328513E81DD56A1400A92AE0 /* backButton.png */; };
 		3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294111D1DD3C077001B1DBB /* ProfileViewController.swift */; };
 		329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329411211DD3CC38001B1DBB /* MainViewController.swift */; };
 		329D06D21DD52D0400717938 /* nextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06CD1DD52D0400717938 /* nextButton.png */; };
@@ -15,7 +16,6 @@
 		329D06D51DD52D0400717938 /* prevButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D01DD52D0400717938 /* prevButton.png */; };
 		329D06D61DD52D0400717938 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D11DD52D0400717938 /* settingsButton.png */; };
 		329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DB1DD538F300717938 /* UsersDatabase.swift */; };
-		329D06DE1DD53E0200717938 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06DD1DD53E0200717938 /* backButton.png */; };
 		329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DF1DD5413A00717938 /* SettingsViewController.swift */; };
 		C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */; };
 		C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC51DCBC55600CBC741 /* Main.storyboard */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		328513E81DD56A1400A92AE0 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		3294111D1DD3C077001B1DBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		329411211DD3CC38001B1DBB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		329D06CD1DD52D0400717938 /* nextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextButton.png; path = JognJam/nextButton.png; sourceTree = SOURCE_ROOT; };
@@ -54,7 +55,6 @@
 		329D06D01DD52D0400717938 /* prevButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prevButton.png; path = JognJam/prevButton.png; sourceTree = SOURCE_ROOT; };
 		329D06D11DD52D0400717938 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsButton.png; path = JognJam/settingsButton.png; sourceTree = SOURCE_ROOT; };
 		329D06DB1DD538F300717938 /* UsersDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
-		329D06DD1DD53E0200717938 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		329D06DF1DD5413A00717938 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C1520BBA1DCBC55600CBC741 /* JognJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JognJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
 			isa = PBXGroup;
 			children = (
+				328513E81DD56A1400A92AE0 /* backButton.png */,
 				329D06CD1DD52D0400717938 /* nextButton.png */,
 				329D06CE1DD52D0400717938 /* pauseButton.png */,
 				329D06CF1DD52D0400717938 /* playButton.png */,
@@ -131,7 +132,6 @@
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
 				329D06DF1DD5413A00717938 /* SettingsViewController.swift */,
 				329411211DD3CC38001B1DBB /* MainViewController.swift */,
-				329D06DD1DD53E0200717938 /* backButton.png */,
 				C16FEC721DD3B50700136830 /* LoginViewController.swift */,
 				329D06DB1DD538F300717938 /* UsersDatabase.swift */,
 				C16FEC741DD3B5AB00136830 /* Logo1.png */,
@@ -267,7 +267,7 @@
 			files = (
 				329D06D31DD52D0400717938 /* pauseButton.png in Resources */,
 				329D06D21DD52D0400717938 /* nextButton.png in Resources */,
-				329D06DE1DD53E0200717938 /* backButton.png in Resources */,
+				328513E91DD56A1400A92AE0 /* backButton.png in Resources */,
 				329D06D61DD52D0400717938 /* settingsButton.png in Resources */,
 				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
 				329D06D41DD52D0400717938 /* playButton.png in Resources */,
