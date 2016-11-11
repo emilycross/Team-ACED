@@ -14,6 +14,12 @@ class LoginViewController: UIViewController {
     var counter = 0;
     var timeInterval = NSTimer()
     
+    //For checking if login is correct
+    
+    var database = UsersDatabase()
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var logo: UIButton!
     let image1 = UIImage(named: "Logo1.png")
     let image2 = UIImage(named: "Logo2.png")
@@ -49,7 +55,14 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //For checking if login is correct
+    //Error: typing keyboard covers buttons so need to figure out how to change
+    /*@IBAction func loginPressed(sender: UIButton) {
+        if database.checkIfRight(usernameTextField.text!, password: passwordTextField.text!) {
+            performSegueWithIdentifier("loginToMain", sender: self)
+        }
+    }*/
+    
     /*
     // MARK: - Navigation
 
