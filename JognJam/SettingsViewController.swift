@@ -10,6 +10,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    var locationServices = true
+    var onlineMode = false
+    var musicSuggestions = true
+    var voiceControl = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,8 +26,28 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
         
     }
-    
 
+    //User presses different switches, values change
+    @IBAction func locationServicesSwitchPressed(sender: UISwitch) {
+         locationServices = !locationServices
+    }
+    @IBAction func onlineModeSwitchPressed(sender: UISwitch) {
+        onlineMode = !onlineMode
+    }
+    @IBAction func musicSuggestionsSwitchPressed(sender: UISwitch) {
+        musicSuggestions = !musicSuggestions
+    }
+    @IBAction func voiceControlSwitchPressed(sender: UISwitch) {
+        voiceControl = !voiceControl
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "settingsToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.showSuggestions = musicSuggestions
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

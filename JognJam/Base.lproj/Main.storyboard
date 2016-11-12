@@ -334,7 +334,8 @@
                                         <exclude reference="Acd-wb-clB"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="282" y="25" width="40" height="40"/>
                                     <mask key="constraints">
                                         <include reference="9nt-S6-rlS"/>
                                         <include reference="Acd-wb-clB"/>
@@ -357,7 +358,8 @@
                                         <exclude reference="PvF-Y2-PhX"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="249" y="157" width="100" height="100"/>
                                     <mask key="constraints">
                                         <include reference="4xh-tk-YLM"/>
                                         <include reference="PvF-Y2-PhX"/>
@@ -384,7 +386,8 @@
                                         <exclude reference="pf6-bQ-J8V"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="144" y="128" width="313" height="21"/>
                                     <mask key="constraints">
                                         <include reference="XMm-1w-yaA"/>
                                         <include reference="pf6-bQ-J8V"/>
@@ -404,12 +407,16 @@
                                         <exclude reference="a9z-h5-TiC"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="181" y="182" width="50" height="50"/>
                                     <mask key="constraints">
                                         <include reference="UGe-n8-bg6"/>
                                         <include reference="a9z-h5-TiC"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="prevButtonPressed:" destination="dXw-y0-Pw0" eventType="touchUpInside" id="OQ4-rK-Bio"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-qt-ENM">
                                 <rect key="frame" x="294" y="215" width="50" height="50"/>
@@ -424,12 +431,16 @@
                                         <exclude reference="qSv-Hq-18z"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="370" y="182" width="50" height="50"/>
                                     <mask key="constraints">
                                         <include reference="PHj-ha-l85"/>
                                         <include reference="qSv-Hq-18z"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="dXw-y0-Pw0" eventType="touchUpInside" id="acM-yD-6zL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-Vy-XG0">
                                 <rect key="frame" x="157" y="307" width="133" height="30"/>
@@ -446,7 +457,8 @@
                                         <exclude reference="YQK-0V-qO5"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="234" y="255" width="133" height="30"/>
                                     <mask key="constraints">
                                         <include reference="SGz-V7-lU4"/>
                                         <include reference="YQK-0V-qO5"/>
@@ -468,7 +480,8 @@
                                         <exclude reference="IpO-8N-kBJ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="257" y="293" width="87" height="21"/>
                                     <mask key="constraints">
                                         <include reference="0wd-Ud-Jnh"/>
                                         <include reference="IpO-8N-kBJ"/>
@@ -490,7 +503,8 @@
                                         <exclude reference="ycc-W5-NLN"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="217" y="309" width="164" height="42"/>
                                     <mask key="constraints">
                                         <include reference="Cri-od-inQ"/>
                                         <include reference="ycc-W5-NLN"/>
@@ -512,7 +526,8 @@
                                         <exclude reference="yWY-79-NPY"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="234" y="359" width="133" height="30"/>
                                     <mask key="constraints">
                                         <include reference="76B-W6-KlC"/>
                                         <include reference="yWY-79-NPY"/>
@@ -593,6 +608,9 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" red="0.57647058819999997" green="0.83921568629999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="532" y="30" width="48" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="703-4V-yAM" kind="show" identifier="mainToLogin" id="Pxc-wY-A0X"/>
                                 </connections>
@@ -616,7 +634,8 @@
                                         <exclude reference="uqv-GQ-ZOQ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="176" y="67" width="249" height="53"/>
                                     <mask key="constraints">
                                         <include reference="HQh-ZB-fS8"/>
                                         <include reference="uqv-GQ-ZOQ"/>
@@ -777,8 +796,10 @@
                     <connections>
                         <outlet property="currentSongLabel" destination="nl5-54-HWF" id="nKB-4M-v8f"/>
                         <outlet property="currentSpeedLabel" destination="HRb-kq-JiX" id="pZV-up-AhX"/>
+                        <outlet property="moreButton" destination="FY4-n2-E4e" id="OLQ-iO-Syh"/>
                         <outlet property="playButton" destination="pPm-sA-2zL" id="ybT-hn-d0R"/>
                         <outlet property="suggestedSongLabel" destination="28x-lV-aQA" id="Rhd-2g-tgP"/>
+                        <outlet property="suggestionsLabel" destination="vkh-0u-0FI" id="X6c-sW-JjU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Yz-qQ-jVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1317,6 +1338,9 @@
                                         <include reference="u1w-IK-1Jv"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="locationServicesSwitchPressed:" destination="Ern-KR-OqK" eventType="valueChanged" id="Syf-zj-0Da"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IZR-PP-tZz">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
@@ -1336,6 +1360,9 @@
                                         <include reference="Gge-mE-S3B"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="onlineModeSwitchPressed:" destination="Ern-KR-OqK" eventType="valueChanged" id="YC0-1O-xje"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-U9-VEj">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
@@ -1355,6 +1382,9 @@
                                         <include reference="ciF-jC-w5U"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="musicSuggestionsSwitchPressed:" destination="Ern-KR-OqK" eventType="valueChanged" id="xUb-4n-W5F"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Pl-eV-atV">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
@@ -1374,6 +1404,9 @@
                                         <include reference="Ry7-Hm-hrh"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="voiceControlSwitchPressed:" destination="Ern-KR-OqK" eventType="valueChanged" id="ubI-0E-ts0"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1503,8 +1536,8 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="C6f-D7-Nqr"/>
         <segue reference="Vh3-H4-SJj"/>
-        <segue reference="Pxc-wY-A0X"/>
-        <segue reference="bdj-oq-0Tv"/>
+        <segue reference="5dg-9u-DF5"/>
     </inferredMetricsTieBreakers>
 </document>
