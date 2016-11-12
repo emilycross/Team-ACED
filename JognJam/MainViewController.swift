@@ -10,8 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var currentSongLabel: UILabel!
-    var songTitle = ""
-    var artist = ""
+    
+    var player = musicPlayer()
+    var start = true
     
     @IBOutlet weak var currentSpeedLabel: UILabel!
     var currentSpeed = 0 //Get data from accelerometer
@@ -29,7 +30,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        currentSongLabel.text = songTitle + " - " + artist
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         currentSpeedLabel.text = String(currentSpeed) + " km/h"
         suggestedSongLabel.text = suggestSongTitle + " - " + suggestedArtist
     }
@@ -39,14 +40,21 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func playButtonPressed(sender: UIButton) {
+        if start == true {
+            player.pickSong(0)
+        }
+        start = false
+         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        //changes song to current song
         //changes the image
         isPlayingMusic = !isPlayingMusic
         if isPlayingMusic == true {
-            
             playButton.setImage(pauseImage, forState: UIControlState.Normal)
+            player.play()
         }
         else {
             playButton.setImage(playImage, forState: UIControlState.Normal)
+            player.pause()
         }
     }
     

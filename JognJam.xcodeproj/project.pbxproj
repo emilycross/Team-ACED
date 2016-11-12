@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320C42F51DD766B900B2D622 /* musicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320C42F41DD766B900B2D622 /* musicPlayer.swift */; };
+		320C42F91DD76E7A00B2D622 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */; };
 		328513E91DD56A1400A92AE0 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 328513E81DD56A1400A92AE0 /* backButton.png */; };
 		3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294111D1DD3C077001B1DBB /* ProfileViewController.swift */; };
 		329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329411211DD3CC38001B1DBB /* MainViewController.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320C42F41DD766B900B2D622 /* musicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicPlayer.swift; sourceTree = "<group>"; };
+		320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = movie_quote.mp3; path = JognJam/movie_quote.mp3; sourceTree = "<group>"; };
 		328513E81DD56A1400A92AE0 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		3294111D1DD3C077001B1DBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		329411211DD3CC38001B1DBB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		C1520BB11DCBC55600CBC741 = {
 			isa = PBXGroup;
 			children = (
+				320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */,
 				C1520BBC1DCBC55600CBC741 /* JognJam */,
 				C1520BD51DCBC55600CBC741 /* JognJamTests */,
 				C1520BE01DCBC55600CBC741 /* JognJamUITests */,
@@ -130,6 +135,7 @@
 				3294111D1DD3C077001B1DBB /* ProfileViewController.swift */,
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
+				320C42F41DD766B900B2D622 /* musicPlayer.swift */,
 				329D06DF1DD5413A00717938 /* SettingsViewController.swift */,
 				329411211DD3CC38001B1DBB /* MainViewController.swift */,
 				C16FEC721DD3B50700136830 /* LoginViewController.swift */,
@@ -271,6 +277,7 @@
 				329D06D61DD52D0400717938 /* settingsButton.png in Resources */,
 				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
 				329D06D41DD52D0400717938 /* playButton.png in Resources */,
+				320C42F91DD76E7A00B2D622 /* movie_quote.mp3 in Resources */,
 				C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */,
 				C16FEC771DD3B5AB00136830 /* Logo2.png in Resources */,
 				329D06D51DD52D0400717938 /* prevButton.png in Resources */,
@@ -306,6 +313,7 @@
 				C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */,
 				329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */,
 				329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */,
+				320C42F51DD766B900B2D622 /* musicPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
