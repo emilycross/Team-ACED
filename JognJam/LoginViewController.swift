@@ -37,13 +37,6 @@ class LoginViewController: UIViewController {
         counter += 1
     }
     
-    /* func roundButton () {
-        logo.layer.cornerRadius = logo.frame.size.width/2
-        logo.clipsToBounds = true
-        
-        
-    }*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
