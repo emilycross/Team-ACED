@@ -9,22 +9,25 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
     
-    var counter = 0;
-    var timeInterval = NSTimer()
-    
-    //For checking if login is correct
-    
+    /* database for users */
     var database = UsersDatabase()
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    /* show if user enters invalid login credentials */
+    @IBOutlet weak var invalidLogin: UILabel!
+    
     @IBOutlet weak var logo: UIButton!
+    /* images for animated logo */
     let image1 = UIImage(named: "Logo1_Circle.png")
     let image2 = UIImage(named: "Logo2_Cirle.png")
     
+    /* counter and timer */
+    var counter = 0;
+    var timeInterval = NSTimer()
     
+    /* use timer to change between the two logo images */
     func incrementTimer() {
         if (counter%2 == 0) {
             logo.setImage(image1, forState: UIControlState.Normal)
@@ -51,22 +54,18 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //For checking if login is correct
-    //Error: typing keyboard covers buttons so need to figure out how to change
-    /*@IBAction func loginPressed(sender: UIButton) {
+    /* check login credentials */
+    @IBAction func loginPressed(sender: UIButton) {
         if database.checkIfRight(usernameTextField.text!, password: passwordTextField.text!) {
+            
             performSegueWithIdentifier("loginToMain", sender: self)
+            
+            print("yes")
         }
-    }*/
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            
+        else {
+            invalidLogin.hidden = false;
+        }
     }
-    */
-
+    
 }
