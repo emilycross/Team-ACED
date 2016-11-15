@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var logo: UIButton!
-    let image1 = UIImage(named: "Logo1.png")
-    let image2 = UIImage(named: "Logo2.png")
+    let image1 = UIImage(named: "Logo1_Circle.png")
+    let image2 = UIImage(named: "Logo2_Cirle.png")
     
     
     func incrementTimer() {
@@ -37,12 +37,15 @@ class LoginViewController: UIViewController {
         counter += 1
     }
     
+    /* func roundButton () {
+        logo.layer.cornerRadius = logo.frame.size.width/2
+        logo.clipsToBounds = true
+        
+        
+    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        logo.layer.cornerRadius = logo.frame.size.width/2
-        
-        logo.clipsToBounds = true
         
         timeInterval = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(incrementTimer), userInfo: nil, repeats: true)
 

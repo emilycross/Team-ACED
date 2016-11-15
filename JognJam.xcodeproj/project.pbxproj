@@ -27,8 +27,12 @@
 		C1520BD71DCBC55600CBC741 /* JognJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BD61DCBC55600CBC741 /* JognJamTests.swift */; };
 		C1520BE21DCBC55600CBC741 /* JognJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */; };
 		C16FEC731DD3B50700136830 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FEC721DD3B50700136830 /* LoginViewController.swift */; };
-		C16FEC761DD3B5AB00136830 /* Logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = C16FEC741DD3B5AB00136830 /* Logo1.png */; };
-		C16FEC771DD3B5AB00136830 /* Logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = C16FEC751DD3B5AB00136830 /* Logo2.png */; };
+		C1B0C8DD1DDB5C150064E513 /* Logo1_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */; };
+		C1B0C8DE1DDB5C150064E513 /* Logo2_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */; };
+		C1B0C8DF1DDB5C150064E513 /* Logo2_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8DB1DDB5C150064E513 /* Logo2_Square.png */; };
+		C1B0C8E11DDB5D0A0064E513 /* Logo1_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */; };
+		C1B0C8E41DDB5E3C0064E513 /* Logo1_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */; };
+		C1B0C8E51DDB5E3C0064E513 /* Logo2_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +79,12 @@
 		C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JognJamUITests.swift; sourceTree = "<group>"; };
 		C1520BE31DCBC55600CBC741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C16FEC721DD3B50700136830 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C16FEC741DD3B5AB00136830 /* Logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1.png; sourceTree = "<group>"; };
-		C16FEC751DD3B5AB00136830 /* Logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo2.png; sourceTree = "<group>"; };
+		C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Square.png; path = ../Logo1_Square.png; sourceTree = "<group>"; };
+		C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Circle.png; path = ../Logo2_Circle.png; sourceTree = "<group>"; };
+		C1B0C8DB1DDB5C150064E513 /* Logo2_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Square.png; path = ../Logo2_Square.png; sourceTree = "<group>"; };
+		C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Circle.png; path = ../Logo1_Circle.png; sourceTree = "<group>"; };
+		C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Transparent.png; path = ../Logo1_Transparent.png; sourceTree = "<group>"; };
+		C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Transparent.png; path = ../Logo2_Transparent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,12 @@
 		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
 			isa = PBXGroup;
 			children = (
+				C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */,
+				C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */,
+				C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */,
+				C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */,
+				C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */,
+				C1B0C8DB1DDB5C150064E513 /* Logo2_Square.png */,
 				320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */,
 				328513E81DD56A1400A92AE0 /* backButton.png */,
 				329D06CD1DD52D0400717938 /* nextButton.png */,
@@ -143,8 +157,6 @@
 				329411211DD3CC38001B1DBB /* MainViewController.swift */,
 				C16FEC721DD3B50700136830 /* LoginViewController.swift */,
 				329D06DB1DD538F300717938 /* UsersDatabase.swift */,
-				C16FEC741DD3B5AB00136830 /* Logo1.png */,
-				C16FEC751DD3B5AB00136830 /* Logo2.png */,
 				C1520BC81DCBC55600CBC741 /* Assets.xcassets */,
 				C1520BCA1DCBC55600CBC741 /* LaunchScreen.storyboard */,
 				C1520BCD1DCBC55600CBC741 /* Info.plist */,
@@ -274,18 +286,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B0C8E41DDB5E3C0064E513 /* Logo1_Transparent.png in Resources */,
 				329D06D31DD52D0400717938 /* pauseButton.png in Resources */,
 				329D06D21DD52D0400717938 /* nextButton.png in Resources */,
 				328513E91DD56A1400A92AE0 /* backButton.png in Resources */,
 				329D06D61DD52D0400717938 /* settingsButton.png in Resources */,
+				C1B0C8DD1DDB5C150064E513 /* Logo1_Square.png in Resources */,
 				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
 				329D06D41DD52D0400717938 /* playButton.png in Resources */,
 				320C42F91DD76E7A00B2D622 /* movie_quote.mp3 in Resources */,
 				C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */,
-				C16FEC771DD3B5AB00136830 /* Logo2.png in Resources */,
+				C1B0C8DF1DDB5C150064E513 /* Logo2_Square.png in Resources */,
+				C1B0C8DE1DDB5C150064E513 /* Logo2_Circle.png in Resources */,
+				C1B0C8E51DDB5E3C0064E513 /* Logo2_Transparent.png in Resources */,
 				329D06D51DD52D0400717938 /* prevButton.png in Resources */,
+				C1B0C8E11DDB5D0A0064E513 /* Logo1_Circle.png in Resources */,
 				C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */,
-				C16FEC761DD3B5AB00136830 /* Logo1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
