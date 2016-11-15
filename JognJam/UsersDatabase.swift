@@ -17,7 +17,7 @@ class UsersDatabase {
 
     //Checks if username and password are correct and match
     func checkIfRight(username: String, password: String)-> Bool {
-        for i in 0...3 {
+        for i in 0...2 {
             if usernames[i] == username {
                 return passwords[i] == password
             }
