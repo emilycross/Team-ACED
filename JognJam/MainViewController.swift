@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     var player = musicPlayer()
     var start = true
     
+    var user = userProfile()
+    
     @IBOutlet weak var currentSpeedLabel: UILabel!
     var currentSpeed = 0 //Get data from accelerometer
     
@@ -29,16 +31,13 @@ class MainViewController: UIViewController {
     let playImage = UIImage(named: "playButton.png")
     let pauseImage = UIImage(named: "pauseButton.png")
     
-    //for suggestions
-    var showSuggestions = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         currentSpeedLabel.text = String(currentSpeed) + " km/h"
         suggestedSongLabel.text = suggestSongTitle + " - " + suggestedArtist
-        if showSuggestions == false {
+        if user.musicSuggestions == false {
             suggestedSongLabel.hidden = true
             suggestionsLabel.hidden = true
             moreButton.hidden = true
@@ -99,5 +98,10 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mainToSettings" {
+            let destinationVC = segue.destinationViewController as? SettingsViewController
+            destinationVC?.user = self.user
+        }
+    }
 }

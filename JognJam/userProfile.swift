@@ -18,4 +18,23 @@ class userProfile
     var currentSpeed = 0
     var highestSpeed = 1
     
+    //Settings
+    var locationServices = true
+    var onlineMode = false
+    var musicSuggestions = true
+    var voiceControl = true
+    
+    func setLocationServices(locS: Bool) {
+        locationServices = locS
+    }
+    func setOnlineMode(onM: Bool) {
+        onlineMode = onM
+    }
+    func setMusicSuggestions(musS: Bool) {
+        musicSuggestions = musS
+    }
+    func setVoiceControl(voiceC: Bool) {
+        voiceControl = voiceC
+    }
+    
 }
