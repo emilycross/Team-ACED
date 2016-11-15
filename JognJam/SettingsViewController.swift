@@ -9,15 +9,19 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-    var locationServices = true
-    var onlineMode = false
-    var musicSuggestions = true
-    var voiceControl = true
     
+    var user: userProfile = userProfile()
+    
+    @IBOutlet weak var locationServicesSwitch: UISwitch!
+    @IBOutlet weak var onlineModeSwitch: UISwitch!
+    @IBOutlet weak var musicSuggestionsSwitch: UISwitch!
+    @IBOutlet weak var voiceControlSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locationServicesSwitch.setOn(user.locationServices, animated: true)
+        onlineModeSwitch.setOn(user.onlineMode, animated: true)
+        musicSuggestionsSwitch.setOn(user.musicSuggestions, animated: true)
+        voiceControlSwitch.setOn(user.voiceControl, animated: true)
         // Do any additional setup after loading the view.
     }
 
@@ -25,26 +29,27 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
+        
     }
 
     //User presses different switches, values change
     @IBAction func locationServicesSwitchPressed(sender: UISwitch) {
-         locationServices = !locationServices
+         user.setLocationServices(!user.locationServices)
     }
     @IBAction func onlineModeSwitchPressed(sender: UISwitch) {
-        onlineMode = !onlineMode
+        user.setOnlineMode(!user.onlineMode)
     }
     @IBAction func musicSuggestionsSwitchPressed(sender: UISwitch) {
-        musicSuggestions = !musicSuggestions
+        user.setMusicSuggestions(!user.musicSuggestions)
     }
     @IBAction func voiceControlSwitchPressed(sender: UISwitch) {
-        voiceControl = !voiceControl
+        user.setVoiceControl(!user.voiceControl)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "settingsToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
-            destinationVC?.showSuggestions = musicSuggestions
+            destinationVC?.user = self.user
         }
     }
     
