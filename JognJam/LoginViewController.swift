@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  JognJam
 //
-//  Created by Emily Cross on 2016-11-09.
+//  Created by Team-ACED on 2016-11-09.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -75,5 +75,4 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

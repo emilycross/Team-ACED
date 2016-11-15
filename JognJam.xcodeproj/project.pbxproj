@@ -10,6 +10,8 @@
 		320C42F51DD766B900B2D622 /* musicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320C42F41DD766B900B2D622 /* musicPlayer.swift */; };
 		320C42F91DD76E7A00B2D622 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */; };
 		3227E9B71DD77A6C007A23E4 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227E9B61DD77A6C007A23E4 /* userProfile.swift */; };
+		323477331DDB6FDF00364743 /* SuggestByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323477321DDB6FDF00364743 /* SuggestByViewController.swift */; };
+		323477371DDB81FF00364743 /* ProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323477361DDB81FF00364743 /* ProfilePictureViewController.swift */; };
 		328513E91DD56A1400A92AE0 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 328513E81DD56A1400A92AE0 /* backButton.png */; };
 		3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294111D1DD3C077001B1DBB /* ProfileViewController.swift */; };
 		329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329411211DD3CC38001B1DBB /* MainViewController.swift */; };
@@ -56,6 +58,8 @@
 		320C42F41DD766B900B2D622 /* musicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musicPlayer.swift; sourceTree = "<group>"; };
 		320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 		3227E9B61DD77A6C007A23E4 /* userProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
+		323477321DDB6FDF00364743 /* SuggestByViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestByViewController.swift; sourceTree = "<group>"; };
+		323477361DDB81FF00364743 /* ProfilePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictureViewController.swift; sourceTree = "<group>"; };
 		328513E81DD56A1400A92AE0 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		3294111D1DD3C077001B1DBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		329411211DD3CC38001B1DBB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -149,8 +153,10 @@
 				329D06D01DD52D0400717938 /* prevButton.png */,
 				329D06D11DD52D0400717938 /* settingsButton.png */,
 				3294111D1DD3C077001B1DBB /* ProfileViewController.swift */,
+				323477361DDB81FF00364743 /* ProfilePictureViewController.swift */,
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
+				323477321DDB6FDF00364743 /* SuggestByViewController.swift */,
 				3227E9B61DD77A6C007A23E4 /* userProfile.swift */,
 				320C42F41DD766B900B2D622 /* musicPlayer.swift */,
 				329D06DF1DD5413A00717938 /* SettingsViewController.swift */,
@@ -327,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */,
+				323477371DDB81FF00364743 /* ProfilePictureViewController.swift in Sources */,
 				C16FEC731DD3B50700136830 /* LoginViewController.swift in Sources */,
 				3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */,
 				C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */,
@@ -334,6 +341,7 @@
 				329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */,
 				329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */,
 				320C42F51DD766B900B2D622 /* musicPlayer.swift in Sources */,
+				323477331DDB6FDF00364743 /* SuggestByViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

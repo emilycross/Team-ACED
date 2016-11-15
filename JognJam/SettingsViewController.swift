@@ -2,7 +2,7 @@
 //  SettingsViewController.swift
 //  JognJam
 //
-//  Created by Angela Dini on 2016-11-10.
+//  Created by Team-ACED on 2016-11-10.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -16,6 +16,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var onlineModeSwitch: UISwitch!
     @IBOutlet weak var musicSuggestionsSwitch: UISwitch!
     @IBOutlet weak var voiceControlSwitch: UISwitch!
+    
+    @IBOutlet weak var profilePictureButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         locationServicesSwitch.setOn(user.locationServices, animated: true)
@@ -23,6 +25,7 @@ class SettingsViewController: UIViewController {
         musicSuggestionsSwitch.setOn(user.musicSuggestions, animated: true)
         voiceControlSwitch.setOn(user.voiceControl, animated: true)
         // Do any additional setup after loading the view.
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {

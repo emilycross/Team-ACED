@@ -2,9 +2,10 @@
 //  ProfileViewController.swift
 //  JognJam
 //
-//  Created by Angela Dini on 2016-11-09.
+//  Created by Team-ACED on 2016-11-09.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
+
 
 import UIKit
 
@@ -15,12 +16,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var currentSpeedLabel: UILabel!
     @IBOutlet weak var highestSpeedLabel: UILabel!
     
-    
+    @IBOutlet weak var profilePictureButton: UIButton!
+    var user = userProfile()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         currentSpeedLabel.text = "" + String(currentSpeed) + " km/h"
         highestSpeedLabel.text = "" + String(highestSpeed) + " km/h"
         // Do any additional setup after loading the view.
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,10 +33,6 @@ class ProfileViewController: UIViewController {
     }
     
     //Will probably not need
-    //The profile picture button has been pressed
-    @IBAction func profilePicturePressed(sender: UIButton) {
-        
-    }
     
     //The playlist button has been pressed
     @IBAction func playlistsPressed(sender: UIButton) {
@@ -43,7 +43,6 @@ class ProfileViewController: UIViewController {
     @IBAction func routesPressed(sender: UIButton) {
         
     }
-    
     /*
     // MARK: - Navigation
 
@@ -53,5 +52,15 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "profileToProfilePicture" {
+            let destinationVC = segue.destinationViewController as? ProfilePictureViewController
+            destinationVC?.profileImage = self.user.picture!
+        }
+        else if segue.identifier == "profileToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+        }
+    }
     
 }

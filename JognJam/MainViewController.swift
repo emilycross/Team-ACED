@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  JognJam
 //
-//  Created by Angela Dini on 2016-11-09.
+//  Created by Team-ACED on 2016-11-09.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -25,7 +25,9 @@ class MainViewController: UIViewController {
     var suggestSongTitle = ""
     var suggestedArtist = ""
     
+    @IBOutlet weak var profilePictureButton: UIButton!
     //boolean to show that music is playing and the play button is the pause image
+    
     var isPlayingMusic = false
     @IBOutlet weak var playButton: UIButton!
     let playImage = UIImage(named: "playButton.png")
@@ -47,6 +49,7 @@ class MainViewController: UIViewController {
             suggestionsLabel.hidden = false
             moreButton.hidden = false
         }
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +104,14 @@ class MainViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mainToSettings" {
             let destinationVC = segue.destinationViewController as? SettingsViewController
+            destinationVC?.user = self.user
+        }
+        else if segue.identifier == "mainToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
+            destinationVC?.user = self.user
+        }
+        else if segue.identifier == "mainToSuggestBy" {
+            let destinationVC = segue.destinationViewController as? SuggestByViewController
             destinationVC?.user = self.user
         }
     }
