@@ -829,9 +829,6 @@
                                 <state key="normal" title="Routes">
                                     <color key="titleColor" red="0.57647058819999997" green="0.83921568629999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="471" y="415" width="75" height="41"/>
-                                </variation>
                                 <connections>
                                     <action selector="routesPressed:" destination="33o-vg-j4z" eventType="touchUpInside" id="lCe-1s-W2P"/>
                                 </connections>
@@ -992,16 +989,6 @@
                                     <segue destination="dXw-y0-Pw0" kind="show" identifier="profileToMain" id="xi0-qf-l5K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1p-Sy-mhM">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Routes">
-                                    <color key="titleColor" red="0.57647058819999997" green="0.83921568629999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="routesPressed:" destination="33o-vg-j4z" eventType="touchUpInside" id="lCe-1s-W2P"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdW-5R-XJI">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -1058,6 +1045,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Paw-iQ-rDk"/>
+                                <exclude reference="W1p-Sy-mhM"/>
                                 <exclude reference="IKk-1b-GYH"/>
                                 <exclude reference="TWB-8h-Gfo"/>
                                 <exclude reference="zeE-00-UUm"/>
@@ -1065,7 +1053,6 @@
                                 <exclude reference="etZ-DH-feF"/>
                                 <exclude reference="qfa-CL-iiK"/>
                                 <exclude reference="6X6-EQ-Qav"/>
-                                <exclude reference="W1p-Sy-mhM"/>
                                 <exclude reference="JdW-5R-XJI"/>
                             </mask>
                             <mask key="constraints">
@@ -1094,6 +1081,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Paw-iQ-rDk"/>
+                                <include reference="W1p-Sy-mhM"/>
                                 <include reference="IKk-1b-GYH"/>
                                 <include reference="TWB-8h-Gfo"/>
                                 <include reference="zeE-00-UUm"/>
@@ -1101,7 +1089,6 @@
                                 <include reference="etZ-DH-feF"/>
                                 <include reference="qfa-CL-iiK"/>
                                 <include reference="6X6-EQ-Qav"/>
-                                <include reference="W1p-Sy-mhM"/>
                                 <include reference="JdW-5R-XJI"/>
                             </mask>
                             <mask key="constraints">
@@ -1210,8 +1197,7 @@
                                         <exclude reference="dN2-GP-Peu"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="532" y="25" width="48" height="30"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="AAG-wh-PhQ"/>
                                         <include reference="dN2-GP-Peu"/>
@@ -1419,31 +1405,6 @@
                                     <action selector="voiceControlSwitchPressed:" destination="Ern-KR-OqK" eventType="valueChanged" id="ubI-0E-ts0"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMa-lG-NcV">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AAG-wh-PhQ"/>
-                                    <constraint firstAttribute="width" constant="48" id="dN2-GP-Peu"/>
-                                </constraints>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.57647058819999997" green="0.83921568629999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="AAG-wh-PhQ"/>
-                                        <exclude reference="dN2-GP-Peu"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="AAG-wh-PhQ"/>
-                                        <include reference="dN2-GP-Peu"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="703-4V-yAM" kind="show" identifier="settingsToLogout" id="5dg-9u-DF5"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.035294117649999998" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1476,6 +1437,7 @@
                             <mask key="subviews">
                                 <exclude reference="6vB-Yw-XPq"/>
                                 <exclude reference="00d-2m-AA3"/>
+                                <exclude reference="gMa-lG-NcV"/>
                                 <exclude reference="qe7-RG-isU"/>
                                 <exclude reference="4rN-42-EE2"/>
                                 <exclude reference="bh1-V6-qd2"/>
@@ -1485,7 +1447,6 @@
                                 <exclude reference="IZR-PP-tZz"/>
                                 <exclude reference="1yO-U9-VEj"/>
                                 <exclude reference="9Pl-eV-atV"/>
-                                <exclude reference="gMa-lG-NcV"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0lj-px-nPz"/>
@@ -1518,6 +1479,7 @@
                             <mask key="subviews">
                                 <include reference="6vB-Yw-XPq"/>
                                 <include reference="00d-2m-AA3"/>
+                                <include reference="gMa-lG-NcV"/>
                                 <include reference="qe7-RG-isU"/>
                                 <include reference="4rN-42-EE2"/>
                                 <include reference="bh1-V6-qd2"/>
@@ -1527,7 +1489,6 @@
                                 <include reference="IZR-PP-tZz"/>
                                 <include reference="1yO-U9-VEj"/>
                                 <include reference="9Pl-eV-atV"/>
-                                <include reference="gMa-lG-NcV"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0lj-px-nPz"/>
