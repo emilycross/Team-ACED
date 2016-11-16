@@ -19,6 +19,12 @@ class userProfile
     var currentSpeed = 0
     var highestSpeed = 1
     
+    var currentLocation = "" //for suggestions
+    var currentSongTitle = ""
+    var currentSongArtist = ""
+    var currentSongGenre = ""
+    var currentSongIndex = -1
+    
     //Settings
     var locationServices = true
     var onlineMode = false

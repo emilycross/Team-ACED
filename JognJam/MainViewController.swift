@@ -37,6 +37,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongIndex = player.currentIndex
         currentSpeedLabel.text = String(currentSpeed) + " km/h"
         suggestedSongLabel.text = suggestSongTitle + " - " + suggestedArtist
         if user.musicSuggestions == false {
@@ -62,6 +65,10 @@ class MainViewController: UIViewController {
         }
         start = false
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
         //changes song to current song
         //changes the image
         isPlayingMusic = !isPlayingMusic
@@ -81,6 +88,10 @@ class MainViewController: UIViewController {
         playButton.setImage(playImage, forState: UIControlState.Normal)
         player.pause()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
     }
     
     @IBAction func nextButtonPressed(sender: UIButton) {
@@ -89,6 +100,10 @@ class MainViewController: UIViewController {
         playButton.setImage(playImage, forState: UIControlState.Normal)
         player.pause()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
     }
     
 

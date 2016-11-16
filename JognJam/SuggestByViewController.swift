@@ -34,13 +34,33 @@ class SuggestByViewController: UIViewController {
     }
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SuggestByToMain" {
+        if segue.identifier == "suggestByToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
         }
-        else if segue.identifier == "SuggestByToProfile" {
+        else if segue.identifier == "suggestByToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
+        }
+        else if segue.identifier == "suggestByToSuggestionsArtist" {
+            let destinationVC = segue.destinationViewController as? SuggestionsViewController
+            destinationVC?.user = self.user
+            destinationVC?.suggestBy = "artist"
+        }
+        else if segue.identifier == "suggestByToSuggestionsGenre" {
+            let destinationVC = segue.destinationViewController as? SuggestionsViewController
+            destinationVC?.user = self.user
+            destinationVC?.suggestBy = "genre"
+        }
+        else if segue.identifier == "suggestByToSuggestionsSpeed" {
+            let destinationVC = segue.destinationViewController as? SuggestionsViewController
+            destinationVC?.user = self.user
+            destinationVC?.suggestBy = "speed"
+        }
+        else if segue.identifier == "suggestByToSuggestionsLocation" {
+            let destinationVC = segue.destinationViewController as? SuggestionsViewController
+            destinationVC?.user = self.user
+            destinationVC?.suggestBy = "location"
         }
     }
 

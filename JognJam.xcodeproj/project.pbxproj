@@ -28,6 +28,7 @@
 		C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BCA1DCBC55600CBC741 /* LaunchScreen.storyboard */; };
 		C1520BD71DCBC55600CBC741 /* JognJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BD61DCBC55600CBC741 /* JognJamTests.swift */; };
 		C1520BE21DCBC55600CBC741 /* JognJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */; };
+		C163F2F01DDCBC9100D42CDB /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C163F2EF1DDCBC9100D42CDB /* SuggestionsViewController.swift */; };
 		C16FEC731DD3B50700136830 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FEC721DD3B50700136830 /* LoginViewController.swift */; };
 		C1B0C8DD1DDB5C150064E513 /* Logo1_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */; };
 		C1B0C8DE1DDB5C150064E513 /* Logo2_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */; };
@@ -82,6 +83,7 @@
 		C1520BDD1DCBC55600CBC741 /* JognJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JognJamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JognJamUITests.swift; sourceTree = "<group>"; };
 		C1520BE31DCBC55600CBC741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C163F2EF1DDCBC9100D42CDB /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		C16FEC721DD3B50700136830 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Square.png; path = ../Logo1_Square.png; sourceTree = "<group>"; };
 		C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Circle.png; path = ../Logo2_Circle.png; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				323477361DDB81FF00364743 /* ProfilePictureViewController.swift */,
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
+				C163F2EF1DDCBC9100D42CDB /* SuggestionsViewController.swift */,
 				323477321DDB6FDF00364743 /* SuggestByViewController.swift */,
 				3227E9B61DD77A6C007A23E4 /* userProfile.swift */,
 				320C42F41DD766B900B2D622 /* musicPlayer.swift */,
@@ -342,6 +345,7 @@
 				329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */,
 				320C42F51DD766B900B2D622 /* musicPlayer.swift in Sources */,
 				323477331DDB6FDF00364743 /* SuggestByViewController.swift in Sources */,
+				C163F2F01DDCBC9100D42CDB /* SuggestionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
