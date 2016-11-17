@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  JognJam
 //
-//  Created by Angela Dini on 2016-11-09.
+//  Created by Team-ACED on 2016-11-09.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -21,11 +21,14 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var suggestionsLabel: UILabel!
-    @IBOutlet weak var suggestedSongLabel: UILabel!
+    
+    @IBOutlet weak var suggestedSongButton: UIButton!
     var suggestSongTitle = ""
     var suggestedArtist = ""
     
+    @IBOutlet weak var profilePictureButton: UIButton!
     //boolean to show that music is playing and the play button is the pause image
+    
     var isPlayingMusic = false
     @IBOutlet weak var playButton: UIButton!
     let playImage = UIImage(named: "playButton.png")
@@ -35,18 +38,22 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongIndex = player.currentIndex
         currentSpeedLabel.text = String(currentSpeed) + " km/h"
-        suggestedSongLabel.text = suggestSongTitle + " - " + suggestedArtist
+        suggestedSongButton.setTitle((suggestSongTitle + " - " + suggestedArtist), forState: UIControlState.Normal)
         if user.musicSuggestions == false {
-            suggestedSongLabel.hidden = true
+            suggestedSongButton.hidden = true
             suggestionsLabel.hidden = true
             moreButton.hidden = true
         }
         else {
-            suggestedSongLabel.hidden = false
+            suggestedSongButton.hidden = false
             suggestionsLabel.hidden = false
             moreButton.hidden = false
         }
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +66,10 @@ class MainViewController: UIViewController {
         }
         start = false
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
         //changes song to current song
         //changes the image
         isPlayingMusic = !isPlayingMusic
@@ -70,22 +81,32 @@ class MainViewController: UIViewController {
             playButton.setImage(playImage, forState: UIControlState.Normal)
             player.pause()
         }
+        player.getSuggestionsByArtist(user.currentSongArtist)
+        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
     }
     
     @IBAction func prevButtonPressed(sender: UIButton) {
         player.pickSong(0) //or pick a different song
         start = false
-        playButton.setImage(playImage, forState: UIControlState.Normal)
-        player.pause()
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
     }
     
     @IBAction func nextButtonPressed(sender: UIButton) {
         player.pickSong(0) //or pick a different song
         start = false
-        playButton.setImage(playImage, forState: UIControlState.Normal)
-        player.pause()
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
     }
     
 
@@ -101,6 +122,14 @@ class MainViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mainToSettings" {
             let destinationVC = segue.destinationViewController as? SettingsViewController
+            destinationVC?.user = self.user
+        }
+        else if segue.identifier == "mainToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
+            destinationVC?.user = self.user
+        }
+        else if segue.identifier == "mainToSuggestBy" {
+            let destinationVC = segue.destinationViewController as? SuggestByViewController
             destinationVC?.user = self.user
         }
     }
