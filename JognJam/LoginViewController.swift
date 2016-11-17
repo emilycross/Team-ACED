@@ -21,13 +21,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var logo: UIButton!
     /* images for animated logo */
     let image1 = UIImage(named: "Logo1_Circle.png")
-    let image2 = UIImage(named: "Logo2_Cirle.png")
+    let image2 = UIImage(named: "Logo2_Circle.png")
     
     /* counter and timer */
     var counter = 0;
     var timeInterval = NSTimer()
 
-    
     
     /* use timer to change between the two logo images */
     func incrementTimer() {
@@ -41,9 +40,6 @@ class LoginViewController: UIViewController {
         }
         counter += 1
     }
-    
-
-    
     
     
     override func viewDidLoad() {
