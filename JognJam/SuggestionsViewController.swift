@@ -26,7 +26,7 @@ class SuggestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if suggestBy == "arist" {
+        if suggestBy == "artist" {
             suggestionsByLabel.text = "Suggestions By Artist"
         }
         else if suggestBy == "genre" {
@@ -51,113 +51,84 @@ class SuggestionsViewController: UIViewController {
     }
     func getSuggestions()
     {
-        if user.onlineMode == true { //on online mode
-            if suggestBy == "artist" {
-                //calculate suggestion (from internet)
-                let currentArtist = user.currentSongArtist
-                player.getSuggestionByArtist(currentArtist)
-                player.getSuggestionByArtist(currentArtist)
-                player.getSuggestionByArtist(currentArtist)
-                player.getSuggestionByArtist(currentArtist)
-                songSuggestion1Label.setTitle(((player.suggestionsTitles[0] as! String) + " - " + (player.suggestionsArtists[0] as! String)), forState: UIControlState.Normal)
-                /*
-                var a = player.getSuggestionByArtist(currentArtist)
-                putSuggestionIntoLabel(songSuggestion1Label, num: a)
-                a = player.getSuggestionByArtist(currentArtist)
-                putSuggestionIntoLabel(songSuggestion2Label, num: a)
-                a = player.getSuggestionByArtist(currentArtist)
-                putSuggestionIntoLabel(songSuggestion3Label, num: a)
-                a = player.getSuggestionByArtist(currentArtist)
-                putSuggestionIntoLabel(songSuggestion4Label, num: a)
-                a = player.getSuggestionByArtist(currentArtist)
-                putSuggestionIntoLabel(songSuggestion5Label, num: a)*/
+        if suggestBy == "artist" {
+            let currentArtist = user.currentSongArtist
+            player.getSuggestionsByArtist(currentArtist)
+            putSuggestionIntoLabel(songSuggestion1Label, num: 0)
+            putSuggestionIntoLabel(songSuggestion2Label, num: 1)
+            putSuggestionIntoLabel(songSuggestion3Label, num: 2)
+            putSuggestionIntoLabel(songSuggestion4Label, num: 3)
+            putSuggestionIntoLabel(songSuggestion5Label, num: 4)
                 
-            }
-            else if suggestBy == "genre" {
-                let currentGenre = user.currentSongGenre
-                var a = player.getSuggestionByGenre(currentGenre)
-                putSuggestionIntoLabel(songSuggestion1Label, num: a)
-                a = player.getSuggestionByGenre(currentGenre)
-                putSuggestionIntoLabel(songSuggestion2Label, num: a)
-                a = player.getSuggestionByGenre(currentGenre)
-                putSuggestionIntoLabel(songSuggestion3Label, num: a)
-                a = player.getSuggestionByGenre(currentGenre)
-                putSuggestionIntoLabel(songSuggestion4Label, num: a)
-                a = player.getSuggestionByGenre(currentGenre)
-                putSuggestionIntoLabel(songSuggestion5Label, num: a)
-            }
-            else if suggestBy == "speed" {
-                let currentSpeed = user.currentSpeed
-                var a = player.getSuggestionBySpeed(currentSpeed)
-                putSuggestionIntoLabel(songSuggestion1Label, num: a)
-                a = player.getSuggestionBySpeed(currentSpeed)
-                putSuggestionIntoLabel(songSuggestion2Label, num: a)
-                a = player.getSuggestionBySpeed(currentSpeed)
-                putSuggestionIntoLabel(songSuggestion3Label, num: a)
-                a = player.getSuggestionBySpeed(currentSpeed)
-                putSuggestionIntoLabel(songSuggestion4Label, num: a)
-                a = player.getSuggestionBySpeed(currentSpeed)
-                putSuggestionIntoLabel(songSuggestion5Label, num: a)
-            }
-            else if suggestBy == "location" {
-                let currentLocation = user.currentLocation
-                var a = player.getSuggestionByLocation(currentLocation)
-                putSuggestionIntoLabel(songSuggestion1Label, num: a)
-                a = player.getSuggestionByLocation(currentLocation)
-                putSuggestionIntoLabel(songSuggestion2Label, num: a)
-                a = player.getSuggestionByLocation(currentLocation)
-                putSuggestionIntoLabel(songSuggestion3Label, num: a)
-                a = player.getSuggestionByLocation(currentLocation)
-                putSuggestionIntoLabel(songSuggestion4Label, num: a)
-                a = player.getSuggestionByLocation(currentLocation)
-                putSuggestionIntoLabel(songSuggestion5Label, num: a)
-            }
+        }
+        else if suggestBy == "genre" {
+            let currentGenre = user.currentSongGenre
+            player.getSuggestionByGenre(currentGenre)
+            putSuggestionIntoLabel(songSuggestion1Label, num: 0)
+            putSuggestionIntoLabel(songSuggestion2Label, num: 1)
+            putSuggestionIntoLabel(songSuggestion3Label, num: 2)
+            putSuggestionIntoLabel(songSuggestion4Label, num: 3)
+            putSuggestionIntoLabel(songSuggestion5Label, num: 4)
+        }
+        else if suggestBy == "speed" {
+            let currentSpeed = user.currentSpeed
+            player.getSuggestionBySpeed(currentSpeed)
+            putSuggestionIntoLabel(songSuggestion1Label, num: 0)
+            putSuggestionIntoLabel(songSuggestion2Label, num: 1)
+            putSuggestionIntoLabel(songSuggestion3Label, num: 2)
+            putSuggestionIntoLabel(songSuggestion4Label, num: 3)
+            putSuggestionIntoLabel(songSuggestion5Label, num: 4)
+        }
+        else if suggestBy == "location" {
+            let currentLocation = user.currentLocation
+            player.getSuggestionByLocation(currentLocation)
+            putSuggestionIntoLabel(songSuggestion1Label, num: 0)
+            putSuggestionIntoLabel(songSuggestion2Label, num: 1)
+            putSuggestionIntoLabel(songSuggestion3Label, num: 2)
+            putSuggestionIntoLabel(songSuggestion4Label, num: 3)
+            putSuggestionIntoLabel(songSuggestion5Label, num: 4)
         }
     }
+    
     func putSuggestionIntoLabel(button: UIButton, num: Int)
     {
-        if num == -1 {
+        if player.suggestionsIndices[num] == -1 {
             button.setTitle("No suggestions", forState: UIControlState.Normal)
             button.enabled = false //make it unclickable
         }
         else {
-            button.setTitle((player.titles[num]+" - "+player.artists[num]), forState: UIControlState.Normal)
+            button.setTitle((player.suggestionsTitles[num]+" - "+player.suggestionsArtists[num]), forState: UIControlState.Normal)
         }
     }
     @IBAction func song1Pressed(sender: UIButton) {
-        let a = player.suggestionsUsed[0] as! Int //when you put in currentSong, will be suggestionsUsed[a]!!
-        user.currentSongTitle = player.titles[a]
-        user.currentSongArtist = player.artists[a]
-        user.currentSongGenre = player.genres[a]
-        user.currentSongIndex = a
+        user.currentSongTitle = player.suggestionsTitles[0]
+        user.currentSongArtist = player.suggestionsArtists[0]
+        user.currentSongGenre = player.suggestionsGenres[0]
+        user.currentSongIndex = player.suggestionsIndices[0]
     }
     @IBAction func song2Pressed(sender: UIButton) {
-        let a = player.suggestionsUsed[1] as! Int //when you put in currentSong, will be suggestionsUsed[a]!!
-        user.currentSongTitle = player.titles[a]
-        user.currentSongArtist = player.artists[a]
-        user.currentSongGenre = player.genres[a]
-        user.currentSongIndex = a
+        user.currentSongTitle = player.suggestionsTitles[1]
+        user.currentSongArtist = player.suggestionsArtists[1]
+        user.currentSongGenre = player.suggestionsGenres[1]
+        user.currentSongIndex = player.suggestionsIndices[1]
     }
     @IBAction func song3Pressed(sender: UIButton) {
-        let a = player.suggestionsUsed[2] as! Int //when you put in currentSong, will be suggestionsUsed[a]!!
-        user.currentSongTitle = player.titles[a]
-        user.currentSongArtist = player.artists[a]
-        user.currentSongGenre = player.genres[a]
-        user.currentSongIndex = a
+        user.currentSongTitle = player.suggestionsTitles[2]
+        user.currentSongArtist = player.suggestionsArtists[2]
+        user.currentSongGenre = player.suggestionsGenres[2]
+        user.currentSongIndex = player.suggestionsIndices[2]
     }
     @IBAction func song4Pressed(sender: UIButton) {
-        let a = player.suggestionsUsed[3] as! Int //when you put in currentSong, will be suggestionsUsed[a]!!
-        user.currentSongTitle = player.titles[a]
-        user.currentSongArtist = player.artists[a]
-        user.currentSongGenre = player.genres[a]
-        user.currentSongIndex = a
+        user.currentSongTitle = player.suggestionsTitles[3]
+        user.currentSongArtist = player.suggestionsArtists[3]
+        user.currentSongGenre = player.suggestionsGenres[3]
+        user.currentSongIndex = player.suggestionsIndices[3]
     }
     @IBAction func song5Pressed(sender: UIButton) {
-        let a = player.suggestionsUsed[4] as! Int //when you put in currentSong, will be suggestionsUsed[a]!!
-        user.currentSongTitle = player.titles[a]
-        user.currentSongArtist = player.artists[a]
-        user.currentSongGenre = player.genres[a]
-        user.currentSongIndex = a
+        user.currentSongTitle = player.suggestionsTitles[4]
+        user.currentSongArtist = player.suggestionsArtists[4]
+        user.currentSongGenre = player.suggestionsGenres[4]
+        user.currentSongIndex = player.suggestionsIndices[4]
     }
 
     /*

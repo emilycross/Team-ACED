@@ -80,13 +80,15 @@ class MainViewController: UIViewController {
             playButton.setImage(playImage, forState: UIControlState.Normal)
             player.pause()
         }
+        player.getSuggestionsByArtist(user.currentSongArtist)
+        suggestedSongLabel.text = player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0]
     }
     
     @IBAction func prevButtonPressed(sender: UIButton) {
         player.pickSong(0) //or pick a different song
         start = false
-        playButton.setImage(playImage, forState: UIControlState.Normal)
-        player.pause()
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
@@ -97,8 +99,8 @@ class MainViewController: UIViewController {
     @IBAction func nextButtonPressed(sender: UIButton) {
         player.pickSong(0) //or pick a different song
         start = false
-        playButton.setImage(playImage, forState: UIControlState.Normal)
-        player.pause()
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist

@@ -26,9 +26,10 @@ class musicPlayer
     var currentIndex = -1
     var audioPlayer = AVAudioPlayer()
     
-    var suggestionsUsed = []
-    var suggestionsTitles = []
-    var suggestionsArtists = []
+    var suggestionsIndices = [-1,-1,-1,-1,-1]
+    var suggestionsTitles = ["","","","",""]
+    var suggestionsArtists = ["","","","",""]
+    var suggestionsGenres = ["","","","",""]
     
     func pickSong(n: Int) {
         if(n < titles.count)
@@ -55,58 +56,63 @@ class musicPlayer
     {
         audioPlayer.stop()
     }
-    func getSuggestionByArtist(artist: String) -> Int
+    func getSuggestionsByArtist(artist: String)
     {
-        var i = -1
-        for a in artists {
-            i += 1
-            if a == artist { //&& !suggestionsUsed.containsObject(i) {
-                suggestionsUsed = suggestionsUsed.arrayByAddingObject(i)
-                return i
+        for i in 0...4 {
+            for j in 0...(artists.count-1) {
+                if artists[j] == artist {
+                    suggestionsArtists[i] = artists[j]
+                    suggestionsTitles[i] = titles[j]
+                    suggestionsGenres[i] = genres[j]
+                    suggestionsIndices[i] = j
+                    break
+                }
             }
         }
-        return -1 //not found
     }
-    func getSuggestionByGenre(genre: String) -> Int
+    func getSuggestionByGenre(genre: String)
     {
-        var i = -1
-        for g in genres {
-            i += 1
-            if g == genre {//&& !suggestionsUsed.containsObject(i) {
-                suggestionsUsed = suggestionsUsed.arrayByAddingObject(i)
-                suggestionsTitles = suggestionsTitles.arrayByAddingObject(titles[i])
-                suggestionsArtists = suggestionsArtists.arrayByAddingObject(artists[i])
-                return i
+        for i in 0...4 {
+            for j in 0...(genres.count-1) {
+                if genres[j] == genre {
+                    suggestionsArtists[i] = artists[j]
+                    suggestionsTitles[i] = titles[j]
+                    suggestionsGenres[i] = genres[j]
+                    suggestionsIndices[i] = j
+                    break
+                }
             }
         }
-        return -1 //not found
+
     }
-    func getSuggestionBySpeed(speed: Int) -> Int
+    func getSuggestionBySpeed(speed: Int)
     {
-        var i = -1
-        for s in speedsOfSongs {
-            i += 1
-            if s == speed {//&& !suggestionsUsed.containsObject(i) {
-                suggestionsUsed = suggestionsUsed.arrayByAddingObject(i)
-                suggestionsTitles = suggestionsTitles.arrayByAddingObject(titles[i])
-                suggestionsArtists = suggestionsArtists.arrayByAddingObject(artists[i])
-                return i
+        for i in 0...4 {
+            for j in 0...(speedsOfSongs.count-1) {
+                if speedsOfSongs[j] == speed {
+                    suggestionsArtists[i] = artists[j]
+                    suggestionsTitles[i] = titles[j]
+                    suggestionsGenres[i] = genres[j]
+                    suggestionsIndices[i] = j
+                    break
+                }
             }
         }
-        return -1 //not found
+
     }
-    func getSuggestionByLocation(location: String) -> Int
+    func getSuggestionByLocation(location: String)
     {
-        var i = -1
-        for l in locations {
-            i += 1
-            if l == location {//&& !suggestionsUsed.containsObject(i) {
-                suggestionsUsed = suggestionsUsed.arrayByAddingObject(i)
-                suggestionsTitles = suggestionsTitles.arrayByAddingObject(titles[i])
-                suggestionsArtists = suggestionsArtists.arrayByAddingObject(artists[i])
-                return i
+        for i in 0...4 {
+            for j in 0...(locations.count-1) {
+                if locations[j] == location {
+                    suggestionsArtists[i] = artists[j]
+                    suggestionsTitles[i] = titles[j]
+                    suggestionsGenres[i] = genres[j]
+                    suggestionsIndices[i] = j
+                    break
+                }
             }
         }
-        return -1 //not found
+
     }
 }
