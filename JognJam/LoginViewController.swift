@@ -59,13 +59,13 @@ class LoginViewController: UIViewController {
         if database.checkIfRight(usernameTextField.text!, password: passwordTextField.text!) {
             
             performSegueWithIdentifier("loginToMain", sender: self)
-            
-            print("yes")
         }
             
         else {
             invalidLogin.hidden = false;
         }
     }
+    
+    
     
 }

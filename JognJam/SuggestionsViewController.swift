@@ -23,6 +23,9 @@ class SuggestionsViewController: UIViewController {
     @IBOutlet weak var songSuggestion4Label: UIButton!
     @IBOutlet weak var songSuggestion5Label: UIButton!
     
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -43,6 +46,8 @@ class SuggestionsViewController: UIViewController {
         currentSpeedLabel.text = String(user.currentSpeed) + " km/h"
         currentLocationLabel.text = user.currentLocation
         getSuggestions()
+        
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -142,8 +147,9 @@ class SuggestionsViewController: UIViewController {
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "suggestionsToMainSong" {
-            let destinationVC = segue.destinationViewController as? SettingsViewController
+            let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
             
         }
     }

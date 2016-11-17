@@ -14,6 +14,7 @@ class UsersDatabase {
     var usernames = ["angeladini", "emilycross", "mobilecomputing"]
     var passwords = ["ad","ec", "csci5708"]
     var profiles = [userProfile(), userProfile(), userProfile()]
+    var players = [musicPlayer(), musicPlayer(), musicPlayer()]
 
     //Checks if username and password are correct and match
     func checkIfRight(username: String, password: String)-> Bool {

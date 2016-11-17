@@ -21,7 +21,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var suggestionsLabel: UILabel!
-    @IBOutlet weak var suggestedSongLabel: UILabel!
+    
+    @IBOutlet weak var suggestedSongButton: UIButton!
     var suggestSongTitle = ""
     var suggestedArtist = ""
     
@@ -41,14 +42,14 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongIndex = player.currentIndex
         currentSpeedLabel.text = String(currentSpeed) + " km/h"
-        suggestedSongLabel.text = suggestSongTitle + " - " + suggestedArtist
+        suggestedSongButton.setTitle((suggestSongTitle + " - " + suggestedArtist), forState: UIControlState.Normal)
         if user.musicSuggestions == false {
-            suggestedSongLabel.hidden = true
+            suggestedSongButton.hidden = true
             suggestionsLabel.hidden = true
             moreButton.hidden = true
         }
         else {
-            suggestedSongLabel.hidden = false
+            suggestedSongButton.hidden = false
             suggestionsLabel.hidden = false
             moreButton.hidden = false
         }
@@ -81,7 +82,7 @@ class MainViewController: UIViewController {
             player.pause()
         }
         player.getSuggestionsByArtist(user.currentSongArtist)
-        suggestedSongLabel.text = player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0]
+        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
     }
     
     @IBAction func prevButtonPressed(sender: UIButton) {
