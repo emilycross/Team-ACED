@@ -26,6 +26,8 @@ class LoginViewController: UIViewController {
     /* counter and timer */
     var counter = 0;
     var timeInterval = NSTimer()
+
+    
     
     /* use timer to change between the two logo images */
     func incrementTimer() {
@@ -40,18 +42,21 @@ class LoginViewController: UIViewController {
         counter += 1
     }
     
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /* set timer */
         timeInterval = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(incrementTimer), userInfo: nil, repeats: true)
-
         
-        // Do any additional setup after loading the view.*/
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     /* check login credentials */
@@ -59,13 +64,12 @@ class LoginViewController: UIViewController {
         if database.checkIfRight(usernameTextField.text!, password: passwordTextField.text!) {
             
             performSegueWithIdentifier("loginToMain", sender: self)
-            
-            print("yes")
         }
             
         else {
             invalidLogin.hidden = false;
         }
     }
+    
     
 }
