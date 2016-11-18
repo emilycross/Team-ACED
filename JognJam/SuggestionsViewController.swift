@@ -12,7 +12,9 @@ class SuggestionsViewController: UIViewController {
 
     var user = userProfile()
     var player = musicPlayer()
+    var musicIsPlaying = true
     var suggestBy = ""
+    
     @IBOutlet weak var suggestionsByLabel: UILabel!
     @IBOutlet weak var currentSpeedLabel: UILabel!
     @IBOutlet weak var currentLocationLabel: UILabel!
@@ -105,36 +107,6 @@ class SuggestionsViewController: UIViewController {
             button.setTitle((player.suggestionsTitles[num]+" - "+player.suggestionsArtists[num]), forState: UIControlState.Normal)
         }
     }
-    @IBAction func song1Pressed(sender: UIButton) {
-        user.currentSongTitle = player.suggestionsTitles[0]
-        user.currentSongArtist = player.suggestionsArtists[0]
-        user.currentSongGenre = player.suggestionsGenres[0]
-        user.currentSongIndex = player.suggestionsIndices[0]
-    }
-    @IBAction func song2Pressed(sender: UIButton) {
-        user.currentSongTitle = player.suggestionsTitles[1]
-        user.currentSongArtist = player.suggestionsArtists[1]
-        user.currentSongGenre = player.suggestionsGenres[1]
-        user.currentSongIndex = player.suggestionsIndices[1]
-    }
-    @IBAction func song3Pressed(sender: UIButton) {
-        user.currentSongTitle = player.suggestionsTitles[2]
-        user.currentSongArtist = player.suggestionsArtists[2]
-        user.currentSongGenre = player.suggestionsGenres[2]
-        user.currentSongIndex = player.suggestionsIndices[2]
-    }
-    @IBAction func song4Pressed(sender: UIButton) {
-        user.currentSongTitle = player.suggestionsTitles[3]
-        user.currentSongArtist = player.suggestionsArtists[3]
-        user.currentSongGenre = player.suggestionsGenres[3]
-        user.currentSongIndex = player.suggestionsIndices[3]
-    }
-    @IBAction func song5Pressed(sender: UIButton) {
-        user.currentSongTitle = player.suggestionsTitles[4]
-        user.currentSongArtist = player.suggestionsArtists[4]
-        user.currentSongGenre = player.suggestionsGenres[4]
-        user.currentSongIndex = player.suggestionsIndices[4]
-    }
 
     /*
     // MARK: - Navigation
@@ -146,10 +118,39 @@ class SuggestionsViewController: UIViewController {
     }
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "suggestionsToMainSong" {
+        if segue.identifier == "suggestionsToMainSong1" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+            destinationVC?.fromSuggestions = 0
+            
+        }
+        else if segue.identifier == "suggestionsToMainSong2" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.fromSuggestions = 1
+            
+        }
+        else if segue.identifier == "suggestionsToMainSong3" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.fromSuggestions = 2
+            
+        }
+        else if segue.identifier == "suggestionsToMainSong4" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.fromSuggestions = 3
+            
+        }
+        else if segue.identifier == "suggestionsToMainSong5" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.fromSuggestions = 4
             
         }
     }

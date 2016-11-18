@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class musicPlayer
+class musicPlayer: NSObject, AVAudioPlayerDelegate
 {
     //Database of songs
     var titles = ["Quote"] // list of songs, can change later, 3/4 for demo? using the one in the TA's github
@@ -25,6 +25,7 @@ class musicPlayer
     var currentSongFile = ""
     var currentIndex = -1
     var audioPlayer = AVAudioPlayer()
+    var songDone = false
     
     var suggestionsIndices = [-1,-1,-1,-1,-1]
     var suggestionsTitles = ["","","","",""]
@@ -46,6 +47,7 @@ class musicPlayer
                 print("Cannot find audio")
             }
             audioPlayer.prepareToPlay()
+            
         }
     }
     func play()
@@ -114,5 +116,11 @@ class musicPlayer
             }
         }
 
+    }
+    
+    //The song stopped so play the next one
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        pickSong(0) //change to next one
+        play()
     }
 }

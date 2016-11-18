@@ -2,7 +2,7 @@
 //  SpecificRouteViewController.swift
 //  JognJam
 //
-//  Created by Emily Cross on 2016-11-17.
+//  Created by Team-ACED on 2016-11-17.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 

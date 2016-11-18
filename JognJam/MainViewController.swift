@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     var player = musicPlayer()
     var start = true
+    var fromSuggestions = -1
     
     var user = userProfile()
     
@@ -23,7 +24,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var suggestionsLabel: UILabel!
     
     @IBOutlet weak var suggestedSongButton: UIButton!
-    var suggestSongTitle = ""
+    var suggestedSongTitle = ""
     var suggestedArtist = ""
     
     @IBOutlet weak var profilePictureButton: UIButton!
@@ -37,12 +38,27 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        if player.currentSongTitle == "" && player.currentArtist == "" {
+            currentSongLabel.text = "No song playing"
+        }
+        else if fromSuggestions == -1{
+            currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        }
+        else {
+            playSuggestions(fromSuggestions)
+        }
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
         user.currentSongIndex = player.currentIndex
         currentSpeedLabel.text = String(currentSpeed) + " km/h"
-        suggestedSongButton.setTitle((suggestSongTitle + " - " + suggestedArtist), forState: UIControlState.Normal)
+        if suggestedSongTitle == "" && suggestedArtist == "" {
+            suggestedSongButton.setTitle("No suggestions", forState: UIControlState.Normal)
+            suggestedSongButton.enabled = false
+        }
+        else if fromSuggestions == -1{
+            suggestedSongButton.setTitle((suggestedSongTitle + " - " + suggestedArtist), forState: UIControlState.Normal)
+            suggestedSongButton.enabled = true
+        }
         if user.musicSuggestions == false {
             suggestedSongButton.hidden = true
             suggestionsLabel.hidden = true
@@ -83,6 +99,7 @@ class MainViewController: UIViewController {
         }
         player.getSuggestionsByArtist(user.currentSongArtist)
         suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+        suggestedSongButton.enabled = true
     }
     
     @IBAction func prevButtonPressed(sender: UIButton) {
@@ -95,6 +112,7 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongGenre = player.currentGenre
         user.currentSongIndex = player.currentIndex
+        isPlayingMusic = true
     }
     
     @IBAction func nextButtonPressed(sender: UIButton) {
@@ -107,9 +125,23 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongGenre = player.currentGenre
         user.currentSongIndex = player.currentIndex
+        isPlayingMusic = true
     }
-    
 
+    @IBAction func suggestionSongPressed(sender: UIButton) {
+        player.pause()
+        player.pickSong(player.suggestionsIndices[0])
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongTitle = player.currentSongTitle
+        user.currentSongArtist = player.currentArtist
+        user.currentSongGenre = player.currentGenre
+        user.currentSongIndex = player.currentIndex
+        player.play()
+        player.getSuggestionsByArtist(user.currentSongArtist)
+        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        isPlayingMusic = true
+    }
     /*
     // MARK: - Navigation
 
@@ -131,6 +163,18 @@ class MainViewController: UIViewController {
         else if segue.identifier == "mainToSuggestBy" {
             let destinationVC = segue.destinationViewController as? SuggestByViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
+    }
+    func playSuggestions(n: Int) {
+        start = false
+        player.pickSong(player.suggestionsIndices[n])
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        isPlayingMusic = true
+        player.getSuggestionsByArtist(player.currentArtist)
+        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+        suggestedSongButton.enabled = true
     }
 }
