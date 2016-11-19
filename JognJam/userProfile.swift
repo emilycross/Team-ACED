@@ -24,6 +24,7 @@ class userProfile
     var currentSongArtist = ""
     var currentSongGenre = ""
     var currentSongIndex = -1
+    var currentSongSpeed = 0
     
     //Settings
     var locationServices = true

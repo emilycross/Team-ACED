@@ -16,7 +16,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var titles = ["Quote"] // list of songs, can change later, 3/4 for demo? using the one in the TA's github
     var artists = ["Forrest Gump"] //list of artists, can change later, 3/4 for demo? using the one in the TA's github
     var genres = ["Soundtrack"]
-    var speedsOfSongs = [0] //change
+    var speedsOfSongs = [286] //change
     var locations = [""]
     var songFile = ["movie_quote"] //list of song files associated with song and artist
     var currentSongTitle=""
@@ -24,6 +24,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var currentGenre = ""
     var currentSongFile = ""
     var currentIndex = -1
+    var currentSongSpeed = 0
     var audioPlayer = AVAudioPlayer()
     var songDone = false
     
@@ -31,6 +32,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var suggestionsTitles = ["","","","",""]
     var suggestionsArtists = ["","","","",""]
     var suggestionsGenres = ["","","","",""]
+    var suggestionsSpeed = [0,0,0,0,0]
     
     func pickSong(n: Int) {
         if(n < titles.count)
@@ -39,6 +41,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             currentArtist = artists[n]
             currentSongFile = songFile[n]
             currentGenre = genres[n]
+            currentSongSpeed = speedsOfSongs[n]
             currentIndex = n
             let songSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(currentSongFile, ofType: "mp3")!)
             do {
@@ -81,6 +84,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
                     suggestionsIndices[i] = j
+                    suggestionsSpeed[i] = speedsOfSongs[j]
                     break
                 }
             }
@@ -96,6 +100,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
                     suggestionsIndices[i] = j
+                    suggestionsSpeed[i] = speedsOfSongs[j]
                     break
                 }
             }
@@ -111,6 +116,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
                     suggestionsIndices[i] = j
+                    suggestionsSpeed[i] = speedsOfSongs[j]
                     break
                 }
             }
@@ -118,7 +124,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
 
     }
     
-    //The song stopped so play the next one
+    //The song stopped so play the next one, have to change
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         pickSong(0) //change to next one
         play()

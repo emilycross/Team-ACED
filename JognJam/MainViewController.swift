@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     var user = userProfile()
     
     @IBOutlet weak var currentSpeedLabel: UILabel!
-    var currentSpeed = 0 //Get data from accelerometer
+    var currentSpeedOfSong = 0
     
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var suggestionsLabel: UILabel!
@@ -29,8 +29,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var profilePictureButton: UIButton!
     //boolean to show that music is playing and the play button is the pause image
-    
     var isPlayingMusic = false
+    
     @IBOutlet weak var playButton: UIButton!
     let playImage = UIImage(named: "playButton.png")
     let pauseImage = UIImage(named: "pauseButton.png")
@@ -50,7 +50,8 @@ class MainViewController: UIViewController {
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
         user.currentSongIndex = player.currentIndex
-        currentSpeedLabel.text = String(currentSpeed) + " km/h"
+        user.currentSongSpeed = player.currentSongSpeed
+        currentSpeedLabel.text = String(currentSpeedOfSong) + " bpm"
         if suggestedSongTitle == "" && suggestedArtist == "" {
             suggestedSongButton.setTitle("No suggestions", forState: UIControlState.Normal)
             suggestedSongButton.enabled = false
@@ -86,6 +87,8 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongGenre = player.currentGenre
         user.currentSongIndex = player.currentIndex
+        user.currentSongSpeed = player.currentSongSpeed
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         //changes song to current song
         //changes the image
         isPlayingMusic = !isPlayingMusic
@@ -112,6 +115,8 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongGenre = player.currentGenre
         user.currentSongIndex = player.currentIndex
+        user.currentSongSpeed = player.currentSongSpeed
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         isPlayingMusic = true
     }
     
@@ -125,6 +130,8 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongGenre = player.currentGenre
         user.currentSongIndex = player.currentIndex
+        user.currentSongSpeed = player.currentSongSpeed
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         isPlayingMusic = true
     }
 
@@ -136,6 +143,8 @@ class MainViewController: UIViewController {
         user.currentSongArtist = player.currentArtist
         user.currentSongGenre = player.currentGenre
         user.currentSongIndex = player.currentIndex
+        user.currentSongSpeed = player.currentSongSpeed
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         player.play()
         player.getSuggestionsByArtist(user.currentSongArtist)
         suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
@@ -172,6 +181,7 @@ class MainViewController: UIViewController {
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         isPlayingMusic = true
         player.getSuggestionsByArtist(player.currentArtist)
         suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
