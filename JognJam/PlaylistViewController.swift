@@ -2,7 +2,7 @@
 //  PlaylistViewController.swift
 //  JognJam
 //
-//  Created by Emily Cross on 2016-11-17.
+//  Created by Team-ACED on 2016-11-17.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -10,6 +10,8 @@ import UIKit
 
 class PlaylistViewController: UIViewController {
 
+    var user = userProfile()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +33,4 @@ class PlaylistViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

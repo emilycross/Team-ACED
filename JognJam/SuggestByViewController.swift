@@ -11,6 +11,7 @@ import UIKit
 class SuggestByViewController: UIViewController {
 
     var user = userProfile()
+    var player = musicPlayer()
     @IBOutlet weak var profilePictureButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class SuggestByViewController: UIViewController {
         if segue.identifier == "suggestByToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
@@ -46,16 +48,19 @@ class SuggestByViewController: UIViewController {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController
             destinationVC?.user = self.user
             destinationVC?.suggestBy = "artist"
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToSuggestionsGenre" {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController
             destinationVC?.user = self.user
             destinationVC?.suggestBy = "genre"
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToSuggestionsSpeed" {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController
             destinationVC?.user = self.user
             destinationVC?.suggestBy = "speed"
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToSuggestionsLocation" {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController

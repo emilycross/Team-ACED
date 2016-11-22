@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -480,28 +480,6 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUl-3S-sCj">
-                                <rect key="frame" x="180" y="345" width="87" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="0wd-Ud-Jnh"/>
-                                    <constraint firstAttribute="height" constant="21" id="IpO-8N-kBJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0wd-Ud-Jnh"/>
-                                        <exclude reference="IpO-8N-kBJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="0wd-Ud-Jnh"/>
-                                        <include reference="IpO-8N-kBJ"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0 km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRb-kq-JiX">
                                 <rect key="frame" x="170" y="374" width="109" height="42"/>
                                 <constraints>
@@ -599,15 +577,6 @@
                                     <action selector="nextButtonPressed:" destination="dXw-y0-Pw0" eventType="touchUpInside" id="acM-yD-6zL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veB-VK-dY9">
-                                <rect key="frame" x="359" y="16" width="48" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="703-4V-yAM" kind="show" identifier="mainToLogin" id="Pxc-wY-A0X"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-aL-mC3">
                                 <rect key="frame" x="158" y="424" width="133" height="30"/>
                                 <constraints>
@@ -674,38 +643,76 @@
                                         <include reference="e2i-qP-lhw"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="suggestionSongPressed:" destination="dXw-y0-Pw0" eventType="touchUpInside" id="pnj-1X-2Pw"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veB-VK-dY9">
+                                <rect key="frame" x="359" y="16" width="48" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="703-4V-yAM" kind="show" identifier="mainToLogin" id="Pxc-wY-A0X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Speed of song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUl-3S-sCj">
+                                <rect key="frame" x="180" y="345" width="87" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="0wd-Ud-Jnh">
+                                        <variation key="widthClass=compact" constant="123"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="21" id="IpO-8N-kBJ">
+                                        <variation key="widthClass=compact" constant="22"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0wd-Ud-Jnh"/>
+                                        <exclude reference="IpO-8N-kBJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0wd-Ud-Jnh"/>
+                                        <include reference="IpO-8N-kBJ"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.031372549020000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aOf-CD-cFP" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="215" id="1ku-lh-CQF">
-                                <variation key="widthClass=compact" constant="180"/>
+                                <variation key="widthClass=compact" constant="183"/>
                             </constraint>
                             <constraint firstItem="PUl-3S-sCj" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="315" id="39d-da-Mau">
-                                <variation key="widthClass=compact" constant="291"/>
+                                <variation key="widthClass=compact" constant="289"/>
                             </constraint>
                             <constraint firstItem="RFy-qt-ENM" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="215" id="3zf-mw-7qP">
-                                <variation key="widthClass=compact" constant="180"/>
+                                <variation key="widthClass=compact" constant="183"/>
                             </constraint>
                             <constraint firstItem="C3J-IT-ZUX" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="47z-v8-5ye"/>
                             <constraint firstItem="oAG-aL-mC3" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="381" id="6TD-o2-k0b">
-                                <variation key="widthClass=compact" constant="347"/>
+                                <variation key="widthClass=compact" constant="350"/>
                             </constraint>
                             <constraint firstItem="CRV-YI-2ja" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="7WY-hp-eFU">
                                 <variation key="widthClass=compact" constant="1.5"/>
                             </constraint>
                             <constraint firstItem="veB-VK-dY9" firstAttribute="trailing" secondItem="Eto-K1-MhP" secondAttribute="trailingMargin" id="Cww-hI-cCP"/>
                             <constraint firstItem="nl5-54-HWF" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="145" id="DEe-ZP-KQQ">
-                                <variation key="widthClass=compact" constant="126"/>
+                                <variation key="widthClass=compact" constant="129"/>
                             </constraint>
                             <constraint firstItem="Bn5-HI-mBv" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="69" id="Mq3-Iq-wwc">
-                                <variation key="widthClass=compact" constant="65"/>
+                                <variation key="widthClass=compact" constant="68"/>
                             </constraint>
                             <constraint firstItem="FY4-n2-E4e" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="NdI-jq-lkS">
                                 <variation key="widthClass=compact" constant="1.5"/>
                             </constraint>
                             <constraint firstItem="pPm-sA-2zL" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="190" id="OgN-Se-ph2">
-                                <variation key="widthClass=compact" constant="155"/>
+                                <variation key="widthClass=compact" constant="158"/>
                             </constraint>
                             <constraint firstItem="nl5-54-HWF" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="OgT-1E-abd"/>
                             <constraint firstItem="Bn5-HI-mBv" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="Ost-KV-3WX"/>
@@ -715,21 +722,23 @@
                                 <variation key="widthClass=compact" constant="-1"/>
                             </constraint>
                             <constraint firstItem="vkh-0u-0FI" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="419" id="Z4f-Q4-dLX">
-                                <variation key="widthClass=compact" constant="376"/>
+                                <variation key="widthClass=compact" constant="379"/>
                             </constraint>
                             <constraint firstItem="veB-VK-dY9" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="16" id="b8z-lh-NEq">
                                 <variation key="widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="HRb-kq-JiX" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="331" id="byA-eC-XB7">
-                                <variation key="widthClass=compact" constant="307"/>
+                                <variation key="widthClass=compact" constant="310"/>
                             </constraint>
                             <constraint firstItem="aWT-Vy-XG0" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="277" id="f2T-tS-Bbd">
-                                <variation key="widthClass=compact" constant="253"/>
+                                <variation key="widthClass=compact" constant="256"/>
                             </constraint>
                             <constraint firstItem="C3J-IT-ZUX" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="411" id="goR-PB-ffh">
-                                <variation key="widthClass=compact" constant="401"/>
+                                <variation key="widthClass=compact" constant="404"/>
                             </constraint>
-                            <constraint firstItem="PUl-3S-sCj" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="hGs-49-Zht"/>
+                            <constraint firstItem="PUl-3S-sCj" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="hGs-49-Zht">
+                                <variation key="widthClass=compact" constant="2.5"/>
+                            </constraint>
                             <constraint firstItem="oAG-aL-mC3" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="lKC-eu-2kP"/>
                             <constraint firstItem="RFy-qt-ENM" firstAttribute="leading" secondItem="pPm-sA-2zL" secondAttribute="trailing" constant="21" id="lsW-ol-1EK">
                                 <variation key="widthClass=compact" constant="19"/>
@@ -738,7 +747,7 @@
                             <constraint firstItem="pPm-sA-2zL" firstAttribute="leading" secondItem="aOf-CD-cFP" secondAttribute="trailing" constant="18" id="mtI-Nz-Aao"/>
                             <constraint firstItem="hmN-du-4ku" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="20" id="p8h-kS-52F"/>
                             <constraint firstItem="FY4-n2-E4e" firstAttribute="top" secondItem="Eto-K1-MhP" secondAttribute="topMargin" constant="488" id="rn5-qO-uZA">
-                                <variation key="widthClass=compact" constant="431"/>
+                                <variation key="widthClass=compact" constant="434"/>
                             </constraint>
                             <constraint firstItem="pPm-sA-2zL" firstAttribute="centerX" secondItem="Eto-K1-MhP" secondAttribute="centerX" id="tPG-Mk-MhV">
                                 <variation key="widthClass=compact" constant="-1"/>
@@ -1384,6 +1393,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2oE-Kj-O8J"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mcn-LS-u5e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-1T-k3f">
@@ -1407,7 +1417,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="33o-vg-j4z" kind="show" id="KuQ-I6-peL"/>
+                                    <segue destination="33o-vg-j4z" kind="show" identifier="playlistsToProfile" id="KuQ-I6-peL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo6-Ce-OaT">
@@ -1663,6 +1673,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4CV-Tg-xiR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EF4-xT-dfk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54a-WV-aJc">
@@ -2557,7 +2568,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="song1Pressed:" destination="sel-Ro-Or8" eventType="touchUpInside" id="BjB-KK-MX0"/>
                                     <segue destination="dXw-y0-Pw0" kind="show" identifier="suggestionsToMainSong1" id="xQZ-UZ-YWx"/>
                                 </connections>
                             </button>
@@ -2583,7 +2593,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="song2Pressed:" destination="sel-Ro-Or8" eventType="touchUpInside" id="r1n-Mk-ZaW"/>
                                     <segue destination="dXw-y0-Pw0" kind="show" identifier="suggestionsToMainSong2" id="ReT-E8-eNI"/>
                                 </connections>
                             </button>
@@ -2609,7 +2618,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="song3Pressed:" destination="sel-Ro-Or8" eventType="touchUpInside" id="25P-pu-w0a"/>
                                     <segue destination="dXw-y0-Pw0" kind="show" identifier="suggestionsToMainSong3" id="Yvq-a3-C8y"/>
                                 </connections>
                             </button>
@@ -2635,7 +2643,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="song5Pressed:" destination="sel-Ro-Or8" eventType="touchUpInside" id="ZNZ-4o-t3b"/>
                                     <segue destination="dXw-y0-Pw0" kind="show" identifier="suggestionsToMainSong5" id="38Q-Bj-eXP"/>
                                 </connections>
                             </button>
@@ -2776,7 +2783,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="song4Pressed:" destination="sel-Ro-Or8" eventType="touchUpInside" id="mm6-cY-Ia2"/>
                                     <segue destination="dXw-y0-Pw0" kind="show" identifier="suggestionsToMainSong4" id="QL9-ix-TB5"/>
                                 </connections>
                             </button>
@@ -2942,7 +2948,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1e-RR-zXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.5" y="1173"/>
+            <point key="canvasLocation" x="1765.5" y="1173"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="scD-8d-LfU">
@@ -3362,13 +3368,13 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KuQ-I6-peL"/>
-        <segue reference="5Yd-ak-zXc"/>
-        <segue reference="uX4-wx-HEz"/>
-        <segue reference="oSz-ks-6cO"/>
-        <segue reference="KY8-dZ-llw"/>
+        <segue reference="bdj-oq-0Tv"/>
         <segue reference="edr-DM-Wdq"/>
+        <segue reference="Pxc-wY-A0X"/>
         <segue reference="QK0-8r-AS2"/>
+        <segue reference="KY8-dZ-llw"/>
+        <segue reference="5Yd-ak-zXc"/>
         <segue reference="TwK-vt-jtd"/>
+        <segue reference="5GE-Pu-2RV"/>
     </inferredMetricsTieBreakers>
 </document>
