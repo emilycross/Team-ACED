@@ -11,7 +11,6 @@ import UIKit
 class SpecificRouteViewController: UIViewController {
     
     var user = userProfile()
-    
     var routeNumber = 0
 
     @IBOutlet weak var routeNumberLabel: UILabel!

@@ -34,6 +34,12 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var suggestionsGenres = ["","","","",""]
     var suggestionsSpeed = [0,0,0,0,0]
     
+    var playlistIndices = [-1,-1,-1,-1,-1]
+    var playlistTitles = ["","","","",""]
+    var playlistArtists = ["","","","",""]
+    var playlistGenres = ["","","","",""]
+    var playlistSpeed = [0,0,0,0,0]
+    
     func pickSong(n: Int) {
         if(n < titles.count)
         {
@@ -123,6 +129,25 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         }
 
     }
+    
+    
+    /* right now the playlist is just going to be Forrest Gump over and over again... */
+    func playSelectedPlaylist(playlist: Int) {
+        for i in 0...4 {
+            /* this will change when playlists are fully implemented */
+            for j in 0...(artists.count-1) {
+                playlistArtists[i] = artists[j]
+                playlistTitles[i] = titles[j]
+                playlistGenres[i] = genres[j]
+                playlistIndices[i] = j
+                playlistSpeed[i] = speedsOfSongs[j]
+                break;
+            }
+        }
+        
+        
+    }
+    
     
     //The song stopped so play the next one, have to change
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {

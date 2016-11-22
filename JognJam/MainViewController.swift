@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
     var start = true
     var fromSuggestions = -1
     
+    var playlistNumber = -1
+    var playlistSong = -1
+    
     var user = userProfile()
     
     @IBOutlet weak var currentSpeedLabel: UILabel!
@@ -47,6 +50,14 @@ class MainViewController: UIViewController {
         else {
             playSuggestions(fromSuggestions)
         }
+        
+        if playlistNumber != -1 && playlistSong != -1 {
+            playPlaylist(playlistSong)
+        }
+        else {
+            currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        }
+        
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
         user.currentSongIndex = player.currentIndex
@@ -70,6 +81,9 @@ class MainViewController: UIViewController {
             suggestionsLabel.hidden = false
             moreButton.hidden = false
         }
+        
+        
+        
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
@@ -187,4 +201,21 @@ class MainViewController: UIViewController {
         suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
         suggestedSongButton.enabled = true
     }
+    
+    func playPlaylist (n: Int) {
+        start = false
+        player.pickSong(player.playlistIndices[n])
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongSpeed = player.playlistSpeed[n]
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
+        isPlayingMusic = true
+        player.playSelectedPlaylist(playlistNumber)
+        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+        suggestedSongButton.enabled = true
+        
+    }
+    
+    
 }

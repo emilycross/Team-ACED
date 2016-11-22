@@ -2,14 +2,13 @@
 //  RouteViewController.swift
 //  JognJam
 //
-//  Created by Emily Cross on 2016-11-17.
+//  Created by Team-ACED on 2016-11-17.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
 import UIKit
 
 class RouteViewController: UIViewController {
-
     
     var user = userProfile()
     
@@ -26,7 +25,13 @@ class RouteViewController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "routeOneToDetails" {
+
+        if segue.identifier == "routeToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
+            destinationVC?.user = self.user
+        }
+        
+        else if segue.identifier == "routeOneToDetails" {
             let destinationVC = segue.destinationViewController as? SpecificRouteViewController
             destinationVC?.user = self.user
             destinationVC?.routeNumber = 1

@@ -27,6 +27,9 @@ class SpecificPlaylistViewController: UIViewController {
         super.viewDidLoad()
         
         playlistNumberLabel.text = "Playlist " + String(playlistNumber)
+        
+        retrievePlaylist()
+        
 
     }
 
@@ -34,4 +37,70 @@ class SpecificPlaylistViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    
+    func retrievePlaylist() {
+        player.playSelectedPlaylist(playlistNumber)
+        displayPlaylistSong(song1, num: 0)
+        displayPlaylistSong(song2, num: 1)
+        displayPlaylistSong(song3, num: 2)
+        displayPlaylistSong(song4, num: 3)
+        displayPlaylistSong(song5, num: 4)
+    }
+    
+    func displayPlaylistSong(button: UIButton, num: Int)
+    {
+        if player.playlistIndices[num] == -1 {
+            button.setTitle("No song available", forState: UIControlState.Normal)
+            button.enabled = false
+        }
+        else {
+            button.setTitle((player.playlistArtists[num]+" - "+player.playlistArtists[num]), forState: UIControlState.Normal)
+        }
+    }
+    
+    
+    /* segue preparation */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "songOneToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistSong = 0
+            destinationVC?.playlistNumber = playlistNumber
+
+        }
+        else if segue.identifier == "songTwoToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistSong = 1
+            destinationVC?.playlistNumber = playlistNumber
+
+        }
+        else if segue.identifier == "songThreeToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistSong = 2
+            destinationVC?.playlistNumber = playlistNumber
+
+        }
+        else if segue.identifier == "songFourToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistSong = 3
+            destinationVC?.playlistNumber = playlistNumber
+            
+        }
+        else if segue.identifier == "songFiveToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistSong = 4
+            destinationVC?.playlistNumber = playlistNumber
+
+            
+        }
+    }
 }
