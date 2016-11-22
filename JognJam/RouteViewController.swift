@@ -10,6 +10,9 @@ import UIKit
 
 class RouteViewController: UIViewController {
 
+    
+    var user = userProfile()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +24,37 @@ class RouteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "routeOneToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificRouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.routeNumber = 1
+        }
+            
+        else if segue.identifier == "routeTwoToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificRouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.routeNumber = 2
+        }
+            
+        else if segue.identifier == "routeThreeToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificRouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.routeNumber = 3
+        }
+            
+        else if segue.identifier == "routeFourToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificRouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.routeNumber = 4
+        }
+            
+        else if segue.identifier == "routeFiveToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificRouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.routeNumber = 5
+        }
     }
-    */
 
 }

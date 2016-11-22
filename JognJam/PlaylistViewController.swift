@@ -11,6 +11,7 @@ import UIKit
 class PlaylistViewController: UIViewController {
 
     var user = userProfile()
+    var player = musicPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,41 @@ class PlaylistViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "playlistOneToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificPlaylistViewController
+            //destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistNumber = 1
+        }
+            
+        else if segue.identifier == "playlistTwoToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificPlaylistViewController
+            //destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistNumber = 2
+        }
+            
+        else if segue.identifier == "playlistThreeToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificPlaylistViewController
+            //destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistNumber = 3
+        }
+            
+        else if segue.identifier == "playlistFourToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificPlaylistViewController
+            //destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistNumber = 4
+        }
+            
+        else if segue.identifier == "playlistFiveToDetails" {
+            let destinationVC = segue.destinationViewController as? SpecificPlaylistViewController
+            //destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.playlistNumber = 5
+        }
     }
-    */
 }

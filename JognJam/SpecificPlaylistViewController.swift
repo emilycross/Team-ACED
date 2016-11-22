@@ -10,26 +10,28 @@ import UIKit
 
 class SpecificPlaylistViewController: UIViewController {
 
+    var user = userProfile()
+    var player = musicPlayer()
+    
+    var playlistNumber = 0
+    
+    @IBOutlet weak var playlistNumberLabel: UILabel!
+    
+    @IBOutlet weak var song1: UIButton!
+    @IBOutlet weak var song2: UIButton!
+    @IBOutlet weak var song3: UIButton!
+    @IBOutlet weak var song4: UIButton!
+    @IBOutlet weak var song5: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playlistNumberLabel.text = "Playlist " + String(playlistNumber)
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

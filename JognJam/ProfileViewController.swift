@@ -61,6 +61,17 @@ class ProfileViewController: UIViewController {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
         }
+        
+        else if segue.identifier == "profileToPlaylists" {
+            let destinationVC = segue.destinationViewController as? PlaylistViewController
+            destinationVC?.user = self.user
+        }
+        
+        else if segue.identifier == "profileToRoutes" {
+            let destinationVC = segue.destinationViewController as? RouteViewController
+            destinationVC?.user = self.user
+        }
+        
     }
     
 }
