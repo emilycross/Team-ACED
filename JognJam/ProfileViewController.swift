@@ -10,21 +10,17 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    var currentSpeed = 0 //will change with accelerometer
-    var highestSpeed = 1 //will change with accelerometer
-    @IBOutlet weak var currentSpeedLabel: UILabel!
-    @IBOutlet weak var highestSpeedLabel: UILabel!
+    @IBOutlet weak var numberStepsLabel: UILabel!
     
     @IBOutlet weak var profilePictureButton: UIButton!
     var user = userProfile()
+    var player = musicPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentSpeedLabel.text = "" + String(currentSpeed) + " km/h"
-        highestSpeedLabel.text = "" + String(highestSpeed) + " km/h"
         // Do any additional setup after loading the view.
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
+        numberStepsLabel.text = String(user.numberSteps)+" steps"
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,16 +56,19 @@ class ProfileViewController: UIViewController {
         else if segue.identifier == "profileToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         
         else if segue.identifier == "profileToPlaylists" {
             let destinationVC = segue.destinationViewController as? PlaylistViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         
         else if segue.identifier == "profileToRoutes" {
             let destinationVC = segue.destinationViewController as? RouteViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         
     }

@@ -43,6 +43,7 @@ class SuggestByViewController: UIViewController {
         else if segue.identifier == "suggestByToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToSuggestionsArtist" {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController
@@ -65,6 +66,7 @@ class SuggestByViewController: UIViewController {
         else if segue.identifier == "suggestByToSuggestionsLocation" {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
             destinationVC?.suggestBy = "location"
         }
     }

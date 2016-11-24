@@ -178,14 +178,17 @@ class MainViewController: UIViewController {
         if segue.identifier == "mainToSettings" {
             let destinationVC = segue.destinationViewController as? SettingsViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "mainToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "mainToSuggestBy" {
             let destinationVC = segue.destinationViewController as? SuggestByViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
             destinationVC?.player = self.player
         }
     }

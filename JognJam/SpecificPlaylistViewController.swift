@@ -102,5 +102,10 @@ class SpecificPlaylistViewController: UIViewController {
 
             
         }
+        else if segue.identifier == "specificPlaylistToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
     }
 }

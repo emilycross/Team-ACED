@@ -10,7 +10,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    var user: userProfile = userProfile()
+    var user = userProfile()
+    var player = musicPlayer()
     
     @IBOutlet weak var locationServicesSwitch: UISwitch!
     @IBOutlet weak var onlineModeSwitch: UISwitch!
@@ -53,6 +54,12 @@ class SettingsViewController: UIViewController {
         if segue.identifier == "settingsToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+        else if segue.identifier == "settingsToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
     }
     

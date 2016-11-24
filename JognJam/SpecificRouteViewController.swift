@@ -11,6 +11,7 @@ import UIKit
 class SpecificRouteViewController: UIViewController {
     
     var user = userProfile()
+    var player = musicPlayer()
     var routeNumber = 0
 
     @IBOutlet weak var routeNumberLabel: UILabel!
@@ -26,5 +27,18 @@ class SpecificRouteViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "specificRouteToRoute" {
+            let destinationVC = segue.destinationViewController as? RouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+        else if segue.identifier == "specificRouteToProfile" {
+            let destinationVC = segue.destinationViewController as? RouteViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+    }
 
 }

@@ -153,5 +153,10 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.fromSuggestions = 4
             
         }
+        else if segue.identifier == "suggestionsToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
     }
 }

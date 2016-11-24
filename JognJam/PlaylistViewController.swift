@@ -27,6 +27,7 @@ class PlaylistViewController: UIViewController {
         if segue.identifier == "playlistToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         
         else if segue.identifier == "playlistOneToDetails" {

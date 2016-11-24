@@ -8,10 +8,29 @@
 
 import Foundation
 import UIKit
+import CoreMotion //for step tracker, tutorial from http://shrikar.com/ios-swift-development-step-counter-app-using-pedometer-data/
 
 //class that holds information for each user's profile
 class userProfile
 {
+    //for step tracking
+    /*var timesClassUsed = 0
+    var days: [String] = []
+    var stepsTaken: [Int] = []
+    let activityManager = CMMotionActivityManager()
+    let pedometer = CMPedometer()
+    
+    func startCountingSteps() {
+        let calendar = NSCalendar.currentCalendar()
+        //var components = calendar.components(NSCalendarUnit.YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit, fromDate: NSDate())
+        calendar.components(NSCalendarUnit.NSYearCalendarUnit, fromDate: <#T##NSDate#>)
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+        let timezone = NSTimeZone.systemTimeZone()
+        calendar.timeZone = timezone
+    }*/
+    
     //var routes
     //var playlists
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
