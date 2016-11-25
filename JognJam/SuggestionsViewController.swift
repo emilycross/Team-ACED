@@ -16,6 +16,7 @@ class SuggestionsViewController: UIViewController {
     var suggestBy = ""
     
     @IBOutlet weak var suggestionsByLabel: UILabel!
+    @IBOutlet weak var currentSuggestionAttributeLabel: UILabel!
     @IBOutlet weak var currentSpeedLabel: UILabel!
     @IBOutlet weak var currentLocationLabel: UILabel!
     
@@ -33,15 +34,19 @@ class SuggestionsViewController: UIViewController {
         // Do any additional setup after loading the view.
         if suggestBy == "artist" {
             suggestionsByLabel.text = "Suggestions By Artist"
+            currentSuggestionAttributeLabel.text = "Current Artist: \(player.currentArtist)"
         }
         else if suggestBy == "genre" {
             suggestionsByLabel.text = "Suggestions By Genre"
+            currentSuggestionAttributeLabel.text = "Current Genre: \(player.currentGenre)"
         }
         else if suggestBy == "speed" {
             suggestionsByLabel.text = "Suggestions By Speed"
+            currentSuggestionAttributeLabel.text = "Current Speed: \(player.currentSongSpeed) bpm"
         }
         else if suggestBy == "location" {
             suggestionsByLabel.text = "Suggestions By Location"
+            suggestionsByLabel.text = "Current Location: \(player.locations[player.currentIndex])"
         }
         //player.suggestionsUsed = [] //don't forget to include the current song! //=[user.currentSongIndex]
         //change more dynamically
@@ -123,6 +128,7 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 0
+            destinationVC?.start = false
             
         }
         else if segue.identifier == "suggestionsToMainSong2" {
@@ -130,6 +136,7 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 1
+            destinationVC?.start = false
             
         }
         else if segue.identifier == "suggestionsToMainSong3" {
@@ -144,19 +151,20 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 3
-            
+            destinationVC?.start = false
         }
         else if segue.identifier == "suggestionsToMainSong5" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 4
-            
+            destinationVC?.start = false
         }
         else if segue.identifier == "suggestionsToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+            destinationVC?.start = false
         }
     }
 }

@@ -12,13 +12,16 @@ import AVFoundation
 
 class musicPlayer: NSObject, AVAudioPlayerDelegate
 {
-    //Database of songs
-    var titles = ["Quote"] // list of songs, can change later, 3/4 for demo? using the one in the TA's github
-    var artists = ["Forrest Gump"] //list of artists, can change later, 3/4 for demo? using the one in the TA's github
-    var genres = ["Soundtrack"]
-    var speedsOfSongs = [286] //change
-    var locations = [""]
-    var songFile = ["movie_quote"] //list of song files associated with song and artist
+    //Database of songs, information
+    var numSongs = 11
+    var titles = ["All In", "Beat Pop", "Death of an Orchid", "Eine Kleine Nachtmusik", "Jingle Bells", "Levels of Greatness", "Sandbox Jingle", "Saturday", "Stay", "Symphony 9 2nd Movement", "Tomorrow"]
+    var artists = ["The Red Thread", "Scott Holmes", "Scott Holmes", "Mozart", "Scott Holmes", "Scott Holmes", "Scott Holmes", "Maxwell Powers", "Simple CUT", "Beethoven", "Scott Jacobs"]
+    var genres = ["Country", "Pop", "Post-Rock", "Classical", "Pop", "Post-Rock", "Pop", "Pop", "Pop", "Classical", "Country"]
+    var speedsOfSongs = [188, 95, 70, 144, 220, 100, 145, 100, 95, 150, 71]
+    //Rounds the values in speedsOfSongs to their nearest multiple of ten
+    var speedsOfSongsTens = [10*Int(188/10), 10*Int(95/10), 10*Int(70/10), 10*Int(144/10), 10*Int(220/10), 10*Int(100/10), 10*Int(145/10), 10*Int(100/10), 10*Int(95/10), 10*Int(150/10), 10*Int(71/10)]
+    var locations = ["Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS"]
+    var songFile = ["allIn", "beatPop", "deathOfAnOrchid", "eineKleineNachtmusik", "jingleBells", "levelsOfGreatness", "sandboxJingle", "saturday", "stay", "symphony92ndMovement", "tomorrow"]
     var currentSongTitle=""
     var currentArtist = ""
     var currentGenre = ""
@@ -27,6 +30,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var currentSongSpeed = 0
     var audioPlayer = AVAudioPlayer()
     var songDone = false
+    var songPlaying = false
     
     var suggestionsIndices = [-1,-1,-1,-1,-1]
     var suggestionsTitles = ["","","","",""]
@@ -62,16 +66,19 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     func play()
     {
         audioPlayer.play()
+        songPlaying = true
     }
     func pause()
     {
         audioPlayer.stop()
+        songPlaying = false
     }
     func getSuggestionsByArtist(artist: String)
     {
+        reset()
         for i in 0...4 {
             for j in 0...(artists.count-1) {
-                if artists[j] == artist {
+                if artists[j] == artist && !suggestionsIndices.contains(j) && currentIndex != j {
                     suggestionsArtists[i] = artists[j]
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
@@ -83,9 +90,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     }
     func getSuggestionByGenre(genre: String)
     {
+        reset()
         for i in 0...4 {
             for j in 0...(genres.count-1) {
-                if genres[j] == genre {
+                if genres[j] == genre && !suggestionsIndices.contains(j) && currentIndex != j {
                     suggestionsArtists[i] = artists[j]
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
@@ -99,9 +107,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     }
     func getSuggestionBySpeed(speed: Int)
     {
+        reset()
         for i in 0...4 {
             for j in 0...(speedsOfSongs.count-1) {
-                if speedsOfSongs[j] == speed {
+                if speedsOfSongs[j] == speed && !suggestionsIndices.contains(j) && currentIndex != j {
                     suggestionsArtists[i] = artists[j]
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
@@ -115,9 +124,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     }
     func getSuggestionByLocation(location: String)
     {
+        reset()
         for i in 0...4 {
             for j in 0...(locations.count-1) {
-                if locations[j] == location {
+                if locations[j] == location && !suggestionsIndices.contains(j) && currentIndex != j {
                     suggestionsArtists[i] = artists[j]
                     suggestionsTitles[i] = titles[j]
                     suggestionsGenres[i] = genres[j]
@@ -145,13 +155,23 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             }
         }
         
-        
     }
     
     
     //The song stopped so play the next one, have to change
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        pickSong(0) //change to next one
+        //Play another random song
+        let randSelection = Int(arc4random_uniform(UInt32(numSongs)) + 1)
+        pickSong(randSelection-1)
         play()
     }
+    
+    func reset() {
+        suggestionsIndices = [-1,-1,-1,-1,-1]
+        suggestionsTitles = ["","","","",""]
+        suggestionsArtists = ["","","","",""]
+        suggestionsGenres = ["","","","",""]
+        suggestionsSpeed = [0,0,0,0,0]
+    }
+
 }

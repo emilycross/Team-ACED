@@ -22,6 +22,17 @@
 		329D06D61DD52D0400717938 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D11DD52D0400717938 /* settingsButton.png */; };
 		329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DB1DD538F300717938 /* UsersDatabase.swift */; };
 		329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DF1DD5413A00717938 /* SettingsViewController.swift */; };
+		C1425CE41DE8809100393715 /* allIn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CDF1DE8809100393715 /* allIn.mp3 */; };
+		C1425CE51DE8809100393715 /* beatPop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CE01DE8809100393715 /* beatPop.mp3 */; };
+		C1425CE61DE8809100393715 /* deathOfAnOrchid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CE11DE8809100393715 /* deathOfAnOrchid.mp3 */; };
+		C1425CE71DE8809100393715 /* eineKleineNachtmusik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CE21DE8809100393715 /* eineKleineNachtmusik.mp3 */; };
+		C1425CF01DE880B700393715 /* jingleBells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CE91DE880B700393715 /* jingleBells.mp3 */; };
+		C1425CF11DE880B700393715 /* levelsOfGreatness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CEA1DE880B700393715 /* levelsOfGreatness.mp3 */; };
+		C1425CF21DE880B700393715 /* sandboxJingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CEB1DE880B700393715 /* sandboxJingle.mp3 */; };
+		C1425CF31DE880B700393715 /* saturday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CEC1DE880B700393715 /* saturday.mp3 */; };
+		C1425CF41DE880B700393715 /* stay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CED1DE880B700393715 /* stay.mp3 */; };
+		C1425CF51DE880B700393715 /* symphony92ndMovement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CEE1DE880B700393715 /* symphony92ndMovement.mp3 */; };
+		C1425CF61DE880B700393715 /* tomorrow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CEF1DE880B700393715 /* tomorrow.mp3 */; };
 		C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */; };
 		C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC51DCBC55600CBC741 /* Main.storyboard */; };
 		C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1520BC81DCBC55600CBC741 /* Assets.xcassets */; };
@@ -78,6 +89,17 @@
 		329D06D11DD52D0400717938 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsButton.png; path = JognJam/settingsButton.png; sourceTree = SOURCE_ROOT; };
 		329D06DB1DD538F300717938 /* UsersDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
 		329D06DF1DD5413A00717938 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C1425CDF1DE8809100393715 /* allIn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = allIn.mp3; sourceTree = "<group>"; };
+		C1425CE01DE8809100393715 /* beatPop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beatPop.mp3; sourceTree = "<group>"; };
+		C1425CE11DE8809100393715 /* deathOfAnOrchid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deathOfAnOrchid.mp3; sourceTree = "<group>"; };
+		C1425CE21DE8809100393715 /* eineKleineNachtmusik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eineKleineNachtmusik.mp3; sourceTree = "<group>"; };
+		C1425CE91DE880B700393715 /* jingleBells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingleBells.mp3; sourceTree = "<group>"; };
+		C1425CEA1DE880B700393715 /* levelsOfGreatness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levelsOfGreatness.mp3; sourceTree = "<group>"; };
+		C1425CEB1DE880B700393715 /* sandboxJingle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sandboxJingle.mp3; sourceTree = "<group>"; };
+		C1425CEC1DE880B700393715 /* saturday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = saturday.mp3; sourceTree = "<group>"; };
+		C1425CED1DE880B700393715 /* stay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stay.mp3; sourceTree = "<group>"; };
+		C1425CEE1DE880B700393715 /* symphony92ndMovement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = symphony92ndMovement.mp3; sourceTree = "<group>"; };
+		C1425CEF1DE880B700393715 /* tomorrow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tomorrow.mp3; sourceTree = "<group>"; };
 		C1520BBA1DCBC55600CBC741 /* JognJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JognJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1520BC61DCBC55600CBC741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +179,17 @@
 		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
 			isa = PBXGroup;
 			children = (
+				C1425CDF1DE8809100393715 /* allIn.mp3 */,
+				C1425CE01DE8809100393715 /* beatPop.mp3 */,
+				C1425CE11DE8809100393715 /* deathOfAnOrchid.mp3 */,
+				C1425CE21DE8809100393715 /* eineKleineNachtmusik.mp3 */,
+				C1425CE91DE880B700393715 /* jingleBells.mp3 */,
+				C1425CEA1DE880B700393715 /* levelsOfGreatness.mp3 */,
+				C1425CEB1DE880B700393715 /* sandboxJingle.mp3 */,
+				C1425CEC1DE880B700393715 /* saturday.mp3 */,
+				C1425CED1DE880B700393715 /* stay.mp3 */,
+				C1425CEE1DE880B700393715 /* symphony92ndMovement.mp3 */,
+				C1425CEF1DE880B700393715 /* tomorrow.mp3 */,
 				C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */,
 				C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */,
 				C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */,
@@ -318,12 +351,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B0C8E41DDB5E3C0064E513 /* Logo1_Transparent.png in Resources */,
+				C1425CE61DE8809100393715 /* deathOfAnOrchid.mp3 in Resources */,
 				329D06D31DD52D0400717938 /* pauseButton.png in Resources */,
 				329D06D21DD52D0400717938 /* nextButton.png in Resources */,
 				328513E91DD56A1400A92AE0 /* backButton.png in Resources */,
+				C1425CE51DE8809100393715 /* beatPop.mp3 in Resources */,
 				329D06D61DD52D0400717938 /* settingsButton.png in Resources */,
+				C1425CF11DE880B700393715 /* levelsOfGreatness.mp3 in Resources */,
 				C1B0C8DD1DDB5C150064E513 /* Logo1_Square.png in Resources */,
 				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
+				C1425CF01DE880B700393715 /* jingleBells.mp3 in Resources */,
+				C1425CF41DE880B700393715 /* stay.mp3 in Resources */,
+				C1425CF21DE880B700393715 /* sandboxJingle.mp3 in Resources */,
+				C1425CF61DE880B700393715 /* tomorrow.mp3 in Resources */,
 				329D06D41DD52D0400717938 /* playButton.png in Resources */,
 				320C42F91DD76E7A00B2D622 /* movie_quote.mp3 in Resources */,
 				C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */,
@@ -332,7 +372,11 @@
 				C1B0C8E51DDB5E3C0064E513 /* Logo2_Transparent.png in Resources */,
 				329D06D51DD52D0400717938 /* prevButton.png in Resources */,
 				C1B0C8E11DDB5D0A0064E513 /* Logo1_Circle.png in Resources */,
+				C1425CE41DE8809100393715 /* allIn.mp3 in Resources */,
+				C1425CE71DE8809100393715 /* eineKleineNachtmusik.mp3 in Resources */,
+				C1425CF51DE880B700393715 /* symphony92ndMovement.mp3 in Resources */,
 				C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */,
+				C1425CF31DE880B700393715 /* saturday.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

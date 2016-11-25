@@ -39,6 +39,7 @@ class SuggestByViewController: UIViewController {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+            destinationVC?.start = false
         }
         else if segue.identifier == "suggestByToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
