@@ -47,6 +47,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     func pickSong(n: Int) {
         if(n < titles.count)
         {
+            
             currentSongTitle = titles[n]
             currentArtist = artists[n]
             currentSongFile = songFile[n]
@@ -62,6 +63,14 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             audioPlayer.prepareToPlay()
             
         }
+    }
+    func randomPick()-> Int{
+        var randSelection = currentIndex+1
+        while randSelection == currentIndex+1 {
+            randSelection = Int(arc4random_uniform(UInt32(numSongs)) + 1)
+        }
+        pickSong(randSelection-1)
+        return randSelection
     }
     func play()
     {

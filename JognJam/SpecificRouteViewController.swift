@@ -20,6 +20,9 @@ class SpecificRouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         routeNumberLabel.text = "Route " + String(routeNumber)
     }
 
@@ -39,6 +42,10 @@ class SpecificRouteViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+        else if segue.identifier == "specificRouteToLogin" {
+            self.player.pause()
+        }
+        
     }
 
 }

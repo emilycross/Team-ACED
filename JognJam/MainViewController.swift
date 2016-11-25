@@ -41,6 +41,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if(start == true) {
+            user.startTracking()
+        }
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         if player.currentSongTitle == "" && player.currentArtist == "" {
             currentSongLabel.text = "No song playing"
         }
@@ -91,7 +98,7 @@ class MainViewController: UIViewController {
         }
         
         
-        
+        setSuggestionLabel()
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
@@ -101,8 +108,7 @@ class MainViewController: UIViewController {
     }
     @IBAction func playButtonPressed(sender: UIButton) {
         if start == true { //pick a random song to play
-            let randSelection = Int(arc4random_uniform(UInt32(player.numSongs)) + 1)
-            player.pickSong(randSelection-1)
+            player.randomPick()
         }
         start = false
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
@@ -127,8 +133,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func prevButtonPressed(sender: UIButton) {
-        let randSelection = Int(arc4random_uniform(UInt32(player.numSongs)) + 1)
-        player.pickSong(randSelection-1)
+        player.randomPick()
         start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.play()
@@ -145,8 +150,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(sender: UIButton) {
-        let randSelection = Int(arc4random_uniform(UInt32(player.numSongs)) + 1)
-        player.pickSong(randSelection-1)
+        player.randomPick()
         start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.play()
@@ -175,33 +179,6 @@ class MainViewController: UIViewController {
         setSuggestionLabel()
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         isPlayingMusic = true
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "mainToSettings" {
-            let destinationVC = segue.destinationViewController as? SettingsViewController
-            destinationVC?.user = self.user
-            destinationVC?.player = self.player
-        }
-        else if segue.identifier == "mainToProfile" {
-            let destinationVC = segue.destinationViewController as? ProfileViewController
-            destinationVC?.user = self.user
-            destinationVC?.player = self.player
-        }
-        else if segue.identifier == "mainToSuggestBy" {
-            let destinationVC = segue.destinationViewController as? SuggestByViewController
-            destinationVC?.user = self.user
-            destinationVC?.player = self.player
-            destinationVC?.player = self.player
-        }
     }
     
     func setSuggestionLabel() {
@@ -263,5 +240,38 @@ class MainViewController: UIViewController {
         suggestedSongButton.enabled = true
         
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mainToSettings" {
+            let destinationVC = segue.destinationViewController as? SettingsViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+        else if segue.identifier == "mainToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+        else if segue.identifier == "mainToSuggestBy" {
+            let destinationVC = segue.destinationViewController as? SuggestByViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.player = self.player
+        }
+        else if segue.identifier == "mainToLogin" {
+            self.player.pause()
+            //user.stopTracking()
+        }
+    }
+    
     
 }

@@ -26,6 +26,9 @@ class SpecificPlaylistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         playlistNumberLabel.text = "Playlist " + String(playlistNumber)
         
         retrievePlaylist()
@@ -106,6 +109,9 @@ class SpecificPlaylistViewController: UIViewController {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+        }
+        else if segue.identifier == "specificPlaylistToLogin" {
+            self.player.pause()
         }
     }
 }

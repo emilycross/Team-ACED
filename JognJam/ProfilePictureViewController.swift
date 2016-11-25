@@ -14,12 +14,20 @@ import UIKit
 class ProfilePictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
-    var profileImage: UIImage = UIImage(named:"Logo2_Circle.png")!
+    
+    
+    var user = userProfile()
+    var player = musicPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        imageView.image = profileImage
+        
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        imageView.image = user.picture
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,11 +56,9 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
             self.presentViewController(imagePick, animated: true, completion: nil)
          }
     }
-    @IBAction func viewProfilePicture(sender: UIButton) {
-    }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        profileImage = image
+        user.picture = image
         imageView.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
      }
@@ -69,7 +75,8 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profilePictureToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
-            destinationVC?.user.picture = self.profileImage
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
     }
 

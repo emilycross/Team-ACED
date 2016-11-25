@@ -17,8 +17,6 @@ class SuggestionsViewController: UIViewController {
     
     @IBOutlet weak var suggestionsByLabel: UILabel!
     @IBOutlet weak var currentSuggestionAttributeLabel: UILabel!
-    @IBOutlet weak var currentSpeedLabel: UILabel!
-    @IBOutlet weak var currentLocationLabel: UILabel!
     
     @IBOutlet weak var songSuggestion1Label: UIButton!
     @IBOutlet weak var songSuggestion2Label: UIButton!
@@ -32,26 +30,26 @@ class SuggestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         if suggestBy == "artist" {
             suggestionsByLabel.text = "Suggestions By Artist"
-            currentSuggestionAttributeLabel.text = "Current Artist: \(player.currentArtist)"
+            currentSuggestionAttributeLabel.text = "Current Artist: " + player.currentArtist
         }
         else if suggestBy == "genre" {
             suggestionsByLabel.text = "Suggestions By Genre"
-            currentSuggestionAttributeLabel.text = "Current Genre: \(player.currentGenre)"
+            currentSuggestionAttributeLabel.text = "Current Genre: " + player.currentGenre
         }
         else if suggestBy == "speed" {
             suggestionsByLabel.text = "Suggestions By Speed"
-            currentSuggestionAttributeLabel.text = "Current Speed: \(player.currentSongSpeed) bpm"
+            currentSuggestionAttributeLabel.text = "Current Speed: " + String(player.currentSongSpeed) + " bpm"
         }
         else if suggestBy == "location" {
             suggestionsByLabel.text = "Suggestions By Location"
-            suggestionsByLabel.text = "Current Location: \(player.locations[player.currentIndex])"
+            suggestionsByLabel.text = "Current Location: " + player.locations[player.currentIndex]
         }
-        //player.suggestionsUsed = [] //don't forget to include the current song! //=[user.currentSongIndex]
-        //change more dynamically
-        currentSpeedLabel.text = String(user.currentSpeed) + " km/h"
-        currentLocationLabel.text = user.currentLocation
         getSuggestions()
         
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
@@ -105,7 +103,7 @@ class SuggestionsViewController: UIViewController {
     func putSuggestionIntoLabel(button: UIButton, num: Int)
     {
         if player.suggestionsIndices[num] == -1 {
-            button.setTitle("No suggestions", forState: UIControlState.Normal)
+            button.setTitle("No suggestion", forState: UIControlState.Normal)
             button.enabled = false //make it unclickable
         }
         else {
@@ -144,6 +142,7 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 2
+            destinationVC?.start = false
             
         }
         else if segue.identifier == "suggestionsToMainSong4" {
@@ -165,6 +164,9 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.start = false
+        }
+        else if segue.identifier == "suggestionsToLogin" {
+            self.player.pause()
         }
     }
 }

@@ -17,6 +17,9 @@ class RouteViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +69,9 @@ class RouteViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.routeNumber = 5
+        }
+        else if segue.identifier == "routeToLogin" {
+            self.player.pause()
         }
     }
 

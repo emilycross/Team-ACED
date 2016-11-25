@@ -8,19 +8,28 @@
 
 
 import UIKit
+import CoreMotion
 
 class ProfileViewController: UIViewController {
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var profilePictureButton: UIButton!
     @IBOutlet weak var numberStepsLabel: UILabel!
     
-    @IBOutlet weak var profilePictureButton: UIButton!
     var user = userProfile()
     var player = musicPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        usernameLabel.text = user.username
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         numberStepsLabel.text = String(user.numberSteps)+" steps"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,17 +37,6 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Will probably not need
-    
-    //The playlist button has been pressed
-    @IBAction func playlistsPressed(sender: UIButton) {
-        
-    }
-    
-    //The routes button has been pressed
-    @IBAction func routesPressed(sender: UIButton) {
-        
-    }
     /*
     // MARK: - Navigation
 
@@ -51,12 +49,14 @@ class ProfileViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profileToProfilePicture" {
             let destinationVC = segue.destinationViewController as? ProfilePictureViewController
-            destinationVC?.profileImage = self.user.picture!
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "profileToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+            destinationVC?.start = false
         }
         
         else if segue.identifier == "profileToPlaylists" {
@@ -69,6 +69,9 @@ class ProfileViewController: UIViewController {
             let destinationVC = segue.destinationViewController as? RouteViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+        }
+        else if segue.identifier == "profileToLogin" {
+            self.player.pause()
         }
         
     }

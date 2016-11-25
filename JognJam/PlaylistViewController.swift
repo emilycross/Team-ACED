@@ -15,6 +15,9 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +66,9 @@ class PlaylistViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.playlistNumber = 5
+        }
+        else if segue.identifier == "playlistToLogin" {
+            self.player.pause()
         }
     }
 }

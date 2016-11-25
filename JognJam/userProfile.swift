@@ -9,30 +9,14 @@
 import Foundation
 import UIKit
 import CoreMotion //for step tracker, tutorial from http://shrikar.com/ios-swift-development-step-counter-app-using-pedometer-data/
+//http://pinkstone.co.uk/how-to-access-the-step-counter-and-pedometer-data-in-ios-9/
 
 //class that holds information for each user's profile
 class userProfile
 {
-    //for step tracking
-    /*var timesClassUsed = 0
-    var days: [String] = []
-    var stepsTaken: [Int] = []
-    let activityManager = CMMotionActivityManager()
-    let pedometer = CMPedometer()
-    
-    func startCountingSteps() {
-        let calendar = NSCalendar.currentCalendar()
-        //var components = calendar.components(NSCalendarUnit.YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit, fromDate: NSDate())
-        calendar.components(NSCalendarUnit.NSYearCalendarUnit, fromDate: <#T##NSDate#>)
-        components.hour = 0
-        components.minute = 0
-        components.second = 0
-        let timezone = NSTimeZone.systemTimeZone()
-        calendar.timeZone = timezone
-    }*/
-    
     //var routes
     //var playlists
+    var username = "diniangela" //example, change later **
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
     var numberSteps = 0
     var currentSpeed = 0
@@ -45,23 +29,30 @@ class userProfile
     var currentSongIndex = -1
     var currentSongSpeed = 0
     
+    //For step tracking
+    var pedometer = CMPedometer()
+    
     //Settings
     var locationServices = true
-    var onlineMode = false
     var musicSuggestions = true
-    var voiceControl = true
     
     func setLocationServices(locS: Bool) {
         locationServices = locS
     }
-    func setOnlineMode(onM: Bool) {
-        onlineMode = onM
-    }
     func setMusicSuggestions(musS: Bool) {
         musicSuggestions = musS
     }
-    func setVoiceControl(voiceC: Bool) {
-        voiceControl = voiceC
-    }
     
+    func startTracking() {
+        pedometer.startPedometerUpdatesFromDate(NSDate(), withHandler: {(data, error) -> Void in
+            if error != nil {
+                print("There was an error requesting data from the pedometer")
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.numberSteps = Int(data!.numberOfSteps)
+                })
+            }
+        })
+    }
 }

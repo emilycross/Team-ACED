@@ -15,6 +15,10 @@ class SuggestByViewController: UIViewController {
     @IBOutlet weak var profilePictureButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Makes the status bar visible
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         // Do any additional setup after loading the view.
     }
@@ -69,6 +73,9 @@ class SuggestByViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.suggestBy = "location"
+        }
+        else if segue.identifier == "suggestByToLogin" {
+            self.player.pause()
         }
     }
 
