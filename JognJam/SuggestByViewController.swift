@@ -71,8 +71,8 @@ class SuggestByViewController: UIViewController {
         else if segue.identifier == "suggestByToSuggestionsLocation" {
             let destinationVC = segue.destinationViewController as? SuggestionsViewController
             destinationVC?.user = self.user
-            destinationVC?.player = self.player
             destinationVC?.suggestBy = "location"
+            destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToLogin" {
             self.player.pause()

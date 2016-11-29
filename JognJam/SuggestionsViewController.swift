@@ -48,7 +48,7 @@ class SuggestionsViewController: UIViewController {
         }
         else if suggestBy == "location" {
             suggestionsByLabel.text = "Suggestions By Location"
-            suggestionsByLabel.text = "Current Location: " + player.locations[player.currentIndex]
+            currentSuggestionAttributeLabel.text = "Current Location: " + player.locations[player.currentIndex]
         }
         getSuggestions()
         
@@ -62,8 +62,7 @@ class SuggestionsViewController: UIViewController {
     func getSuggestions()
     {
         if suggestBy == "artist" {
-            let currentArtist = user.currentSongArtist
-            player.getSuggestionsByArtist(currentArtist)
+            player.getSuggestionsByArtist(user.currentSongArtist)
             putSuggestionIntoLabel(songSuggestion1Label, num: 0)
             putSuggestionIntoLabel(songSuggestion2Label, num: 1)
             putSuggestionIntoLabel(songSuggestion3Label, num: 2)
@@ -72,8 +71,7 @@ class SuggestionsViewController: UIViewController {
                 
         }
         else if suggestBy == "genre" {
-            let currentGenre = user.currentSongGenre
-            player.getSuggestionByGenre(currentGenre)
+            player.getSuggestionByGenre(user.currentSongGenre)
             putSuggestionIntoLabel(songSuggestion1Label, num: 0)
             putSuggestionIntoLabel(songSuggestion2Label, num: 1)
             putSuggestionIntoLabel(songSuggestion3Label, num: 2)
@@ -81,8 +79,7 @@ class SuggestionsViewController: UIViewController {
             putSuggestionIntoLabel(songSuggestion5Label, num: 4)
         }
         else if suggestBy == "speed" {
-            let currentSpeed = user.currentSpeed
-            player.getSuggestionBySpeed(currentSpeed)
+            player.getSuggestionBySpeed(user.currentSongSpeed)
             putSuggestionIntoLabel(songSuggestion1Label, num: 0)
             putSuggestionIntoLabel(songSuggestion2Label, num: 1)
             putSuggestionIntoLabel(songSuggestion3Label, num: 2)
@@ -90,8 +87,7 @@ class SuggestionsViewController: UIViewController {
             putSuggestionIntoLabel(songSuggestion5Label, num: 4)
         }
         else if suggestBy == "location" {
-            let currentLocation = user.currentLocation
-            player.getSuggestionByLocation(currentLocation)
+            player.getSuggestionByLocation(user.currentLocation)
             putSuggestionIntoLabel(songSuggestion1Label, num: 0)
             putSuggestionIntoLabel(songSuggestion2Label, num: 1)
             putSuggestionIntoLabel(songSuggestion3Label, num: 2)

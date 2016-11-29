@@ -19,8 +19,6 @@ class userProfile
     var username = "diniangela" //example, change later **
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
     var numberSteps = 0
-    var currentSpeed = 0
-    var highestSpeed = 1
     
     var currentLocation = "" //for suggestions
     var currentSongTitle = ""
