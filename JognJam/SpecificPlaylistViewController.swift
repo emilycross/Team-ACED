@@ -13,6 +13,8 @@ class SpecificPlaylistViewController: UIViewController {
     var user = userProfile()
     var player = musicPlayer()
     
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
     var playlistNumber = 0
     
     @IBOutlet weak var playlistNumberLabel: UILabel!
@@ -28,6 +30,7 @@ class SpecificPlaylistViewController: UIViewController {
         
         //Makes the status bar visible
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
         playlistNumberLabel.text = "Playlist " + String(playlistNumber)
         
@@ -66,6 +69,7 @@ class SpecificPlaylistViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "songOneToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.playlistSong = 0
@@ -74,6 +78,7 @@ class SpecificPlaylistViewController: UIViewController {
         }
         else if segue.identifier == "songTwoToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.playlistSong = 1
@@ -82,6 +87,7 @@ class SpecificPlaylistViewController: UIViewController {
         }
         else if segue.identifier == "songThreeToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.playlistSong = 2
@@ -90,6 +96,7 @@ class SpecificPlaylistViewController: UIViewController {
         }
         else if segue.identifier == "songFourToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.playlistSong = 3
@@ -98,6 +105,7 @@ class SpecificPlaylistViewController: UIViewController {
         }
         else if segue.identifier == "songFiveToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.playlistSong = 4

@@ -20,6 +20,8 @@ class userProfile
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
     var numberSteps = 0
     
+    var start = true
+    
     var currentLocation = "" //for suggestions
     var currentSongTitle = ""
     var currentSongArtist = ""

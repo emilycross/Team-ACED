@@ -119,47 +119,47 @@ class SuggestionsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "suggestionsToMainSong1" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 0
-            destinationVC?.start = false
             
         }
         else if segue.identifier == "suggestionsToMainSong2" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 1
-            destinationVC?.start = false
             
         }
         else if segue.identifier == "suggestionsToMainSong3" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 2
-            destinationVC?.start = false
             
         }
         else if segue.identifier == "suggestionsToMainSong4" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 3
-            destinationVC?.start = false
         }
         else if segue.identifier == "suggestionsToMainSong5" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 4
-            destinationVC?.start = false
         }
         else if segue.identifier == "suggestionsToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
-            destinationVC?.start = false
         }
         else if segue.identifier == "suggestionsToLogin" {
             self.player.pause()

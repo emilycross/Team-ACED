@@ -13,6 +13,8 @@ class RouteViewController: UIViewController {
     var user = userProfile()
     var player = musicPlayer()
     
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,7 @@ class RouteViewController: UIViewController {
         
         //Makes the status bar visible
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {

@@ -54,9 +54,9 @@ class ProfileViewController: UIViewController {
         }
         else if segue.identifier == "profileToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
+            //user start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
-            destinationVC?.start = false
         }
         
         else if segue.identifier == "profileToPlaylists" {

@@ -17,11 +17,14 @@ class SpecificRouteViewController: UIViewController {
     @IBOutlet weak var routeNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Makes the status bar visible
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
         routeNumberLabel.text = "Route " + String(routeNumber)
     }

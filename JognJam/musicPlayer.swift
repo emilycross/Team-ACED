@@ -76,13 +76,13 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     
     //Plays a random song
     func randomPick(){
-        pickSong(randomSong())
+        pickSong(randomSong()-1)
     }
     
     //Returns a random index in the array of songs
     func randomSong() ->Int {
-        var randSelection = currentIndex//+1
-        while randSelection == currentIndex{//+1 {
+        var randSelection = currentIndex+1
+        while randSelection == currentIndex+1 {
             randSelection = Int(arc4random_uniform(UInt32(numSongs)) + 1)
         }
         return randSelection

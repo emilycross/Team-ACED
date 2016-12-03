@@ -12,7 +12,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var currentSongLabel: UILabel!
     
     var player = musicPlayer()
-    var start = true
     var fromSuggestions = -1
     
     var playlistNumber = -1
@@ -65,7 +64,7 @@ class MainViewController: UIViewController {
         prevButton.addGestureRecognizer(prevLongPressGesture)*/
         
         
-        if start == true {
+        if user.start == true {
             user.startTracking()
             currentSongLabel.text = "No song playing"
             prevButton.hidden = true
@@ -79,6 +78,7 @@ class MainViewController: UIViewController {
             prevButton.enabled = true
             nextButton.hidden = false
             nextButton.enabled = true
+            setSuggestionLabel()
         }
         else if playlistNumber != -1 && playlistSong != -1 {
             playPlaylist(playlistSong)
@@ -86,6 +86,7 @@ class MainViewController: UIViewController {
             prevButton.enabled = true
             nextButton.hidden = false
             nextButton.enabled = true
+            setSuggestionLabel()
         }
         else { //fromSuggestions != -1
             playSuggestions(fromSuggestions)
@@ -93,6 +94,7 @@ class MainViewController: UIViewController {
             prevButton.enabled = true
             nextButton.hidden = false
             nextButton.enabled = true
+            setSuggestionLabel()
         }
         
         user.currentSongTitle = player.currentSongTitle
@@ -101,14 +103,7 @@ class MainViewController: UIViewController {
         user.currentSongSpeed = player.currentSongSpeed
         user.currentLocation = player.currentLocation
         currentSpeedLabel.text = String(player.currentSongSpeed) + " bpm"
-        if suggestedSongTitle == "" && suggestedArtist == "" {
-            suggestedSongButton.setTitle("No suggestions", forState: UIControlState.Normal)
-            suggestedSongButton.enabled = false
-        }
-        else if fromSuggestions == -1{
-            suggestedSongButton.setTitle((suggestedSongTitle + " - " + suggestedArtist), forState: UIControlState.Normal)
-            suggestedSongButton.enabled = true
-        }
+        
         if user.musicSuggestions == false {
             suggestedSongButton.hidden = true
             suggestionsLabel.hidden = true
@@ -124,12 +119,9 @@ class MainViewController: UIViewController {
             currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
             currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
             isPlayingMusic = true
-            player.getSuggestionsByArtist(player.currentArtist)
-            suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+            setSuggestionLabel()
         }
         
-        
-        setSuggestionLabel()
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
@@ -138,10 +130,10 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func playButtonPressed(sender: UIButton) {
-        if start == true { //pick a random song to play
+        if user.start == true { //pick a random song to play
             player.randomPick()
         }
-        start = false
+        user.start = false
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
@@ -169,7 +161,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func prevButtonPressed(sender: UIButton) {
-        start = false
+        user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.prev()
         player.play()
@@ -190,7 +182,7 @@ class MainViewController: UIViewController {
     
     @IBAction func nextButtonPressed(sender: UIButton) { //button has been released
         print("touchUpInside")
-        start = false
+        user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.next()
         player.play()
@@ -217,10 +209,13 @@ class MainViewController: UIViewController {
     @IBAction func touchUpOutside(sender: UIButton) {
         print("touchUpOutside")
     }
+    @IBAction func touchDragExit(sender: UIButton) {
+        print("touchDragExit")
+    }
     
     //Controls change depending on how long you hold
     func nextTapped() {
-        start = false
+        user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.next()
         player.play()
@@ -240,7 +235,7 @@ class MainViewController: UIViewController {
         nextButton.enabled = true
     }
     func nextHeld() {
-        start = false
+        user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.fastforward()
         prevButton.hidden = false
@@ -249,7 +244,7 @@ class MainViewController: UIViewController {
         nextButton.enabled = true
     }
     func prevTapped() {
-        start = false
+        user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.prev()
         player.play()
@@ -269,7 +264,7 @@ class MainViewController: UIViewController {
         nextButton.enabled = true
     }
     func prevHeld() {
-        start = false
+        user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.rewind()
         prevButton.hidden = false
@@ -300,7 +295,7 @@ class MainViewController: UIViewController {
     }
     
     func setSuggestionLabel() {
-        if start == true {
+        if user.start == true {
             suggestedSongButton.setTitle("No suggestions", forState: UIControlState.Normal)
             suggestedSongButton.enabled = false
         }
@@ -317,41 +312,47 @@ class MainViewController: UIViewController {
                             suggestedSongButton.enabled = false
                         }
                         else {
-                            suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+                            suggestedSongTitle = player.suggestionsTitles[0]
+                            suggestedArtist = player.suggestionsArtists[0]
+                            suggestedSongButton.setTitle(suggestedSongTitle + " - " + suggestedArtist, forState: UIControlState.Normal)
                             suggestedSongButton.enabled = true
                         }
                     }
                     else {
-                        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+                        suggestedSongTitle = player.suggestionsTitles[0]
+                        suggestedArtist = player.suggestionsArtists[0]
+                        suggestedSongButton.setTitle(suggestedSongTitle + " - " + suggestedArtist, forState: UIControlState.Normal)
                         suggestedSongButton.enabled = true
                     }
                 }
                 else {
-                    suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+                    suggestedSongTitle = player.suggestionsTitles[0]
+                    suggestedArtist = player.suggestionsArtists[0]
+                    suggestedSongButton.setTitle(suggestedSongTitle + " - " + suggestedArtist, forState: UIControlState.Normal)
                     suggestedSongButton.enabled = true
                 }
             }
             else {
-                suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
+                suggestedSongTitle = player.suggestionsTitles[0]
+                suggestedArtist = player.suggestionsArtists[0]
+                suggestedSongButton.setTitle(suggestedSongTitle + " - " + suggestedArtist, forState: UIControlState.Normal)
                 suggestedSongButton.enabled = true
             }
         }
     }
     func playSuggestions(n: Int) {
-        start = false
+        user.start = false
         player.pickSong(player.suggestionsIndices[n])
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         isPlayingMusic = true
-        player.getSuggestionsByArtist(player.currentArtist)
-        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
-        suggestedSongButton.enabled = true
+        setSuggestionLabel()
     }
     
     func playPlaylist (n: Int) {
-        start = false
+        user.start = false
         player.pickSong(player.playlistIndices[n])
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.play()
@@ -360,8 +361,7 @@ class MainViewController: UIViewController {
         currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         isPlayingMusic = true
         player.playSelectedPlaylist(playlistNumber)
-        suggestedSongButton.setTitle(player.suggestionsTitles[0] + " - " + player.suggestionsArtists[0], forState: UIControlState.Normal)
-        suggestedSongButton.enabled = true
+        setSuggestionLabel()
         
     }
 
