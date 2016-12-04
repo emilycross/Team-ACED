@@ -22,6 +22,12 @@
 		329D06D61DD52D0400717938 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D11DD52D0400717938 /* settingsButton.png */; };
 		329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DB1DD538F300717938 /* UsersDatabase.swift */; };
 		329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DF1DD5413A00717938 /* SettingsViewController.swift */; };
+		C12348781DF47EDA00D521F6 /* Logo1_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348721DF47EDA00D521F6 /* Logo1_Circle.png */; };
+		C12348791DF47EDA00D521F6 /* Logo1_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348731DF47EDA00D521F6 /* Logo1_Square.png */; };
+		C123487A1DF47EDA00D521F6 /* Logo1_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348741DF47EDA00D521F6 /* Logo1_Transparent.png */; };
+		C123487B1DF47EDA00D521F6 /* Logo2_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348751DF47EDA00D521F6 /* Logo2_Circle.png */; };
+		C123487C1DF47EDA00D521F6 /* Logo2_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348761DF47EDA00D521F6 /* Logo2_Square.png */; };
+		C123487D1DF47EDA00D521F6 /* Logo2_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348771DF47EDA00D521F6 /* Logo2_Transparent.png */; };
 		C1425CE41DE8809100393715 /* allIn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CDF1DE8809100393715 /* allIn.mp3 */; };
 		C1425CE51DE8809100393715 /* beatPop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CE01DE8809100393715 /* beatPop.mp3 */; };
 		C1425CE61DE8809100393715 /* deathOfAnOrchid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1425CE11DE8809100393715 /* deathOfAnOrchid.mp3 */; };
@@ -41,12 +47,6 @@
 		C1520BE21DCBC55600CBC741 /* JognJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1520BE11DCBC55600CBC741 /* JognJamUITests.swift */; };
 		C163F2F01DDCBC9100D42CDB /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C163F2EF1DDCBC9100D42CDB /* SuggestionsViewController.swift */; };
 		C16FEC731DD3B50700136830 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FEC721DD3B50700136830 /* LoginViewController.swift */; };
-		C1B0C8DD1DDB5C150064E513 /* Logo1_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */; };
-		C1B0C8DE1DDB5C150064E513 /* Logo2_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */; };
-		C1B0C8DF1DDB5C150064E513 /* Logo2_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8DB1DDB5C150064E513 /* Logo2_Square.png */; };
-		C1B0C8E11DDB5D0A0064E513 /* Logo1_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */; };
-		C1B0C8E41DDB5E3C0064E513 /* Logo1_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */; };
-		C1B0C8E51DDB5E3C0064E513 /* Logo2_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */; };
 		C1C163301DDE4E030043D195 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1632F1DDE4E030043D195 /* RouteViewController.swift */; };
 		C1C163321DDE4E320043D195 /* SpecificRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163311DDE4E320043D195 /* SpecificRouteViewController.swift */; };
 		C1C163341DDE4EB00043D195 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */; };
@@ -89,6 +89,12 @@
 		329D06D11DD52D0400717938 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsButton.png; path = JognJam/settingsButton.png; sourceTree = SOURCE_ROOT; };
 		329D06DB1DD538F300717938 /* UsersDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
 		329D06DF1DD5413A00717938 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C12348721DF47EDA00D521F6 /* Logo1_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1_Circle.png; sourceTree = "<group>"; };
+		C12348731DF47EDA00D521F6 /* Logo1_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1_Square.png; sourceTree = "<group>"; };
+		C12348741DF47EDA00D521F6 /* Logo1_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1_Transparent.png; sourceTree = "<group>"; };
+		C12348751DF47EDA00D521F6 /* Logo2_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo2_Circle.png; sourceTree = "<group>"; };
+		C12348761DF47EDA00D521F6 /* Logo2_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo2_Square.png; sourceTree = "<group>"; };
+		C12348771DF47EDA00D521F6 /* Logo2_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo2_Transparent.png; sourceTree = "<group>"; };
 		C1425CDF1DE8809100393715 /* allIn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = allIn.mp3; sourceTree = "<group>"; };
 		C1425CE01DE8809100393715 /* beatPop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beatPop.mp3; sourceTree = "<group>"; };
 		C1425CE11DE8809100393715 /* deathOfAnOrchid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deathOfAnOrchid.mp3; sourceTree = "<group>"; };
@@ -114,12 +120,6 @@
 		C1520BE31DCBC55600CBC741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C163F2EF1DDCBC9100D42CDB /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		C16FEC721DD3B50700136830 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Square.png; path = ../Logo1_Square.png; sourceTree = "<group>"; };
-		C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Circle.png; path = ../Logo2_Circle.png; sourceTree = "<group>"; };
-		C1B0C8DB1DDB5C150064E513 /* Logo2_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Square.png; path = ../Logo2_Square.png; sourceTree = "<group>"; };
-		C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Circle.png; path = ../Logo1_Circle.png; sourceTree = "<group>"; };
-		C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo1_Transparent.png; path = ../Logo1_Transparent.png; sourceTree = "<group>"; };
-		C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo2_Transparent.png; path = ../Logo2_Transparent.png; sourceTree = "<group>"; };
 		C1C1632F1DDE4E030043D195 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		C1C163311DDE4E320043D195 /* SpecificRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificRouteViewController.swift; sourceTree = "<group>"; };
 		C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +179,12 @@
 		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
 			isa = PBXGroup;
 			children = (
+				C12348721DF47EDA00D521F6 /* Logo1_Circle.png */,
+				C12348731DF47EDA00D521F6 /* Logo1_Square.png */,
+				C12348741DF47EDA00D521F6 /* Logo1_Transparent.png */,
+				C12348751DF47EDA00D521F6 /* Logo2_Circle.png */,
+				C12348761DF47EDA00D521F6 /* Logo2_Square.png */,
+				C12348771DF47EDA00D521F6 /* Logo2_Transparent.png */,
 				C1425CDF1DE8809100393715 /* allIn.mp3 */,
 				C1425CE01DE8809100393715 /* beatPop.mp3 */,
 				C1425CE11DE8809100393715 /* deathOfAnOrchid.mp3 */,
@@ -190,12 +196,6 @@
 				C1425CED1DE880B700393715 /* stay.mp3 */,
 				C1425CEE1DE880B700393715 /* symphony92ndMovement.mp3 */,
 				C1425CEF1DE880B700393715 /* tomorrow.mp3 */,
-				C1B0C8E21DDB5E3C0064E513 /* Logo1_Transparent.png */,
-				C1B0C8E31DDB5E3C0064E513 /* Logo2_Transparent.png */,
-				C1B0C8E01DDB5D0A0064E513 /* Logo1_Circle.png */,
-				C1B0C8D91DDB5C150064E513 /* Logo1_Square.png */,
-				C1B0C8DA1DDB5C150064E513 /* Logo2_Circle.png */,
-				C1B0C8DB1DDB5C150064E513 /* Logo2_Square.png */,
 				320C42F81DD76E7A00B2D622 /* movie_quote.mp3 */,
 				328513E81DD56A1400A92AE0 /* backButton.png */,
 				329D06CD1DD52D0400717938 /* nextButton.png */,
@@ -350,30 +350,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B0C8E41DDB5E3C0064E513 /* Logo1_Transparent.png in Resources */,
+				C123487B1DF47EDA00D521F6 /* Logo2_Circle.png in Resources */,
 				C1425CE61DE8809100393715 /* deathOfAnOrchid.mp3 in Resources */,
+				C123487D1DF47EDA00D521F6 /* Logo2_Transparent.png in Resources */,
 				329D06D31DD52D0400717938 /* pauseButton.png in Resources */,
 				329D06D21DD52D0400717938 /* nextButton.png in Resources */,
+				C123487A1DF47EDA00D521F6 /* Logo1_Transparent.png in Resources */,
 				328513E91DD56A1400A92AE0 /* backButton.png in Resources */,
+				C12348781DF47EDA00D521F6 /* Logo1_Circle.png in Resources */,
 				C1425CE51DE8809100393715 /* beatPop.mp3 in Resources */,
 				329D06D61DD52D0400717938 /* settingsButton.png in Resources */,
 				C1425CF11DE880B700393715 /* levelsOfGreatness.mp3 in Resources */,
-				C1B0C8DD1DDB5C150064E513 /* Logo1_Square.png in Resources */,
 				C1520BCC1DCBC55600CBC741 /* LaunchScreen.storyboard in Resources */,
 				C1425CF01DE880B700393715 /* jingleBells.mp3 in Resources */,
 				C1425CF41DE880B700393715 /* stay.mp3 in Resources */,
 				C1425CF21DE880B700393715 /* sandboxJingle.mp3 in Resources */,
+				C123487C1DF47EDA00D521F6 /* Logo2_Square.png in Resources */,
 				C1425CF61DE880B700393715 /* tomorrow.mp3 in Resources */,
 				329D06D41DD52D0400717938 /* playButton.png in Resources */,
 				320C42F91DD76E7A00B2D622 /* movie_quote.mp3 in Resources */,
 				C1520BC91DCBC55600CBC741 /* Assets.xcassets in Resources */,
-				C1B0C8DF1DDB5C150064E513 /* Logo2_Square.png in Resources */,
-				C1B0C8DE1DDB5C150064E513 /* Logo2_Circle.png in Resources */,
-				C1B0C8E51DDB5E3C0064E513 /* Logo2_Transparent.png in Resources */,
 				329D06D51DD52D0400717938 /* prevButton.png in Resources */,
-				C1B0C8E11DDB5D0A0064E513 /* Logo1_Circle.png in Resources */,
 				C1425CE41DE8809100393715 /* allIn.mp3 in Resources */,
 				C1425CE71DE8809100393715 /* eineKleineNachtmusik.mp3 in Resources */,
+				C12348791DF47EDA00D521F6 /* Logo1_Square.png in Resources */,
 				C1425CF51DE880B700393715 /* symphony92ndMovement.mp3 in Resources */,
 				C1520BC71DCBC55600CBC741 /* Main.storyboard in Resources */,
 				C1425CF31DE880B700393715 /* saturday.mp3 in Resources */,
@@ -562,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JognJam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,6 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JognJam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
