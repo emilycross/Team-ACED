@@ -121,14 +121,14 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         }
         
     }
-    func fastforward() {
-        print("fastforward")
-    }
-    func rewind() {
-        print("rewind")
+    func suggestionPressed() {
+        pause()
+        prevSongIndex = currentIndex
+        pickSong(suggestionsIndices[0])
+        nextSongIndex = -1
     }
     
-    //Methods for suggestions
+    //Methods for suggestions by different attributes
     func getSuggestionsByArtist(artist: String)
     {
         reset()

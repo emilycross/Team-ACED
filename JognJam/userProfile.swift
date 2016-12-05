@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreMotion //for step tracker, tutorial from http://shrikar.com/ios-swift-development-step-counter-app-using-pedometer-data/
-//http://pinkstone.co.uk/how-to-access-the-step-counter-and-pedometer-data-in-ios-9/
 
 //class that holds information for each user's profile
 class userProfile
@@ -29,9 +27,6 @@ class userProfile
     var currentSongIndex = -1
     var currentSongSpeed = 0
     
-    //For step tracking
-    var pedometer = CMPedometer()
-    
     //Settings
     var locationServices = true
     var musicSuggestions = true
@@ -43,16 +38,5 @@ class userProfile
         musicSuggestions = musS
     }
     
-    func startTracking() {
-        pedometer.startPedometerUpdatesFromDate(NSDate(), withHandler: {(data, error) -> Void in
-            if error != nil {
-                print("There was an error requesting data from the pedometer")
-            }
-            else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.numberSteps = Int(data!.numberOfSteps)
-                })
-            }
-        })
-    }
+    
 }

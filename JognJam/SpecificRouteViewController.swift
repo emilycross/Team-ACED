@@ -12,6 +12,7 @@ class SpecificRouteViewController: UIViewController {
     
     var user = userProfile()
     var player = musicPlayer()
+    
     var routeNumber = 0
 
     @IBOutlet weak var routeNumberLabel: UILabel!
@@ -46,6 +47,7 @@ class SpecificRouteViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "specificRouteToLogin" {
+            self.user.start = true
             self.player.pause()
         }
         

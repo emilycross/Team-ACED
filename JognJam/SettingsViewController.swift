@@ -55,6 +55,7 @@ class SettingsViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "settingsToLogin" {
+            self.user.start = true
             self.player.pause()
         }
     }

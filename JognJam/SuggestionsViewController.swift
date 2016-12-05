@@ -12,6 +12,7 @@ class SuggestionsViewController: UIViewController {
 
     var user = userProfile()
     var player = musicPlayer()
+    
     var musicIsPlaying = true
     var suggestBy = ""
     
@@ -99,8 +100,15 @@ class SuggestionsViewController: UIViewController {
     func putSuggestionIntoLabel(button: UIButton, num: Int)
     {
         if player.suggestionsIndices[num] == -1 {
-            button.setTitle("No suggestion", forState: UIControlState.Normal)
-            button.enabled = false //make it unclickable
+            if num == 0 {
+                button.setTitle("No suggestions", forState: UIControlState.Normal)
+                button.enabled = false //make it unclickable
+            }
+            else
+            {
+                button.enabled = false
+                button.hidden = true
+            }
         }
         else {
             button.setTitle((player.suggestionsTitles[num]+" - "+player.suggestionsArtists[num]), forState: UIControlState.Normal)
@@ -162,6 +170,7 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestionsToLogin" {
+            self.user.start = true
             self.player.pause()
         }
     }

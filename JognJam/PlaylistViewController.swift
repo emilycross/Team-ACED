@@ -70,6 +70,7 @@ class PlaylistViewController: UIViewController {
             destinationVC?.playlistNumber = 5
         }
         else if segue.identifier == "playlistToLogin" {
+            self.user.start = true
             self.player.pause()
         }
     }

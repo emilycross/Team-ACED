@@ -66,6 +66,10 @@ class LoginViewController: UIViewController {
             invalidLogin.hidden = false;
         }
     }
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "loginToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user.start = true
+        }
+    }
 }

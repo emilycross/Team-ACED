@@ -74,6 +74,7 @@ class RouteViewController: UIViewController {
             destinationVC?.routeNumber = 5
         }
         else if segue.identifier == "routeToLogin" {
+            self.user.start = true
             self.player.pause()
         }
     }
