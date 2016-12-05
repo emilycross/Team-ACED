@@ -1572,7 +1572,6 @@
                         <viewControllerLayoutGuide type="bottom" id="aVY-5s-Gwb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xik-Ze-5UB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nL4-Rh-zlA">
@@ -1920,11 +1919,15 @@
                                 <exclude reference="DnB-FK-SRT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="h0c-Ei-x4v"/>
-                                <exclude reference="HS9-Ik-Urz"/>
-                                <exclude reference="2ye-Eg-50L"/>
-                                <exclude reference="Wdb-BN-d0B"/>
-                                <exclude reference="rJ1-I1-tpV"/>
+                                <exclude reference="7VR-1E-nI4"/>
+                                <exclude reference="nYa-IS-peW"/>
+                                <exclude reference="wkV-7F-MdF"/>
+                                <exclude reference="pl6-4W-Txx"/>
+                                <exclude reference="SSL-x8-6Xx"/>
+                                <exclude reference="zfU-6p-qI9"/>
+                                <exclude reference="Kdh-MA-l7l"/>
+                                <exclude reference="UJN-EV-6Ee"/>
+                                <exclude reference="5wQ-j5-dnG"/>
                                 <exclude reference="9vc-eS-Ihm"/>
                                 <exclude reference="TmD-iu-cOz"/>
                                 <exclude reference="buc-YW-S2I"/>
@@ -1934,6 +1937,12 @@
                                 <exclude reference="G7K-pp-Z44"/>
                                 <exclude reference="bE1-Sg-9ck"/>
                                 <exclude reference="saw-uc-06N"/>
+                                <exclude reference="4A8-4t-xAU"/>
+                                <exclude reference="7nc-HQ-MoO"/>
+                                <exclude reference="2ye-Eg-50L"/>
+                                <exclude reference="Wdb-BN-d0B"/>
+                                <exclude reference="rJ1-I1-tpV"/>
+                                <exclude reference="HS9-Ik-Urz"/>
                                 <exclude reference="93v-Op-Dvt"/>
                                 <exclude reference="LhM-hM-XOZ"/>
                                 <exclude reference="Wha-zG-aMQ"/>
@@ -1978,11 +1987,15 @@
                                 <include reference="DnB-FK-SRT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="h0c-Ei-x4v"/>
-                                <include reference="HS9-Ik-Urz"/>
-                                <include reference="2ye-Eg-50L"/>
-                                <include reference="Wdb-BN-d0B"/>
-                                <include reference="rJ1-I1-tpV"/>
+                                <include reference="7VR-1E-nI4"/>
+                                <include reference="nYa-IS-peW"/>
+                                <include reference="wkV-7F-MdF"/>
+                                <include reference="pl6-4W-Txx"/>
+                                <include reference="SSL-x8-6Xx"/>
+                                <include reference="zfU-6p-qI9"/>
+                                <include reference="Kdh-MA-l7l"/>
+                                <include reference="UJN-EV-6Ee"/>
+                                <include reference="5wQ-j5-dnG"/>
                                 <include reference="9vc-eS-Ihm"/>
                                 <include reference="TmD-iu-cOz"/>
                                 <include reference="buc-YW-S2I"/>
@@ -1992,6 +2005,12 @@
                                 <include reference="G7K-pp-Z44"/>
                                 <include reference="bE1-Sg-9ck"/>
                                 <include reference="saw-uc-06N"/>
+                                <include reference="4A8-4t-xAU"/>
+                                <include reference="7nc-HQ-MoO"/>
+                                <include reference="2ye-Eg-50L"/>
+                                <include reference="Wdb-BN-d0B"/>
+                                <include reference="rJ1-I1-tpV"/>
+                                <include reference="HS9-Ik-Urz"/>
                                 <include reference="93v-Op-Dvt"/>
                                 <include reference="LhM-hM-XOZ"/>
                                 <include reference="Wha-zG-aMQ"/>
@@ -4322,12 +4341,14 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aRV-2U-GCT"/>
+        <segue reference="KdX-Pm-2aG"/>
+        <segue reference="0ax-nz-mnI"/>
+        <segue reference="Yfq-1Y-Jso"/>
         <segue reference="SS8-un-z5l"/>
-        <segue reference="7kq-q4-soY"/>
-        <segue reference="Wjf-e1-JVh"/>
-        <segue reference="Pi8-DD-xs4"/>
-        <segue reference="KSi-oK-GNA"/>
+        <segue reference="XGB-w2-k6m"/>
+        <segue reference="edr-DM-Wdq"/>
+        <segue reference="hLy-K3-RxR"/>
+        <segue reference="KY8-dZ-llw"/>
         <segue reference="Geu-Rn-oeq"/>
         <segue reference="PF1-xV-XGk"/>
     </inferredMetricsTieBreakers>
