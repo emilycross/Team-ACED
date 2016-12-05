@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 
 
@@ -28,10 +29,9 @@ class userProfile {
     var currentSongSpeed = 0
     
     var playlists = [true, false, false, false, false]
-    var routes = [true, false, false, false, false]
+    var routeLocations = [[CLLocation](),[CLLocation](), [CLLocation](), [CLLocation](), [CLLocation]()]
     
-    //For step tracking
-    var pedometer = CMPedometer()
+    var routeStarted = false
     
     //Settings
     var locationServices = true
