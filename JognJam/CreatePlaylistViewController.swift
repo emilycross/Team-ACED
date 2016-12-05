@@ -31,8 +31,16 @@ class CreatePlaylistViewController: UIViewController {
     @IBOutlet weak var song10: UIButton!
     @IBOutlet weak var song11: UIButton!
     
+    
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
+        
         retrieveSongs()
         // Do any additional setup after loading the view.
         

@@ -1972,6 +1972,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="profilePictureButton" destination="yBM-cP-Gov" id="Dtx-5I-GS0"/>
                         <outlet property="song1" destination="DnB-FK-SRT" id="Whf-Vo-1JK"/>
                         <outlet property="song10" destination="RqM-vV-5pH" id="Sh3-Jo-S2B"/>
                         <outlet property="song11" destination="w2p-PE-SxL" id="5RE-aO-IuK"/>
@@ -3698,14 +3699,14 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mBF-ib-9as"/>
-        <segue reference="Geu-Rn-oeq"/>
-        <segue reference="KSi-oK-GNA"/>
-        <segue reference="zf2-4V-V9J"/>
+        <segue reference="YCZ-dj-eDT"/>
+        <segue reference="XGB-w2-k6m"/>
+        <segue reference="nla-fF-req"/>
+        <segue reference="SS8-un-z5l"/>
+        <segue reference="nBG-b1-exW"/>
         <segue reference="edr-DM-Wdq"/>
         <segue reference="hLy-K3-RxR"/>
-        <segue reference="aRV-2U-GCT"/>
-        <segue reference="SS8-un-z5l"/>
-        <segue reference="XGB-w2-k6m"/>
+        <segue reference="KSi-oK-GNA"/>
+        <segue reference="Geu-Rn-oeq"/>
     </inferredMetricsTieBreakers>
 </document>
