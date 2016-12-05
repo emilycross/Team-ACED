@@ -8,7 +8,6 @@
 
 
 import UIKit
-import CoreMotion
 
 class ProfileViewController: UIViewController {
     
@@ -28,7 +27,8 @@ class ProfileViewController: UIViewController {
         
         usernameLabel.text = user.username
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
-        numberStepsLabel.text = String(user.numberSteps)+" steps"
+        user.numberSteps = (UIApplication.sharedApplication().delegate! as! AppDelegate).nSteps
+        numberStepsLabel.text = String(user.numberSteps) + " steps"
         
     }
 
@@ -54,7 +54,6 @@ class ProfileViewController: UIViewController {
         }
         else if segue.identifier == "profileToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
-            //user start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
@@ -71,6 +70,7 @@ class ProfileViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "profileToLogin" {
+            self.user.start = true
             self.player.pause()
         }
         

@@ -79,6 +79,7 @@
 		323477321DDB6FDF00364743 /* SuggestByViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestByViewController.swift; sourceTree = "<group>"; };
 		323477361DDB81FF00364743 /* ProfilePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictureViewController.swift; sourceTree = "<group>"; };
 		328513E81DD56A1400A92AE0 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		328D602A1DF5D1C500D0E955 /* JognJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = JognJam.entitlements; sourceTree = "<group>"; };
 		3294111D1DD3C077001B1DBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		329411211DD3CC38001B1DBB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		329D06CD1DD52D0400717938 /* nextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextButton.png; path = JognJam/nextButton.png; sourceTree = SOURCE_ROOT; };
@@ -177,6 +178,7 @@
 		C1520BBC1DCBC55600CBC741 /* JognJam */ = {
 			isa = PBXGroup;
 			children = (
+				328D602A1DF5D1C500D0E955 /* JognJam.entitlements */,
 				C12348721DF47EDA00D521F6 /* Logo1_Circle.png */,
 				C12348731DF47EDA00D521F6 /* Logo1_Square.png */,
 				C12348741DF47EDA00D521F6 /* Logo1_Transparent.png */,
@@ -311,6 +313,12 @@
 				TargetAttributes = {
 					C1520BB91DCBC55600CBC741 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = AT5WT75A66;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 					C1520BD11DCBC55600CBC741 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -557,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JognJam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -569,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JognJam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

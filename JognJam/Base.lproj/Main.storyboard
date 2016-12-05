@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -575,12 +575,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="dXw-y0-Pw0" eventType="touchUpInside" id="nNe-Ff-5zp"/>
-                                    <action selector="primaryActionTriggered:" destination="dXw-y0-Pw0" eventType="primaryActionTriggered" id="dZx-yC-kjg"/>
-                                    <action selector="touchCancel:" destination="dXw-y0-Pw0" eventType="touchCancel" id="oSc-TK-Y8a"/>
-                                    <action selector="touchDown:" destination="dXw-y0-Pw0" eventType="touchDown" id="dEJ-MG-6G4"/>
-                                    <action selector="touchDragEnter:" destination="dXw-y0-Pw0" eventType="touchDragEnter" id="tbW-OQ-3P9"/>
-                                    <action selector="touchDragExit:" destination="dXw-y0-Pw0" eventType="touchDragExit" id="c6u-Py-BoH"/>
-                                    <action selector="touchUpOutside:" destination="dXw-y0-Pw0" eventType="touchUpOutside" id="sKZ-7R-Dw7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-aL-mC3">
@@ -845,13 +839,13 @@
                         <outlet property="createNewPlaylistButton" destination="aWT-Vy-XG0" id="Ddk-9B-37a"/>
                         <outlet property="currentSongLabel" destination="nl5-54-HWF" id="nKB-4M-v8f"/>
                         <outlet property="currentSpeedLabel" destination="HRb-kq-JiX" id="pZV-up-AhX"/>
-                        <outlet property="moreButton" destination="FY4-n2-E4e" id="OLQ-iO-Syh"/>
+                        <outlet property="moreButton" destination="FY4-n2-E4e" id="wXg-9b-kyJ"/>
                         <outlet property="nextButton" destination="RFy-qt-ENM" id="qet-Jp-HEo"/>
                         <outlet property="playButton" destination="pPm-sA-2zL" id="ybT-hn-d0R"/>
                         <outlet property="prevButton" destination="aOf-CD-cFP" id="Z9a-Kn-ofF"/>
                         <outlet property="profilePictureButton" destination="CRV-YI-2ja" id="SHa-Vm-7aC"/>
                         <outlet property="suggestedSongButton" destination="C3J-IT-ZUX" id="Li3-GM-um1"/>
-                        <outlet property="suggestionsLabel" destination="vkh-0u-0FI" id="X6c-sW-JjU"/>
+                        <outlet property="suggestionsLabel" destination="vkh-0u-0FI" id="1Xb-8T-2XX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Yz-qQ-jVo" userLabel="First Responder" sceneMemberID="firstResponder"/>

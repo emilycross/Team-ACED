@@ -119,6 +119,7 @@ class PlaylistViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "playlistToLogin" {
+            self.user.start = true
             self.player.pause()
         }
     }

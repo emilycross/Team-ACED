@@ -12,6 +12,7 @@ class SuggestByViewController: UIViewController {
 
     var user = userProfile()
     var player = musicPlayer()
+    
     @IBOutlet weak var profilePictureButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class SuggestByViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "suggestByToLogin" {
+            self.user.start = true
             self.player.pause()
         }
     }
