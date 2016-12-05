@@ -53,6 +53,7 @@
 		C1C163341DDE4EB00043D195 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */; };
 		C1C163361DDE4EC00043D195 /* SpecificPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163351DDE4EC00043D195 /* SpecificPlaylistViewController.swift */; };
 		C1EBE4071DF5D8C4004C6FEC /* CreatePlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */; };
+		C1EBE4091DF624B9004C6FEC /* MostPlayedSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBE4081DF624B9004C6FEC /* MostPlayedSongsViewController.swift */; };
 		C1F63FE71DE3F37A00178371 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F63FE61DE3F37A00178371 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		C1C163351DDE4EC00043D195 /* SpecificPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificPlaylistViewController.swift; sourceTree = "<group>"; };
 		C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewController.swift; sourceTree = "<group>"; };
+		C1EBE4081DF624B9004C6FEC /* MostPlayedSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostPlayedSongsViewController.swift; sourceTree = "<group>"; };
 		C1F63FE61DE3F37A00178371 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 				32ECF2DF1DF6170500CDDC07 /* CreateRouteViewController.swift */,
 				C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */,
 				C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */,
+				C1EBE4081DF624B9004C6FEC /* MostPlayedSongsViewController.swift */,
 				C1C163351DDE4EC00043D195 /* SpecificPlaylistViewController.swift */,
 				C1C1632F1DDE4E030043D195 /* RouteViewController.swift */,
 				C1C163311DDE4E320043D195 /* SpecificRouteViewController.swift */,
@@ -316,7 +319,7 @@
 				TargetAttributes = {
 					C1520BB91DCBC55600CBC741 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = AT5WT75A66;
+						DevelopmentTeam = 6X2YV4VF7E;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C163361DDE4EC00043D195 /* SpecificPlaylistViewController.swift in Sources */,
+				C1EBE4091DF624B9004C6FEC /* MostPlayedSongsViewController.swift in Sources */,
 				329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */,
 				323477371DDB81FF00364743 /* ProfilePictureViewController.swift in Sources */,
 				C1C163341DDE4EB00043D195 /* PlaylistViewController.swift in Sources */,
@@ -573,11 +577,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JognJam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -586,11 +592,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JognJam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aced.JognJam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
