@@ -27,10 +27,7 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(numPlaylists)
-        print(user.playlists)
-        //Makes the status bar visible
+                //Makes the status bar visible
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         

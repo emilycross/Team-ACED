@@ -31,7 +31,7 @@ class userProfile {
     var routes = [true, false, false, false, false]
     
     //For step tracking
-    var pedometer = CMPedometer()
+    //var pedometer = CMPedometer()
     
     //Settings
     var locationServices = true

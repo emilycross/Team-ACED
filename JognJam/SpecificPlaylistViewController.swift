@@ -55,6 +55,8 @@ class SpecificPlaylistViewController: UIViewController {
     
     func displayPlaylistSong(button: UIButton, num: Int)
     {
+        
+        print(player.playlist1Titles)
 
         if playlistNumber == 0 {
                 

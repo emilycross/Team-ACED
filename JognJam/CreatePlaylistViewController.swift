@@ -2,7 +2,7 @@
 //  CreatePlaylistViewController.swift
 //  JognJam
 //
-//  Created by Emily Cross on 2016-12-05.
+//  Created by Team-ACED on 2016-12-05.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -272,7 +272,7 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist1Artists[i] = player.artists[songsPicked[i]]
                         player.playlist1Titles[i] = player.titles[songsPicked[i]]
                         player.playlist1Genres[i] = player.genres[songsPicked[i]]
-                        player.playlist1Indices[i] = i
+                        player.playlist1Indices[i] = songsPicked[i]
                         player.playlist1Speed[i] = player.speedsOfSongs[songsPicked[i]]
                         player.playlist1Locations[i] = player.locations[songsPicked[i]]
                     }
@@ -282,7 +282,7 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist2Artists[i] = player.artists[songsPicked[i]]
                         player.playlist2Titles[i] = player.titles[songsPicked[i]]
                         player.playlist2Genres[i] = player.genres[songsPicked[i]]
-                        player.playlist2Indices[i] = i
+                        player.playlist2Indices[i] = songsPicked[i]
                         player.playlist2Speed[i] = player.speedsOfSongs[songsPicked[i]]
                         player.playlist2Locations[i] = player.locations[songsPicked[i]]
                     }
@@ -293,7 +293,7 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist3Artists[i] = player.artists[songsPicked[i]]
                         player.playlist3Titles[i] = player.titles[songsPicked[i]]
                         player.playlist3Genres[i] = player.genres[songsPicked[i]]
-                        player.playlist3Indices[i] = i
+                        player.playlist3Indices[i] = songsPicked[i]
                         player.playlist3Speed[i] = player.speedsOfSongs[songsPicked[i]]
                         player.playlist3Locations[i] = player.locations[songsPicked[i]]
                     }
@@ -304,7 +304,7 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist4Artists[i] = player.artists[songsPicked[i]]
                         player.playlist4Titles[i] = player.titles[songsPicked[i]]
                         player.playlist4Genres[i] = player.genres[songsPicked[i]]
-                        player.playlist4Indices[i] = i
+                        player.playlist4Indices[i] = songsPicked[i]
                         player.playlist4Speed[i] = player.speedsOfSongs[songsPicked[i]]
                         player.playlist4Locations[i] = player.locations[songsPicked[i]]
                     }
@@ -315,7 +315,7 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist5Artists[i] = player.artists[songsPicked[i]]
                         player.playlist5Titles[i] = player.titles[songsPicked[i]]
                         player.playlist5Genres[i] = player.genres[songsPicked[i]]
-                        player.playlist5Indices[i] = i
+                        player.playlist5Indices[i] = songsPicked[i]
                         player.playlist5Speed[i] = player.speedsOfSongs[songsPicked[i]]
                         player.playlist5Locations[i] = player.locations[songsPicked[i]]
                     }
@@ -347,6 +347,13 @@ class CreatePlaylistViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "createPlaylistToPlaylist" {
             let destinationVC = segue.destinationViewController as? PlaylistViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            
+        }
+            
+        if segue.identifier == "createPlaylistToProfile" {
+            let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             

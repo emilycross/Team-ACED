@@ -39,6 +39,16 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var songDone = false
     var songPlaying = false
     
+    
+    var playingPlaylist1 = false
+    var playingPlaylist2 = false
+    var playingPlaylist3 = false
+    var playingPlaylist4 = false
+    var playingPlaylist5 = false
+    var playlistIndex = -1
+    
+    var randomised = false
+
     //Records the index of the last played song, and if needed the next song to play
     var prevSongIndex = -1
     var nextSongIndex = -1
@@ -104,8 +114,6 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             } catch {
                 print("Cannot find audio")
             }
-            
-            print(numberOfTimesPlayed)
             audioPlayer.prepareToPlay()
             
         }
@@ -137,16 +145,88 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         audioPlayer.stop()
         songPlaying = false
     }
+    
     func next() {
         prevSongIndex = currentIndex
-        if nextSongIndex == -1 {
+        
+        if (playingPlaylist1) {
+            if (playlistIndex < 4) {
+                playlistIndex += 1
+                pickSong(playlist1Indices[(playlistIndex)])
+            }
+            else {
+                pickSong(playlist1Indices[0])
+                playlistIndex = 0
+            }
+        }
+            
+        else if (playingPlaylist2) {
+            if (playlistIndex < 4) {
+                playlistIndex += 1
+                pickSong(playlist2Indices[(playlistIndex)])
+            }
+            else {
+                pickSong(playlist2Indices[0])
+                playlistIndex = 0
+            }
+        }
+            
+        if (playingPlaylist3) {
+            if (playlistIndex < 4) {
+                playlistIndex += 1
+                pickSong(playlist3Indices[(playlistIndex)])
+            }
+            else {
+                pickSong(playlist3Indices[0])
+                playlistIndex = 0
+            }
+        }
+            
+        if (playingPlaylist4) {
+            if (playlistIndex < 4) {
+                playlistIndex += 1
+                pickSong(playlist4Indices[(playlistIndex)])
+            }
+            else {
+                pickSong(playlist4Indices[0])
+                playlistIndex = 0
+            }
+        }
+            
+        if (playingPlaylist5) {
+            if (playlistIndex < 4) {
+                playlistIndex += 1
+                pickSong(playlist5Indices[(playlistIndex)])
+            }
+            else {
+                pickSong(playlist5Indices[0])
+                playlistIndex = 0
+            }
+        }
+        
+            
+        else if randomised == true {
+            playingPlaylist1 = false
+            playingPlaylist2 = false
+            playingPlaylist3 = false
+            playingPlaylist4 = false
+            playingPlaylist5 = false
+            randomPick()
+
+        }
+            
+        else if nextSongIndex == -1 {
             randomPick()
         }
+            
         else {
             pickSong(nextSongIndex)
             nextSongIndex = -1
         }
+
+        
     }
+    
     func prev() {
         nextSongIndex = currentIndex
         if prevSongIndex == -1 {
@@ -247,9 +327,9 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
 
     
     
-    /* right now the playlist is just going to be Forrest Gump over and over again... */
     func playSelectedPlaylist(playlist: Int) {
         /* automatically fill first playlist with first 5 songs so we have something to show in demo */
+        reset()
         if (playlist == 0) {
             for i in 0...4 {
                 playlist1Artists[i] = artists[i]
@@ -260,7 +340,6 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
                 playlist1Locations[i] = locations[i]
             }
         }
-        
     }
     
  

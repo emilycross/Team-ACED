@@ -53,6 +53,8 @@ class SettingsViewController: UIViewController {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
+            destinationVC?.user.username = self.user.username
+
         }
         else if segue.identifier == "settingsToLogin" {
             self.user.start = true
