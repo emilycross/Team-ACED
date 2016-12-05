@@ -115,6 +115,13 @@ class PlaylistViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
+        else if segue.identifier == "playlistToMostPlayedSongs" {
+            let destinationVC = segue.destinationViewController as? MostPlayedSongsViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+            
         else if segue.identifier == "playlistToLogin" {
             self.user.start = true
             self.player.pause()
