@@ -499,7 +499,7 @@ class MainViewController: UIViewController {
             destinationVC?.player = self.player
         }
         else if segue.identifier == "mainToCreatePlaylist" {
-            let destinationVC = segue.destinationViewController as? SuggestByViewController
+            let destinationVC = segue.destinationViewController as? CreatePlaylistViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
