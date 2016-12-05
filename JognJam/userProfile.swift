@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
+
+
 //class that holds information for each user's profile
-class userProfile
-{
+class userProfile {
     //var routes
     //var playlists
-    var username = "diniangela" //example, change later **
+    var username = "" //example, change later **
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
     var numberSteps = 0
     

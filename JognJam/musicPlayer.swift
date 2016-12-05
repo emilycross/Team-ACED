@@ -22,6 +22,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var speedsOfSongsTens = [10*Int(188/10), 10*Int(95/10), 10*Int(70/10), 10*Int(144/10), 10*Int(220/10), 10*Int(100/10), 10*Int(145/10), 10*Int(100/10), 10*Int(95/10), 10*Int(150/10), 10*Int(71/10)]
     var locations = ["Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS"]
     var songFile = ["allIn", "beatPop", "deathOfAnOrchid", "eineKleineNachtmusik", "jingleBells", "levelsOfGreatness", "sandboxJingle", "saturday", "stay", "symphony92ndMovement", "tomorrow"]
+    /* to keep track of most frequently listened to songs */
+    var numberOfTimesPlayed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    
     var currentSongTitle=""
     var currentArtist = ""
     var currentGenre = ""
@@ -63,12 +67,16 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             currentSongSpeed = speedsOfSongs[n]
             currentLocation = locations[n]
             currentIndex = n
+            numberOfTimesPlayed[n] += 1
+            
             let songSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(currentSongFile, ofType: "mp3")!)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOfURL: songSound)
             } catch {
                 print("Cannot find audio")
             }
+            
+            print(numberOfTimesPlayed)
             audioPlayer.prepareToPlay()
             
         }
@@ -235,4 +243,5 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         pickSong(randSelection-1)
         play()
     }
+
 }

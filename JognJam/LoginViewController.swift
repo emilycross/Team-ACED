@@ -10,6 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    /* user profile & music player */
+    var user = userProfile()
+    var player = musicPlayer()
+    var username = ""
+        
+    
     /* database for users */
     var database = UsersDatabase()
     @IBOutlet weak var usernameTextField: UITextField!
@@ -57,13 +63,24 @@ class LoginViewController: UIViewController {
     
     /* check login credentials */
     @IBAction func loginPressed(sender: UIButton) {
-        if database.checkIfRight(usernameTextField.text!, password: passwordTextField.text!) {
-            
+        if (database.checkIfRight(usernameTextField.text!, password: passwordTextField.text!)) {
+            username = usernameTextField.text!
             performSegueWithIdentifier("loginToMain", sender: self)
+
         }
-            
+        
         else {
-            invalidLogin.hidden = false;
+            invalidLogin.hidden = false
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "loginToMain" {
+            let destinationVC = segue.destinationViewController as? MainViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+            destinationVC?.user.username = self.username
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
