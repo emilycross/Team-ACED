@@ -83,10 +83,6 @@ class LoginViewController: UIViewController {
             destinationVC?.user.username = self.username
         }
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "loginToMain" {
-            let destinationVC = segue.destinationViewController as? MainViewController
-            destinationVC?.user.start = true
-        }
-    }
+    
+    
 }
