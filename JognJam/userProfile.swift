@@ -15,9 +15,8 @@ import CoreMotion //for step tracker, tutorial from http://shrikar.com/ios-swift
 
 //class that holds information for each user's profile
 class userProfile {
-    //var routes
-    //var playlists
-    var username = "" //example, change later **
+
+    var username = ""
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
     var numberSteps = 0
     
@@ -29,6 +28,9 @@ class userProfile {
     var currentSongGenre = ""
     var currentSongIndex = -1
     var currentSongSpeed = 0
+    
+    var playlists = [true, false, false, false, false]
+    var routes = [true, false, false, false, false]
     
     //For step tracking
     var pedometer = CMPedometer()

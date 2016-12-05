@@ -12,6 +12,8 @@ import AVFoundation
 
 class musicPlayer: NSObject, AVAudioPlayerDelegate
 {
+    
+    
     //Database of songs, information
     var numSongs = 11
     var titles = ["All In", "Beat Pop", "Death of an Orchid", "Eine Kleine Nachtmusik", "Jingle Bells", "Levels of Greatness", "Sandbox Jingle", "Saturday", "Stay", "Symphony 9 2nd Movement", "Tomorrow"]
@@ -42,7 +44,6 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var nextSongIndex = -1
     
     
-    
     var suggestionsIndices = [-1,-1,-1,-1,-1]
     var suggestionsTitles = ["","","","",""]
     var suggestionsArtists = ["","","","",""]
@@ -50,12 +51,40 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var suggestionsSpeed = [0,0,0,0,0]
     var suggestionsLocations = ["","","","",""]
     
-    var playlistIndices = [-1,-1,-1,-1,-1]
-    var playlistTitles = ["","","","",""]
-    var playlistArtists = ["","","","",""]
-    var playlistGenres = ["","","","",""]
-    var playlistSpeed = [0,0,0,0,0]
-    var playlistLocations = ["","","","",""]
+    var playlist1Indices = [-1,-1,-1,-1,-1]
+    var playlist1Titles = ["","","","",""]
+    var playlist1Artists = ["","","","",""]
+    var playlist1Genres = ["","","","",""]
+    var playlist1Speed = [0,0,0,0,0]
+    var playlist1Locations = ["","","","",""]
+    
+    var playlist2Indices = [-1,-1,-1,-1,-1]
+    var playlist2Titles = ["","","","",""]
+    var playlist2Artists = ["","","","",""]
+    var playlist2Genres = ["","","","",""]
+    var playlist2Speed = [0,0,0,0,0]
+    var playlist2Locations = ["","","","",""]
+    
+    var playlist3Indices = [-1,-1,-1,-1,-1]
+    var playlist3Titles = ["","","","",""]
+    var playlist3Artists = ["","","","",""]
+    var playlist3Genres = ["","","","",""]
+    var playlist3Speed = [0,0,0,0,0]
+    var playlist3Locations = ["","","","",""]
+    
+    var playlist4Indices = [-1,-1,-1,-1,-1]
+    var playlist4Titles = ["","","","",""]
+    var playlist4Artists = ["","","","",""]
+    var playlist4Genres = ["","","","",""]
+    var playlist4Speed = [0,0,0,0,0]
+    var playlist4Locations = ["","","","",""]
+    
+    var playlist5Indices = [-1,-1,-1,-1,-1]
+    var playlist5Titles = ["","","","",""]
+    var playlist5Artists = ["","","","",""]
+    var playlist5Genres = ["","","","",""]
+    var playlist5Speed = [0,0,0,0,0]
+    var playlist5Locations = ["","","","",""]
     
     func pickSong(n: Int) {
         if(n < titles.count)
@@ -220,20 +249,21 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     
     /* right now the playlist is just going to be Forrest Gump over and over again... */
     func playSelectedPlaylist(playlist: Int) {
-        for i in 0...4 {
-            /* this will change when playlists are fully implemented */
-            for j in 0...(artists.count-1) {
-                playlistArtists[i] = artists[j]
-                playlistTitles[i] = titles[j]
-                playlistGenres[i] = genres[j]
-                playlistIndices[i] = j
-                playlistSpeed[i] = speedsOfSongs[j]
-                playlistLocations[i] = locations[j]
-                break;
+        /* automatically fill first playlist with first 5 songs so we have something to show in demo */
+        if (playlist == 0) {
+            for i in 0...4 {
+                playlist1Artists[i] = artists[i]
+                playlist1Titles[i] = titles[i]
+                playlist1Genres[i] = genres[i]
+                playlist1Indices[i] = i
+                playlist1Speed[i] = speedsOfSongs[i]
+                playlist1Locations[i] = locations[i]
             }
         }
         
     }
+    
+ 
     
     
     //The song stopped so play the next one, have to change

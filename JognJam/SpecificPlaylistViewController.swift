@@ -32,7 +32,7 @@ class SpecificPlaylistViewController: UIViewController {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
-        playlistNumberLabel.text = "Playlist " + String(playlistNumber)
+        playlistNumberLabel.text = "Playlist " + String(playlistNumber+1)
         
         retrievePlaylist()
         
@@ -55,13 +55,62 @@ class SpecificPlaylistViewController: UIViewController {
     
     func displayPlaylistSong(button: UIButton, num: Int)
     {
-        if player.playlistIndices[num] == -1 {
-            button.setTitle("No song available", forState: UIControlState.Normal)
-            button.enabled = false
+
+        if playlistNumber == 0 {
+                
+            if player.playlist1Indices[num] == -1 {
+                button.setTitle("No song available", forState: UIControlState.Normal)
+                button.enabled = false
+            }
+        
+            else {
+                button.setTitle((player.playlist1Titles[num]+" - "+player.playlist1Artists[num]), forState: UIControlState.Normal)
+            }
         }
-        else {
-            button.setTitle((player.playlistArtists[num]+" - "+player.playlistArtists[num]), forState: UIControlState.Normal)
+            
+        else if playlistNumber == 1 {
+            if player.playlist2Indices[num] == -1 {
+                button.setTitle("No song available", forState: UIControlState.Normal)
+                    button.enabled = false
+            }
+                
+            else {
+                button.setTitle((player.playlist2Titles[num]+" - "+player.playlist2Artists[num]), forState: UIControlState.Normal)
+            }
         }
+        
+        else if playlistNumber == 2 {
+            if player.playlist3Indices[num] == -1 {
+                button.setTitle("No song available", forState: UIControlState.Normal)
+                    button.enabled = false
+            }
+            else {
+                button.setTitle((player.playlist3Titles[num]+" - "+player.playlist3Artists[num]), forState: UIControlState.Normal)
+            }
+        }
+            
+        else if playlistNumber == 3 {
+            if player.playlist4Indices[num] == -1 {
+                button.setTitle("No song available", forState: UIControlState.Normal)
+                    button.enabled = false
+            }
+            else {
+                button.setTitle((player.playlist4Titles[num]+" - "+player.playlist4Artists[num]), forState: UIControlState.Normal)
+            }
+        }
+            
+        else if playlistNumber == 4 {
+            if player.playlist5Indices[num] == -1 {
+                button.setTitle("No song available", forState: UIControlState.Normal)
+                    button.enabled = false
+            }
+            
+            else {
+                button.setTitle((player.playlist5Titles[num]+" - "+player.playlist5Artists[num]), forState: UIControlState.Normal)
+            }
+        }
+
+        
     }
     
     
@@ -113,6 +162,12 @@ class SpecificPlaylistViewController: UIViewController {
 
             
         }
+        else if segue.identifier == "specificPlaylistToPlaylist" {
+            let destinationVC = segue.destinationViewController as? PlaylistViewController
+            destinationVC?.user = self.user
+            destinationVC?.player = self.player
+        }
+            
         else if segue.identifier == "specificPlaylistToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
@@ -121,5 +176,7 @@ class SpecificPlaylistViewController: UIViewController {
         else if segue.identifier == "specificPlaylistToLogin" {
             self.player.pause()
         }
+        
+        
     }
 }

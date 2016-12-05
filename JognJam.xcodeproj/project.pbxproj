@@ -51,8 +51,7 @@
 		C1C163321DDE4E320043D195 /* SpecificRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163311DDE4E320043D195 /* SpecificRouteViewController.swift */; };
 		C1C163341DDE4EB00043D195 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */; };
 		C1C163361DDE4EC00043D195 /* SpecificPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C163351DDE4EC00043D195 /* SpecificPlaylistViewController.swift */; };
-		C1F63FE31DE3D43D00178371 /* routeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F63FE21DE3D43D00178371 /* routeObject.swift */; };
-		C1F63FE51DE3E39400178371 /* playlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F63FE41DE3E39400178371 /* playlistObject.swift */; };
+		C1EBE4071DF5D8C4004C6FEC /* CreatePlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */; };
 		C1F63FE71DE3F37A00178371 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F63FE61DE3F37A00178371 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,8 +123,7 @@
 		C1C163311DDE4E320043D195 /* SpecificRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificRouteViewController.swift; sourceTree = "<group>"; };
 		C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		C1C163351DDE4EC00043D195 /* SpecificPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificPlaylistViewController.swift; sourceTree = "<group>"; };
-		C1F63FE21DE3D43D00178371 /* routeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = routeObject.swift; sourceTree = "<group>"; };
-		C1F63FE41DE3E39400178371 /* playlistObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playlistObject.swift; sourceTree = "<group>"; };
+		C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewController.swift; sourceTree = "<group>"; };
 		C1F63FE61DE3F37A00178371 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -207,6 +205,7 @@
 				323477361DDB81FF00364743 /* ProfilePictureViewController.swift */,
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
+				C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */,
 				C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */,
 				C1C163351DDE4EC00043D195 /* SpecificPlaylistViewController.swift */,
 				C1C1632F1DDE4E030043D195 /* RouteViewController.swift */,
@@ -214,8 +213,6 @@
 				C163F2EF1DDCBC9100D42CDB /* SuggestionsViewController.swift */,
 				323477321DDB6FDF00364743 /* SuggestByViewController.swift */,
 				3227E9B61DD77A6C007A23E4 /* userProfile.swift */,
-				C1F63FE21DE3D43D00178371 /* routeObject.swift */,
-				C1F63FE41DE3E39400178371 /* playlistObject.swift */,
 				320C42F41DD766B900B2D622 /* musicPlayer.swift */,
 				329411211DD3CC38001B1DBB /* MainViewController.swift */,
 				329D06DF1DD5413A00717938 /* SettingsViewController.swift */,
@@ -403,7 +400,6 @@
 			files = (
 				C1C163361DDE4EC00043D195 /* SpecificPlaylistViewController.swift in Sources */,
 				329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */,
-				C1F63FE31DE3D43D00178371 /* routeObject.swift in Sources */,
 				323477371DDB81FF00364743 /* ProfilePictureViewController.swift in Sources */,
 				C1C163341DDE4EB00043D195 /* PlaylistViewController.swift in Sources */,
 				C1C163301DDE4E030043D195 /* RouteViewController.swift in Sources */,
@@ -412,10 +408,10 @@
 				3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */,
 				C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */,
 				3227E9B71DD77A6C007A23E4 /* userProfile.swift in Sources */,
+				C1EBE4071DF5D8C4004C6FEC /* CreatePlaylistViewController.swift in Sources */,
 				329411221DD3CC38001B1DBB /* MainViewController.swift in Sources */,
 				329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */,
 				320C42F51DD766B900B2D622 /* musicPlayer.swift in Sources */,
-				C1F63FE51DE3E39400178371 /* playlistObject.swift in Sources */,
 				323477331DDB6FDF00364743 /* SuggestByViewController.swift in Sources */,
 				C163F2F01DDCBC9100D42CDB /* SuggestionsViewController.swift in Sources */,
 			);

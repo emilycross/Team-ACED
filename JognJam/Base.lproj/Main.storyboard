@@ -842,6 +842,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="createNewPlaylistButton" destination="aWT-Vy-XG0" id="Ddk-9B-37a"/>
                         <outlet property="currentSongLabel" destination="nl5-54-HWF" id="nKB-4M-v8f"/>
                         <outlet property="currentSpeedLabel" destination="HRb-kq-JiX" id="pZV-up-AhX"/>
                         <outlet property="moreButton" destination="FY4-n2-E4e" id="OLQ-iO-Syh"/>
@@ -885,9 +886,6 @@
                                 <state key="normal" title="Routes">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="474" y="415" width="75" height="41"/>
-                                </variation>
                                 <connections>
                                     <segue destination="tJX-Rh-Btw" kind="show" identifier="profileToRoutes" id="KY8-dZ-llw"/>
                                 </connections>
@@ -907,8 +905,7 @@
                                         <exclude reference="uhO-gd-Fj7"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="200" y="198" width="200" height="37"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Jqk-CR-YJ5"/>
                                         <include reference="uhO-gd-Fj7"/>
@@ -928,8 +925,7 @@
                                         <exclude reference="k3S-XV-2ew"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="223" y="28" width="155" height="170"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="daC-6H-XQ2"/>
                                         <include reference="k3S-XV-2ew"/>
@@ -977,8 +973,7 @@
                                         <exclude reference="gAq-fw-2qb"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="532" y="28" width="48" height="30"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="aZF-F6-0Ni"/>
                                         <include reference="gAq-fw-2qb"/>
@@ -1003,8 +998,7 @@
                                         <exclude reference="c0l-Rf-h3T"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="213" y="261" width="175" height="21"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="QqO-yh-Y8P"/>
                                         <include reference="c0l-Rf-h3T"/>
@@ -1026,8 +1020,7 @@
                                         <exclude reference="zIm-XP-Bnj"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="238" y="301" width="124" height="22"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="40G-xh-nPS"/>
                                         <include reference="zIm-XP-Bnj"/>
@@ -1156,8 +1149,7 @@
                                         <exclude reference="qdx-hD-Q6A"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="207" y="28" width="186" height="51"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Lyd-Wb-fkU"/>
                                         <include reference="qdx-hD-Q6A"/>
@@ -1178,8 +1170,7 @@
                                         <exclude reference="DoD-LF-a6t"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="120" y="73" width="360" height="225"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="3Zk-Ij-wqO"/>
                                         <include reference="DoD-LF-a6t"/>
@@ -1201,8 +1192,7 @@
                                         <exclude reference="uGw-mC-MO3"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="198" y="306" width="205" height="21"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Vqg-3k-0uW"/>
                                         <include reference="uGw-mC-MO3"/>
@@ -1214,9 +1204,6 @@
                                 <state key="normal" title="Change the profile picture from camera">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="165" y="338" width="270" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="changeProfilePictureCamera:" destination="8hM-FF-ZqU" eventType="touchUpInside" id="J6J-db-gWn"/>
                                 </connections>
@@ -1226,9 +1213,6 @@
                                 <state key="normal" title="Change the profile picture from photo library">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="147" y="376" width="306" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="changeProfilePictureLibrary:" destination="8hM-FF-ZqU" eventType="touchUpInside" id="DNf-Am-ib2"/>
                                 </connections>
@@ -1238,9 +1222,6 @@
                                 <state key="normal" title="Go back">
                                     <color key="titleColor" red="0.49803921569999998" green="0.027450980390000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="272" y="414" width="57" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="33o-vg-j4z" kind="show" identifier="profilePictureToProfile" id="SBR-DW-7F3"/>
                                 </connections>
@@ -1405,6 +1386,9 @@
                                         <include reference="sUJ-OA-itC"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="33o-vg-j4z" kind="show" identifier="playlistToProfile" id="KdX-Pm-2aG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNi-kJ-aju">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1478,6 +1462,9 @@
                                 <state key="normal" title="Create New Playlist">
                                     <color key="titleColor" red="0.49803921569999998" green="0.027450980390000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Ubk-Yr-2fi" kind="show" identifier="playlistToCreatePlaylist" id="XGB-w2-k6m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.031372549020000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1583,12 +1570,432 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="createNewPlaylistButton" destination="Cfo-j4-XiR" id="r8u-Rt-3Qv"/>
+                        <outlet property="playlist1Button" destination="vt4-uQ-pgb" id="ss8-Jf-aHL"/>
+                        <outlet property="playlist2Button" destination="5Vl-42-QLW" id="vKL-m0-MWp"/>
+                        <outlet property="playlist3Button" destination="c6U-PA-HHH" id="496-2h-cvq"/>
+                        <outlet property="playlist4Button" destination="8mH-FO-Es5" id="c69-sV-WUK"/>
+                        <outlet property="playlist5Button" destination="dLe-06-5YW" id="NNW-Nr-6aQ"/>
                         <outlet property="profilePictureButton" destination="dp8-Ud-g8D" id="c4Y-zN-Ywb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1m-Xo-Xeq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="933" y="1349"/>
+        </scene>
+        <!--Create Playlist View Controller-->
+        <scene sceneID="6yW-Ld-QXZ">
+            <objects>
+                <viewController id="Ubk-Yr-2fi" customClass="CreatePlaylistViewController" customModule="JognJam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rwn-u2-K9t"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVY-5s-Gwb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xik-Ze-5UB">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nL4-Rh-zlA">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="m5R-Fp-B4l"/>
+                                    <constraint firstAttribute="width" constant="50" id="zJP-4o-fiS"/>
+                                </constraints>
+                                <state key="normal" image="backButton.png"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zJP-4o-fiS"/>
+                                        <exclude reference="m5R-Fp-B4l"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zJP-4o-fiS"/>
+                                        <include reference="m5R-Fp-B4l"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="B7y-xT-Dpt" kind="show" identifier="createPlaylistToPlaylist" id="nla-fF-req"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgg-ZF-LVe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="jIc-kg-iXz"/>
+                                    <constraint firstAttribute="height" constant="30" id="uun-ti-bJg"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uun-ti-bJg"/>
+                                        <exclude reference="jIc-kg-iXz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="uun-ti-bJg"/>
+                                        <include reference="jIc-kg-iXz"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="703-4V-yAM" kind="show" identifier="createPlaylistToLogin" id="nBG-b1-exW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBM-cP-Gov">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Mye-gQ-btb"/>
+                                    <constraint firstAttribute="height" constant="40" id="eR6-km-DmQ"/>
+                                </constraints>
+                                <state key="normal" image="Logo1_Square.png"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mye-gQ-btb"/>
+                                        <exclude reference="eR6-km-DmQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Mye-gQ-btb"/>
+                                        <include reference="eR6-km-DmQ"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Playlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOf-jB-Nln">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="Ele-xE-P3s">
+                                        <variation key="widthClass=compact" constant="190"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="54" id="SHE-VJ-Frs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ele-xE-P3s"/>
+                                        <exclude reference="SHE-VJ-Frs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ele-xE-P3s"/>
+                                        <include reference="SHE-VJ-Frs"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnB-FK-SRT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 1 - Artist 1">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong1:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="cNO-GJ-nHD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqc-MD-zx8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 2 - Artist 2">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong2:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="KWm-j3-VDo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iN4-j3-Vo1">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 3 - Artist 3">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong3:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="ir4-Q0-Q2h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMr-DI-NF2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="wBx-LU-3PL"/>
+                                </constraints>
+                                <state key="normal" title="Song 4 - Artist 4">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wBx-LU-3PL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="wBx-LU-3PL"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addSong4:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="3pw-UJ-Hw8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-fi-WEn">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="h6T-To-AmH"/>
+                                </constraints>
+                                <state key="normal" title="Song 5 - Artist 5">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="h6T-To-AmH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="h6T-To-AmH"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addSong5:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="pAu-dr-txB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rga-ad-dAm">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 6 - Artist 6">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong6:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="6OX-Ho-BtC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCa-Zp-dAY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 7 - Artist 7">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong7:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="SDB-1z-5w5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BG3-SW-nJH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 9 - Artist 9">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong9:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="C2h-Kf-RUq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqM-vV-5pH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 10 - Artist 10">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong10:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="O2g-JE-OCr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D7-mc-Y6n">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Song 8 - Artist 8">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong8:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="GP0-FF-9gd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2p-PE-SxL">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Sd4-yW-Qs8"/>
+                                </constraints>
+                                <state key="normal" title="Song 11 - Artist 11">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Sd4-yW-Qs8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Sd4-yW-Qs8"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addSong11:" destination="Ubk-Yr-2fi" eventType="touchUpInside" id="j3a-tw-Abb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.031372549020000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RHd-fi-WEn" firstAttribute="trailing" secondItem="8D7-mc-Y6n" secondAttribute="trailing" id="1gi-wp-VNt"/>
+                            <constraint firstItem="DCa-Zp-dAY" firstAttribute="leading" secondItem="BG3-SW-nJH" secondAttribute="leading" id="2ye-Eg-50L"/>
+                            <constraint firstItem="bqc-MD-zx8" firstAttribute="centerX" secondItem="iN4-j3-Vo1" secondAttribute="centerX" id="32M-W6-exn"/>
+                            <constraint firstItem="w2p-PE-SxL" firstAttribute="top" secondItem="BG3-SW-nJH" secondAttribute="bottom" constant="28" id="5wQ-j5-dnG"/>
+                            <constraint firstItem="RHd-fi-WEn" firstAttribute="leading" secondItem="8D7-mc-Y6n" secondAttribute="leading" id="7Uy-fe-ttp"/>
+                            <constraint firstItem="nL4-Rh-zlA" firstAttribute="top" secondItem="lgg-ZF-LVe" secondAttribute="top" id="7VR-1E-nI4"/>
+                            <constraint firstItem="RqM-vV-5pH" firstAttribute="leading" secondItem="xik-Ze-5UB" secondAttribute="leadingMargin" constant="99" id="93v-Op-Dvt"/>
+                            <constraint firstItem="DnB-FK-SRT" firstAttribute="centerX" secondItem="DOf-jB-Nln" secondAttribute="centerX" id="9vc-eS-Ihm"/>
+                            <constraint firstItem="RHd-fi-WEn" firstAttribute="top" secondItem="zMr-DI-NF2" secondAttribute="bottom" constant="2" id="Fr0-GU-tYv"/>
+                            <constraint firstItem="Rga-ad-dAm" firstAttribute="trailing" secondItem="DCa-Zp-dAY" secondAttribute="trailing" id="G7K-pp-Z44"/>
+                            <constraint firstItem="8D7-mc-Y6n" firstAttribute="top" secondItem="DCa-Zp-dAY" secondAttribute="bottom" id="HS9-Ik-Urz"/>
+                            <constraint firstItem="iN4-j3-Vo1" firstAttribute="centerX" secondItem="zMr-DI-NF2" secondAttribute="centerX" id="JFd-bB-mJX"/>
+                            <constraint firstItem="iN4-j3-Vo1" firstAttribute="centerX" secondItem="RHd-fi-WEn" secondAttribute="centerX" id="KZE-wF-TD0"/>
+                            <constraint firstItem="yBM-cP-Gov" firstAttribute="centerX" secondItem="xik-Ze-5UB" secondAttribute="centerX" id="Kdh-MA-l7l"/>
+                            <constraint firstItem="RqM-vV-5pH" firstAttribute="top" secondItem="8D7-mc-Y6n" secondAttribute="bottom" constant="28" id="LhM-hM-XOZ"/>
+                            <constraint firstItem="iN4-j3-Vo1" firstAttribute="trailing" secondItem="Rga-ad-dAm" secondAttribute="trailing" id="Q7G-bx-1M7"/>
+                            <constraint firstItem="DOf-jB-Nln" firstAttribute="top" secondItem="yBM-cP-Gov" secondAttribute="bottom" constant="30" id="SSL-x8-6Xx"/>
+                            <constraint firstItem="DnB-FK-SRT" firstAttribute="centerX" secondItem="bqc-MD-zx8" secondAttribute="centerX" id="TmD-iu-cOz"/>
+                            <constraint firstItem="zMr-DI-NF2" firstAttribute="top" secondItem="iN4-j3-Vo1" secondAttribute="bottom" constant="2" id="UHG-mY-iBw"/>
+                            <constraint firstItem="yBM-cP-Gov" firstAttribute="top" secondItem="Rwn-u2-K9t" secondAttribute="bottom" id="UJN-EV-6Ee"/>
+                            <constraint firstItem="DCa-Zp-dAY" firstAttribute="trailing" secondItem="BG3-SW-nJH" secondAttribute="trailing" id="Wdb-BN-d0B"/>
+                            <constraint firstItem="RqM-vV-5pH" firstAttribute="centerX" secondItem="w2p-PE-SxL" secondAttribute="centerX" id="Wha-zG-aMQ"/>
+                            <constraint firstItem="Rga-ad-dAm" firstAttribute="top" secondItem="RHd-fi-WEn" secondAttribute="bottom" constant="2" id="bE1-Sg-9ck"/>
+                            <constraint firstItem="DnB-FK-SRT" firstAttribute="top" secondItem="DOf-jB-Nln" secondAttribute="bottom" constant="1" id="buc-YW-S2I"/>
+                            <constraint firstItem="aVY-5s-Gwb" firstAttribute="top" secondItem="w2p-PE-SxL" secondAttribute="bottom" constant="115" id="h0c-Ei-x4v"/>
+                            <constraint firstItem="RqM-vV-5pH" firstAttribute="centerX" secondItem="BG3-SW-nJH" secondAttribute="centerX" id="hI8-fh-Q21"/>
+                            <constraint firstItem="iN4-j3-Vo1" firstAttribute="top" secondItem="bqc-MD-zx8" secondAttribute="bottom" constant="2" id="jPI-bf-uKl"/>
+                            <constraint firstItem="zMr-DI-NF2" firstAttribute="centerX" secondItem="Rga-ad-dAm" secondAttribute="centerX" id="k9d-FF-xlx"/>
+                            <constraint firstItem="iN4-j3-Vo1" firstAttribute="leading" secondItem="RHd-fi-WEn" secondAttribute="leading" id="mDu-IC-WNg"/>
+                            <constraint firstItem="nL4-Rh-zlA" firstAttribute="leading" secondItem="xik-Ze-5UB" secondAttribute="leadingMargin" id="nYa-IS-peW"/>
+                            <constraint firstItem="lgg-ZF-LVe" firstAttribute="trailing" secondItem="xik-Ze-5UB" secondAttribute="trailingMargin" id="pl6-4W-Txx"/>
+                            <constraint firstItem="DCa-Zp-dAY" firstAttribute="top" secondItem="Rga-ad-dAm" secondAttribute="bottom" constant="1" id="rJ1-I1-tpV"/>
+                            <constraint firstItem="Rga-ad-dAm" firstAttribute="leading" secondItem="DCa-Zp-dAY" secondAttribute="leading" id="saw-uc-06N"/>
+                            <constraint firstItem="bqc-MD-zx8" firstAttribute="top" secondItem="DnB-FK-SRT" secondAttribute="bottom" constant="3" id="srg-Pg-Qh7"/>
+                            <constraint firstItem="nL4-Rh-zlA" firstAttribute="top" secondItem="Rwn-u2-K9t" secondAttribute="bottom" constant="8" symbolic="YES" id="wkV-7F-MdF"/>
+                            <constraint firstItem="DOf-jB-Nln" firstAttribute="centerX" secondItem="yBM-cP-Gov" secondAttribute="centerX" id="zfU-6p-qI9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nL4-Rh-zlA"/>
+                                <exclude reference="lgg-ZF-LVe"/>
+                                <exclude reference="yBM-cP-Gov"/>
+                                <exclude reference="DOf-jB-Nln"/>
+                                <exclude reference="DnB-FK-SRT"/>
+                                <exclude reference="bqc-MD-zx8"/>
+                                <exclude reference="iN4-j3-Vo1"/>
+                                <exclude reference="zMr-DI-NF2"/>
+                                <exclude reference="RHd-fi-WEn"/>
+                                <exclude reference="Rga-ad-dAm"/>
+                                <exclude reference="DCa-Zp-dAY"/>
+                                <exclude reference="BG3-SW-nJH"/>
+                                <exclude reference="RqM-vV-5pH"/>
+                                <exclude reference="8D7-mc-Y6n"/>
+                                <exclude reference="w2p-PE-SxL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7VR-1E-nI4"/>
+                                <exclude reference="nYa-IS-peW"/>
+                                <exclude reference="wkV-7F-MdF"/>
+                                <exclude reference="SSL-x8-6Xx"/>
+                                <exclude reference="zfU-6p-qI9"/>
+                                <exclude reference="Kdh-MA-l7l"/>
+                                <exclude reference="UJN-EV-6Ee"/>
+                                <exclude reference="9vc-eS-Ihm"/>
+                                <exclude reference="TmD-iu-cOz"/>
+                                <exclude reference="buc-YW-S2I"/>
+                                <exclude reference="32M-W6-exn"/>
+                                <exclude reference="srg-Pg-Qh7"/>
+                                <exclude reference="JFd-bB-mJX"/>
+                                <exclude reference="KZE-wF-TD0"/>
+                                <exclude reference="Q7G-bx-1M7"/>
+                                <exclude reference="jPI-bf-uKl"/>
+                                <exclude reference="mDu-IC-WNg"/>
+                                <exclude reference="UHG-mY-iBw"/>
+                                <exclude reference="k9d-FF-xlx"/>
+                                <exclude reference="1gi-wp-VNt"/>
+                                <exclude reference="7Uy-fe-ttp"/>
+                                <exclude reference="Fr0-GU-tYv"/>
+                                <exclude reference="pl6-4W-Txx"/>
+                                <exclude reference="G7K-pp-Z44"/>
+                                <exclude reference="bE1-Sg-9ck"/>
+                                <exclude reference="saw-uc-06N"/>
+                                <exclude reference="2ye-Eg-50L"/>
+                                <exclude reference="Wdb-BN-d0B"/>
+                                <exclude reference="rJ1-I1-tpV"/>
+                                <exclude reference="HS9-Ik-Urz"/>
+                                <exclude reference="93v-Op-Dvt"/>
+                                <exclude reference="LhM-hM-XOZ"/>
+                                <exclude reference="Wha-zG-aMQ"/>
+                                <exclude reference="hI8-fh-Q21"/>
+                                <exclude reference="5wQ-j5-dnG"/>
+                                <exclude reference="h0c-Ei-x4v"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="nL4-Rh-zlA"/>
+                                <include reference="lgg-ZF-LVe"/>
+                                <include reference="yBM-cP-Gov"/>
+                                <include reference="DOf-jB-Nln"/>
+                                <include reference="DnB-FK-SRT"/>
+                                <include reference="bqc-MD-zx8"/>
+                                <include reference="iN4-j3-Vo1"/>
+                                <include reference="zMr-DI-NF2"/>
+                                <include reference="RHd-fi-WEn"/>
+                                <include reference="Rga-ad-dAm"/>
+                                <include reference="DCa-Zp-dAY"/>
+                                <include reference="BG3-SW-nJH"/>
+                                <include reference="RqM-vV-5pH"/>
+                                <include reference="8D7-mc-Y6n"/>
+                                <include reference="w2p-PE-SxL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7VR-1E-nI4"/>
+                                <include reference="nYa-IS-peW"/>
+                                <include reference="wkV-7F-MdF"/>
+                                <include reference="SSL-x8-6Xx"/>
+                                <include reference="zfU-6p-qI9"/>
+                                <include reference="Kdh-MA-l7l"/>
+                                <include reference="UJN-EV-6Ee"/>
+                                <include reference="9vc-eS-Ihm"/>
+                                <include reference="TmD-iu-cOz"/>
+                                <include reference="buc-YW-S2I"/>
+                                <include reference="32M-W6-exn"/>
+                                <include reference="srg-Pg-Qh7"/>
+                                <include reference="JFd-bB-mJX"/>
+                                <include reference="KZE-wF-TD0"/>
+                                <include reference="Q7G-bx-1M7"/>
+                                <include reference="jPI-bf-uKl"/>
+                                <include reference="mDu-IC-WNg"/>
+                                <include reference="UHG-mY-iBw"/>
+                                <include reference="k9d-FF-xlx"/>
+                                <include reference="1gi-wp-VNt"/>
+                                <include reference="7Uy-fe-ttp"/>
+                                <include reference="Fr0-GU-tYv"/>
+                                <include reference="pl6-4W-Txx"/>
+                                <include reference="G7K-pp-Z44"/>
+                                <include reference="bE1-Sg-9ck"/>
+                                <include reference="saw-uc-06N"/>
+                                <include reference="2ye-Eg-50L"/>
+                                <include reference="Wdb-BN-d0B"/>
+                                <include reference="rJ1-I1-tpV"/>
+                                <include reference="HS9-Ik-Urz"/>
+                                <include reference="93v-Op-Dvt"/>
+                                <include reference="LhM-hM-XOZ"/>
+                                <include reference="Wha-zG-aMQ"/>
+                                <include reference="hI8-fh-Q21"/>
+                                <include reference="5wQ-j5-dnG"/>
+                                <include reference="h0c-Ei-x4v"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="song1" destination="DnB-FK-SRT" id="Whf-Vo-1JK"/>
+                        <outlet property="song10" destination="RqM-vV-5pH" id="Sh3-Jo-S2B"/>
+                        <outlet property="song11" destination="w2p-PE-SxL" id="5RE-aO-IuK"/>
+                        <outlet property="song2" destination="bqc-MD-zx8" id="cNF-6X-95Y"/>
+                        <outlet property="song3" destination="iN4-j3-Vo1" id="V8G-Vl-YFb"/>
+                        <outlet property="song4" destination="zMr-DI-NF2" id="exY-Va-EfM"/>
+                        <outlet property="song5" destination="RHd-fi-WEn" id="9fE-u2-6vQ"/>
+                        <outlet property="song6" destination="Rga-ad-dAm" id="3Zt-lt-6cf"/>
+                        <outlet property="song7" destination="DCa-Zp-dAY" id="7hs-vR-I1h"/>
+                        <outlet property="song8" destination="8D7-mc-Y6n" id="5rl-Nh-9jc"/>
+                        <outlet property="song9" destination="BG3-SW-nJH" id="tR3-If-Jhf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0UK-uF-NmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="2133"/>
         </scene>
         <!--Specific Playlist View Controller-->
         <scene sceneID="RC9-oR-DnH">
@@ -1622,7 +2029,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="B7y-xT-Dpt" kind="show" identifier="specificPlaylistToProfile" id="aRV-2U-GCT"/>
+                                    <segue destination="B7y-xT-Dpt" kind="show" identifier="specificPlaylistToPlaylist" id="aRV-2U-GCT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haH-7T-caP">
@@ -1669,6 +2076,9 @@
                                         <include reference="uWw-as-mz2"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="33o-vg-j4z" kind="show" identifier="specificPlaylistToProfile" id="PMt-ht-ejz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwV-5Y-WKi">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1905,8 +2315,7 @@
                                         <exclude reference="n72-Bv-IXC"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="532" y="20" width="48" height="30"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="MTI-pR-6Kn"/>
                                         <include reference="n72-Bv-IXC"/>
@@ -1929,8 +2338,7 @@
                                         <exclude reference="Bch-x2-mOR"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="280" y="20" width="40" height="40"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="8mg-hh-JH5"/>
                                         <include reference="Bch-x2-mOR"/>
@@ -1952,8 +2360,7 @@
                                         <exclude reference="w00-Pg-ETA"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="223" y="86" width="154" height="54"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="a7z-lA-uQg"/>
                                         <include reference="w00-Pg-ETA"/>
@@ -1965,9 +2372,6 @@
                                 <state key="normal" title="Route 1">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="275" y="172" width="51" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="ZDH-NO-LaQ" kind="show" identifier="routeOneToDetails" id="JZy-Wt-qVV"/>
                                 </connections>
@@ -1977,9 +2381,6 @@
                                 <state key="normal" title="Route 2">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="274" y="219" width="53" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="ZDH-NO-LaQ" kind="show" identifier="routeTwoToDetails" id="l8l-dW-XFx"/>
                                 </connections>
@@ -1989,9 +2390,6 @@
                                 <state key="normal" title="Route 3">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="273" y="265" width="54" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="ZDH-NO-LaQ" kind="show" identifier="routeThreeToDetails" id="t8h-jn-4aF"/>
                                 </connections>
@@ -2001,9 +2399,6 @@
                                 <state key="normal" title="Route 4">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="272" y="308" width="54" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="ZDH-NO-LaQ" kind="show" identifier="routeFourToDetails" id="Geu-Rn-oeq"/>
                                 </connections>
@@ -2013,9 +2408,6 @@
                                 <state key="normal" title="Route 5">
                                     <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="273" y="352" width="53" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="ZDH-NO-LaQ" kind="show" identifier="routeFiveToDetails" id="TwK-vt-jtd"/>
                                 </connections>
@@ -2025,9 +2417,6 @@
                                 <state key="normal" title="Create New Route">
                                     <color key="titleColor" red="0.49803921569999998" green="0.027450980390000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="237" y="413" width="125" height="30"/>
-                                </variation>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.031372549020000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2190,8 +2579,7 @@
                                         <exclude reference="eae-db-ARe"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="532" y="28" width="48" height="30"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="9KV-Jw-diG"/>
                                         <include reference="eae-db-ARe"/>
@@ -2214,8 +2602,7 @@
                                         <exclude reference="a0Q-sk-Gpx"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="280" y="20" width="40" height="40"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="8cE-R3-uvc"/>
                                         <include reference="a0Q-sk-Gpx"/>
@@ -2240,8 +2627,7 @@
                                         <exclude reference="qlA-3H-OfO"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="223" y="91" width="154" height="54"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="bU7-eT-A62"/>
                                         <include reference="qlA-3H-OfO"/>
@@ -2250,18 +2636,12 @@
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEr-wB-oje">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="53" y="168" width="494" height="309"/>
-                                </variation>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time Route Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gT-0e-EIx">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="210" y="495" width="181" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.031372549020000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -3326,13 +3706,13 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edr-DM-Wdq"/>
-        <segue reference="Pxc-wY-A0X"/>
-        <segue reference="Wjf-e1-JVh"/>
-        <segue reference="mBF-ib-9as"/>
-        <segue reference="t8h-jn-4aF"/>
-        <segue reference="KSi-oK-GNA"/>
+        <segue reference="7kq-q4-soY"/>
+        <segue reference="SS8-un-z5l"/>
         <segue reference="aRV-2U-GCT"/>
-        <segue reference="uX4-wx-HEz"/>
+        <segue reference="xkP-0m-oMr"/>
+        <segue reference="PMt-ht-ejz"/>
+        <segue reference="KY8-dZ-llw"/>
+        <segue reference="Geu-Rn-oeq"/>
+        <segue reference="Wjf-e1-JVh"/>
     </inferredMetricsTieBreakers>
 </document>

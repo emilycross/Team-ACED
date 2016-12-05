@@ -31,6 +31,10 @@ class MainViewController: UIViewController {
     var suggestedSongTitle = ""
     var suggestedArtist = ""
     
+    @IBOutlet weak var createNewPlaylistButton: UIButton!
+    var numPlaylists = 0
+    
+    
     @IBOutlet weak var profilePictureButton: UIButton!
     //boolean to show that music is playing and the play button is the pause image
     var isPlayingMusic = false
@@ -81,7 +85,24 @@ class MainViewController: UIViewController {
             setSuggestionLabel()
         }
         else if playlistNumber != -1 && playlistSong != -1 {
-            playPlaylist(playlistSong)
+            if (playlistNumber == 0) {
+                playPlaylist1(playlistSong)
+            }
+            if (playlistNumber == 1) {
+                playPlaylist2(playlistSong)
+            }
+            if (playlistNumber == 2) {
+                playPlaylist3(playlistSong)
+            }
+            if (playlistNumber == 3) {
+                playPlaylist4(playlistSong)
+            }
+            if (playlistNumber == 4) {
+                playPlaylist5(playlistSong)
+            }
+            
+                
+                
             prevButton.hidden = false
             prevButton.enabled = true
             nextButton.hidden = false
@@ -123,6 +144,17 @@ class MainViewController: UIViewController {
         }
         
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
+        
+        /* hide the create new playlist button if they already have 5 playlists created */
+        for i in 0...4 {
+            if (user.playlists[i]) {
+                numPlaylists += 1
+            }
+        }
+        
+        if (numPlaylists == 5) {
+            createNewPlaylistButton.hidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -351,19 +383,76 @@ class MainViewController: UIViewController {
         setSuggestionLabel()
     }
     
-    func playPlaylist (n: Int) {
+    func playPlaylist1 (n: Int) {
         user.start = false
-        player.pickSong(player.playlistIndices[n])
+        player.pickSong(player.playlist1Indices[n])
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.play()
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
-        user.currentSongSpeed = player.playlistSpeed[n]
+        user.currentSongSpeed = player.playlist1Speed[n]
         currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
         isPlayingMusic = true
         player.playSelectedPlaylist(playlistNumber)
         setSuggestionLabel()
         
     }
+    
+    func playPlaylist2 (n: Int) {
+        user.start = false
+        player.pickSong(player.playlist2Indices[n])
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongSpeed = player.playlist2Speed[n]
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
+        isPlayingMusic = true
+        player.playSelectedPlaylist(playlistNumber)
+        setSuggestionLabel()
+        
+    }
+    
+    func playPlaylist3 (n: Int) {
+        user.start = false
+        player.pickSong(player.playlist3Indices[n])
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongSpeed = player.playlist3Speed[n]
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
+        isPlayingMusic = true
+        player.playSelectedPlaylist(playlistNumber)
+        setSuggestionLabel()
+        
+    }
+    
+    func playPlaylist4 (n: Int) {
+        user.start = false
+        player.pickSong(player.playlist4Indices[n])
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongSpeed = player.playlist4Speed[n]
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
+        isPlayingMusic = true
+        player.playSelectedPlaylist(playlistNumber)
+        setSuggestionLabel()
+        
+    }
+    
+    func playPlaylist5 (n: Int) {
+        user.start = false
+        player.pickSong(player.playlist5Indices[n])
+        playButton.setImage(pauseImage, forState: UIControlState.Normal)
+        player.play()
+        currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+        user.currentSongSpeed = player.playlist5Speed[n]
+        currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
+        isPlayingMusic = true
+        player.playSelectedPlaylist(playlistNumber)
+        setSuggestionLabel()
+        
+    }
+    
 
     /*
     // MARK: - Navigation
