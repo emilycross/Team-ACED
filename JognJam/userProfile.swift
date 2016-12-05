@@ -11,12 +11,13 @@ import UIKit
 import CoreMotion //for step tracker, tutorial from http://shrikar.com/ios-swift-development-step-counter-app-using-pedometer-data/
 //http://pinkstone.co.uk/how-to-access-the-step-counter-and-pedometer-data-in-ios-9/
 
+
+
 //class that holds information for each user's profile
-class userProfile
-{
+class userProfile {
     //var routes
     //var playlists
-    var username = "diniangela" //example, change later **
+    var username = "" //example, change later **
     var picture = UIImage(named: "Logo2_Square.png") //picture used for profile picture
     var numberSteps = 0
     

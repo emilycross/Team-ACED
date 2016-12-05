@@ -3326,13 +3326,13 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="edr-DM-Wdq"/>
+        <segue reference="Pxc-wY-A0X"/>
+        <segue reference="Wjf-e1-JVh"/>
         <segue reference="mBF-ib-9as"/>
         <segue reference="t8h-jn-4aF"/>
         <segue reference="KSi-oK-GNA"/>
-        <segue reference="zf2-4V-V9J"/>
-        <segue reference="uX4-wx-HEz"/>
         <segue reference="aRV-2U-GCT"/>
-        <segue reference="tpg-Nr-DGV"/>
-        <segue reference="Wjf-e1-JVh"/>
+        <segue reference="uX4-wx-HEz"/>
     </inferredMetricsTieBreakers>
 </document>
