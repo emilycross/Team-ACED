@@ -219,6 +219,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             playingPlaylist3 = false
             playingPlaylist4 = false
             playingPlaylist5 = false
+            playingMostPlayed = false
             randomPick()
 
         }
