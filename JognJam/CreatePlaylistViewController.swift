@@ -10,18 +10,11 @@ import UIKit
 
 class CreatePlaylistViewController: UIViewController {
 
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     
     @IBOutlet weak var profilePictureButton: UIButton!
-    
-    /* Allow user to pick 5 songs, then create playlist */
-    var numPicked = 0
-    var songsPicked = [12, 12, 12, 12, 12]
-    
-    /* Change colour of song when selected */
-    var selected = UIColor(red: 127/255, green: 7/255, blue: 153/255, alpha: 1.0)
-    var createdPlaylist = false
     
     @IBOutlet weak var song1: UIButton!
     @IBOutlet weak var song2: UIButton!
@@ -34,6 +27,14 @@ class CreatePlaylistViewController: UIViewController {
     @IBOutlet weak var song9: UIButton!
     @IBOutlet weak var song10: UIButton!
     @IBOutlet weak var song11: UIButton!
+    
+    /* Allow user to pick 5 songs, then create playlist */
+    var numPicked = 0
+    var songsPicked = [12, 12, 12, 12, 12]
+    
+    /* Change colour of song when selected */
+    var selected = UIColor(red: 127/255, green: 7/255, blue: 153/255, alpha: 1.0)
+    var createdPlaylist = false
     
     
     override func viewDidLoad() {
@@ -259,6 +260,7 @@ class CreatePlaylistViewController: UIViewController {
         }
     }
     
+    /* Create playlist for user */
     func createPlaylist() {
         /* Figure out what number playlist you're creating */
         for i in 0...4 {
@@ -275,6 +277,7 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist1Locations[i] = player.locations[songsPicked[i]]
                     }
                 }
+                
                 if i == 1 {
                     for i in 0 ... 4 {
                         player.playlist2Artists[i] = player.artists[songsPicked[i]]
@@ -318,7 +321,6 @@ class CreatePlaylistViewController: UIViewController {
                         player.playlist5Locations[i] = player.locations[songsPicked[i]]
                     }
                 }
-                
                 
                 user.playlists[i] = true
                 createdPlaylist = true

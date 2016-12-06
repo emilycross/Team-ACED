@@ -10,12 +10,11 @@ import UIKit
 
 class SpecificPlaylistViewController: UIViewController {
 
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     
     @IBOutlet weak var profilePictureButton: UIButton!
-    
-    var playlistNumber = 0
     
     @IBOutlet weak var playlistNumberLabel: UILabel!
     
@@ -24,6 +23,9 @@ class SpecificPlaylistViewController: UIViewController {
     @IBOutlet weak var song3: UIButton!
     @IBOutlet weak var song4: UIButton!
     @IBOutlet weak var song5: UIButton!
+    
+    /* Number for which playlist the user is viewing */
+    var playlistNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,6 @@ class SpecificPlaylistViewController: UIViewController {
         playlistNumberLabel.text = "Playlist " + String(playlistNumber+1)
         
         retrievePlaylist()
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,16 +56,13 @@ class SpecificPlaylistViewController: UIViewController {
     }
     
     /* Display playlist song title and artist if available on button */
-    func displayPlaylistSong(button: UIButton, num: Int)
-    {
-
+    func displayPlaylistSong(button: UIButton, num: Int) {
         if playlistNumber == 0 {
-                
             if player.playlist1Indices[num] == -1 {
                 button.setTitle("No song available", forState: UIControlState.Normal)
                 button.enabled = false
             }
-        
+            /* Get song titles and artists for playlist */
             else {
                 button.setTitle((player.playlist1Titles[num]+" - "+player.playlist1Artists[num]), forState: UIControlState.Normal)
             }
@@ -76,7 +73,6 @@ class SpecificPlaylistViewController: UIViewController {
                 button.setTitle("No song available", forState: UIControlState.Normal)
                     button.enabled = false
             }
-                
             else {
                 button.setTitle((player.playlist2Titles[num]+" - "+player.playlist2Artists[num]), forState: UIControlState.Normal)
             }
@@ -113,12 +109,11 @@ class SpecificPlaylistViewController: UIViewController {
             }
         }
 
-        
     }
-    
     
     /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "songOneToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -128,6 +123,7 @@ class SpecificPlaylistViewController: UIViewController {
             destinationVC?.playlistNumber = playlistNumber
 
         }
+            
         else if segue.identifier == "songTwoToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -137,6 +133,7 @@ class SpecificPlaylistViewController: UIViewController {
             destinationVC?.playlistNumber = playlistNumber
 
         }
+            
         else if segue.identifier == "songThreeToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -146,6 +143,7 @@ class SpecificPlaylistViewController: UIViewController {
             destinationVC?.playlistNumber = playlistNumber
 
         }
+            
         else if segue.identifier == "songFourToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -155,6 +153,7 @@ class SpecificPlaylistViewController: UIViewController {
             destinationVC?.playlistNumber = playlistNumber
             
         }
+            
         else if segue.identifier == "songFiveToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -163,8 +162,8 @@ class SpecificPlaylistViewController: UIViewController {
             destinationVC?.playlistSong = 4
             destinationVC?.playlistNumber = playlistNumber
 
-            
         }
+            
         else if segue.identifier == "specificPlaylistToPlaylist" {
             let destinationVC = segue.destinationViewController as? PlaylistViewController
             destinationVC?.user = self.user
@@ -176,11 +175,10 @@ class SpecificPlaylistViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "specificPlaylistToLogin" {
             self.user.start = true
             self.player.pause()
         }
-        
-        
     }
 }

@@ -2,7 +2,7 @@
 //  CreateRouteViewController.swift
 //  JognJam
 //
-//  Created by Angela Dini on 2016-12-05.
+//  Created by Team-ACED on 2016-12-05.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -10,14 +10,16 @@ import UIKit
 import CoreLocation
 
 class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
-
+    
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
+    @IBOutlet weak var startRouteButton: UIButton!
+    @IBOutlet weak var saveRouteButton: UIButton!
+    
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     var routeNum = 0
-    
-    @IBOutlet weak var profilePictureButton: UIButton!
-    @IBOutlet weak var startRouteButton: UIButton!
-    @IBOutlet weak var saveRouteButton: UIButton!
     
     /* Used for route tracking */
     var locManager = CLLocationManager()
@@ -41,17 +43,15 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    
     
     /* For location tracking:
        Called when new location update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for loc in locations {
             if loc.horizontalAccuracy < 20 {
-                //save location
+                /* Save location */
                 self.locations.append(loc)
                 
             }
@@ -63,14 +63,11 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
         if user.routeStarted == true {
             startRouteButton.setTitle("Start Route", forState: UIControlState.Normal)
             user.routeStarted = false
-            /*locations.removeAll(keepCapacity: false)
-            locManager.startUpdatingLocation()*/
             saveRouteButton.hidden = false
         }
         else {
             startRouteButton.setTitle("End Route", forState: UIControlState.Normal)
             user.routeStarted = true
-            //locManager.stopUpdatingLocation()
             saveRouteButton.hidden = true
         }
     }
@@ -97,6 +94,7 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "createRouteToLogin" {
             self.user.routeLocations[0] = self.locations
             self.user.start = true

@@ -2,7 +2,7 @@
 //  MostPlayedSongsViewController.swift
 //  JognJam
 //
-//  Created by Emily Cross on 2016-12-05.
+//  Created by Team-ACED on 2016-12-05.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
 
@@ -10,12 +10,11 @@ import UIKit
 
 class MostPlayedSongsViewController: UIViewController {
 
-    
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     
-    var numTimes = [0, 0, 0, 0, 0]
-    var songIndices = [-1, -1, -1, -1, -1]
+    @IBOutlet weak var profilePictureButton: UIButton!
 
     /* Button and corresponding label to show each song and the number of times it was played */
     @IBOutlet weak var song1: UIButton!
@@ -33,7 +32,10 @@ class MostPlayedSongsViewController: UIViewController {
     @IBOutlet weak var song5: UIButton!
     @IBOutlet weak var song5NumTimes: UILabel!
     
-    @IBOutlet weak var profilePictureButton: UIButton!
+    /* Number of times each of the top 5 songs have been played */
+    var numTimes = [0, 0, 0, 0, 0]
+    /* Indices of most played songs (indices match with database of songs in musicPlayer */
+    var songIndices = [-1, -1, -1, -1, -1]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,10 +131,13 @@ class MostPlayedSongsViewController: UIViewController {
             }
         }
     }
-
-
-    func displaySong(button: UIButton, num: Int)
-    {
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    /* Display song title and artist if available on button */
+    func displaySong(button: UIButton, num: Int) {
         if (num == -1) {
             button.setTitle("No song available", forState: UIControlState.Normal)
             button.enabled = false
@@ -142,11 +147,6 @@ class MostPlayedSongsViewController: UIViewController {
             button.setTitle((player.titles[num]+" - "+player.artists[num]), forState: UIControlState.Normal)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     
     /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -160,6 +160,7 @@ class MostPlayedSongsViewController: UIViewController {
             destinationVC?.player.mostPlayedIndices = songIndices
             
         }
+            
         else if segue.identifier == "songTwoToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -170,6 +171,7 @@ class MostPlayedSongsViewController: UIViewController {
 
             
         }
+            
         else if segue.identifier == "songThreeToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -180,6 +182,7 @@ class MostPlayedSongsViewController: UIViewController {
 
             
         }
+            
         else if segue.identifier == "songFourToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -190,6 +193,7 @@ class MostPlayedSongsViewController: UIViewController {
 
             
         }
+            
         else if segue.identifier == "songFiveToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -210,15 +214,10 @@ class MostPlayedSongsViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "mostPlayedSongsToLogin" {
             self.user.start = true
             self.player.pause()
         }
-        
-        
     }
-    
-    
-    
-
 }

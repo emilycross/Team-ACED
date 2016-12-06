@@ -5,8 +5,6 @@
 //  Created by Team-ACED on 2016-11-15.
 //  Copyright © 2016 Team ACED. All rights reserved.
 //
-
-
 //Obtained image picking abilities from https://turbofuture.com/cell-phones/Access-Photo-Camera-and-Library-in-Swift
 
 import UIKit
@@ -15,7 +13,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
 
     @IBOutlet weak var imageView: UIImageView!
     
-    
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     
@@ -64,6 +62,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
 
     /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "profilePictureToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user

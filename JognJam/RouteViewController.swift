@@ -10,10 +10,9 @@ import UIKit
 
 class RouteViewController: UIViewController{
     
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
-    
-    var routeUpTo = -1
     
     @IBOutlet weak var profilePictureButton: UIButton!
     @IBOutlet weak var route1Button: UIButton!
@@ -21,6 +20,9 @@ class RouteViewController: UIViewController{
     @IBOutlet weak var route3Button: UIButton!
     @IBOutlet weak var route4Button: UIButton!
     @IBOutlet weak var route5Button: UIButton!
+    
+    /* Keeps track of how many routes there are */
+    var routeUpTo = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class RouteViewController: UIViewController{
         /* Update profile picture */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
-        /* Set how many routes are made and display */
+        /* Set how many routes are made and display buttons accordingly */
         if user.routeLocations[0] == [] {
             route1Button.hidden = true
             route2Button.hidden = true
@@ -129,16 +131,17 @@ class RouteViewController: UIViewController{
             destinationVC?.player = self.player
             destinationVC?.routeNumber = 5
         }
+            
         else if segue.identifier == "routeToCreateRoute" {
             let destinationVC = segue.destinationViewController as? CreateRouteViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.routeNum = routeUpTo
         }
+            
         else if segue.identifier == "routeToLogin" {
             self.user.start = true
             self.player.pause()
         }
     }
-
 }

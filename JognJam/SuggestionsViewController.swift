@@ -10,12 +10,13 @@ import UIKit
 
 class SuggestionsViewController: UIViewController {
 
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     
-    var musicIsPlaying = true
-    var suggestBy = ""
-    
+    @IBOutlet weak var profilePictureButton: UIButton!
+
+    /* Labels to keep track of type of suggestion */
     @IBOutlet weak var suggestionsByLabel: UILabel!
     @IBOutlet weak var currentSuggestionAttributeLabel: UILabel!
     
@@ -25,15 +26,20 @@ class SuggestionsViewController: UIViewController {
     @IBOutlet weak var songSuggestion4Label: UIButton!
     @IBOutlet weak var songSuggestion5Label: UIButton!
     
-    @IBOutlet weak var profilePictureButton: UIButton!
+    /* See whether music is playing */
+    var musicIsPlaying = true
+    /* Current type of suggestions */
+    var suggestBy = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        //Makes the status bar visible
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        /* Update profile picture */
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
         if suggestBy == "artist" {
             suggestionsByLabel.text = "Suggestions By Artist"
@@ -58,10 +64,9 @@ class SuggestionsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    func getSuggestions()
-    {
+    
+    func getSuggestions() {
         if suggestBy == "artist" {
             player.getSuggestionsByArtist(user.currentSongArtist)
             putSuggestionIntoLabel(songSuggestion1Label, num: 0)
@@ -115,16 +120,9 @@ class SuggestionsViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "suggestionsToMainSong1" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -133,6 +131,7 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.fromSuggestions = 0
             
         }
+            
         else if segue.identifier == "suggestionsToMainSong2" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -141,14 +140,15 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.fromSuggestions = 1
             
         }
+            
         else if segue.identifier == "suggestionsToMainSong3" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 2
-            
         }
+            
         else if segue.identifier == "suggestionsToMainSong4" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -156,6 +156,7 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 3
         }
+            
         else if segue.identifier == "suggestionsToMainSong5" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
@@ -163,12 +164,14 @@ class SuggestionsViewController: UIViewController {
             destinationVC?.player = self.player
             destinationVC?.fromSuggestions = 4
         }
+            
         else if segue.identifier == "suggestionsToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             user.start = false
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "suggestionsToLogin" {
             self.user.start = true
             self.player.pause()

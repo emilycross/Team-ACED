@@ -11,10 +11,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profilePictureButton: UIButton!
+
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var numberStepsLabel: UILabel!
     
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
 
@@ -42,11 +44,13 @@ class ProfileViewController: UIViewController {
     
     /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "profileToProfilePicture" {
             let destinationVC = segue.destinationViewController as? ProfilePictureViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "profileToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController
             destinationVC?.user = self.user
@@ -64,11 +68,11 @@ class ProfileViewController: UIViewController {
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "profileToLogin" {
             self.user.start = true
             self.player.pause()
         }
-        
     }
     
 }

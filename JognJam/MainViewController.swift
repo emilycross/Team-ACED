@@ -9,21 +9,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var currentSongLabel: UILabel!
-    
-    var fromSuggestions = -1
-    
-    var playlistNumber = -1
-    var playlistSong = -1
-    
-    var mostPlayedSongIndice = -1
     
     var user = userProfile()
     var player = musicPlayer()
     
-    @IBOutlet weak var currentSpeedLabel: UILabel!
-    var currentSpeedOfSong = 0
+    @IBOutlet weak var profilePictureButton: UIButton!
     
+    @IBOutlet weak var currentSongLabel: UILabel!
+    @IBOutlet weak var currentSpeedLabel: UILabel!
     
     @IBOutlet weak var randomiseButton: UIButton!
     
@@ -31,32 +24,46 @@ class MainViewController: UIViewController {
     @IBOutlet weak var suggestedSongButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
     
-    
-    var suggestedSongTitle = ""
-    var suggestedArtist = ""
-    
-    @IBOutlet weak var createNewPlaylistButton: UIButton!
-    var numPlaylists = 0
-    
-    
-    @IBOutlet weak var profilePictureButton: UIButton!
-    //boolean to show that music is playing and the play button is the pause image
-    var isPlayingMusic = false
-    
     @IBOutlet weak var playButton: UIButton!
-    let playImage = UIImage(named: "playButton.png")
-    let pauseImage = UIImage(named: "pauseButton.png")
-    
+
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var createNewPlaylistButton: UIButton!
+
+    var currentSpeedOfSong = 0
+    
+    var suggestedSongTitle = ""
+    var suggestedArtist = ""
+    var fromSuggestions = -1
+    
+    /* Images for play/pause button */
+    let playImage = UIImage(named: "playButton.png")
+    let pauseImage = UIImage(named: "pauseButton.png")
+    
+    /* Boolean to show that music is playing and the play button is the pause image */
+    var isPlayingMusic = false
+
+    /* Current number of playlists */
+    var numPlaylists = 0
+    /* Which number playlist is being played */
+    var playlistNumber = -1
+    /* Which song on the given playlist is being played */
+    var playlistSong = -1
+    
+    /* If playing most played song, which index */
+    var mostPlayedSongIndice = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        //Makes the status bar visible
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        /* Update profile picture */
+        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
+        
+        /* State before any music has been played */
         if user.start == true {
             currentSongLabel.text = "No song playing"
             suggestedSongButton.setTitle("No suggestions", forState: UIControlState.Normal)
@@ -68,6 +75,8 @@ class MainViewController: UIViewController {
             nextButton.hidden = true
             nextButton.enabled = false
         }
+            
+        /* Current song */
         else if fromSuggestions == -1 && (playlistNumber == -1 || playlistSong == -1) && mostPlayedSongIndice == -1 {
             currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
             prevButton.hidden = false
@@ -75,6 +84,8 @@ class MainViewController: UIViewController {
             nextButton.hidden = false
             nextButton.enabled = true
         }
+            
+        /* Playing a playlist */
         else if playlistNumber != -1 && playlistSong != -1 {
             if (playlistNumber == 0) {
                 playPlaylist1(playlistSong)
@@ -97,19 +108,18 @@ class MainViewController: UIViewController {
             nextButton.enabled = true
         }
         
+        /* Playing most played songs */
         else if mostPlayedSongIndice != -1 {
-            "hello?"
             playMostPlayed(mostPlayedSongIndice)
             prevButton.hidden = false
             prevButton.enabled = true
             nextButton.hidden = false
             nextButton.enabled = true
-            
-            
         }
             
         
-        else { //fromSuggestions != -1
+        /* Play suggestions */
+        else {
             playSuggestions(fromSuggestions)
             prevButton.hidden = false
             prevButton.enabled = true
@@ -117,6 +127,7 @@ class MainViewController: UIViewController {
             nextButton.enabled = true
         }
         
+        /* Current song information */
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
         user.currentSongIndex = player.currentIndex
@@ -124,6 +135,7 @@ class MainViewController: UIViewController {
         user.currentLocation = player.currentLocation
         currentSpeedLabel.text = String(player.currentSongSpeed) + " bpm"
         
+        /* If the user turns off song suggestions, hide them */
         if user.musicSuggestions == false {
             suggestedSongButton.hidden = true
             suggestionsLabel.hidden = true
@@ -137,6 +149,8 @@ class MainViewController: UIViewController {
             }
             setSuggestionLabel()
         }
+        
+        /* If song is playing, display information */
         if player.songPlaying == true {
             playButton.setImage(pauseImage, forState: UIControlState.Normal)
             currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
@@ -147,15 +161,14 @@ class MainViewController: UIViewController {
             }
         }
         
-        profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
-        
-        /* hide the create new playlist button if they already have 5 playlists created */
+        /* Hide the create new playlist button if they already have 5 playlists created */
         for i in 0...4 {
             if (user.playlists[i]) {
                 numPlaylists += 1
             }
         }
         
+        /* Otherwise, let them create a new playlist from the main page */
         if (numPlaylists == 5) {
             createNewPlaylistButton.hidden = true
         }
@@ -163,13 +176,17 @@ class MainViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    /* Pressed play button */
     @IBAction func playButtonPressed(sender: UIButton) {
-        if user.start == true { //pick a random song to play
+        /* Play a random song */
+        if user.start == true {
             player.randomPick()
         }
+        
         user.start = false
+        /* Current song information */
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
@@ -178,8 +195,8 @@ class MainViewController: UIViewController {
         user.currentSongSpeed = player.currentSongSpeed
         user.currentLocation = player.currentLocation
         currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
-        //changes song to current song
-        //changes the image
+        
+        /* Changes image based on whether music is playing or paused */
         isPlayingMusic = !isPlayingMusic
         if isPlayingMusic == true {
             playButton.setImage(pauseImage, forState: UIControlState.Normal)
@@ -189,20 +206,25 @@ class MainViewController: UIViewController {
             playButton.setImage(playImage, forState: UIControlState.Normal)
             player.pause()
         }
+        
+        /* Display suggestions if user has them turned on */
         if user.musicSuggestions == true {
             setSuggestionLabel()
         }
+        
         prevButton.hidden = false
         prevButton.enabled = true
         nextButton.hidden = false
         nextButton.enabled = true
     }
     
+    /* Pressed previous button */
     @IBAction func prevButtonPressed(sender: UIButton) {
         user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.prev()
         player.play()
+        /* Current song information */
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
@@ -222,11 +244,13 @@ class MainViewController: UIViewController {
 
     }
     
+    /* Pressed next button */
     @IBAction func nextButtonPressed(sender: UIButton) {
         user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.next()
         player.play()
+        /* Current song information */
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
@@ -245,12 +269,13 @@ class MainViewController: UIViewController {
         nextButton.enabled = true
     }
     
-
+    /* If the user selects a suggestion song, play it */
     @IBAction func suggestionSongPressed(sender: UIButton) {
         user.start = false
         playButton.setImage(pauseImage, forState: UIControlState.Normal)
         player.suggestionPressed()
         player.play()
+        /* Current song information */
         currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
         user.currentSongTitle = player.currentSongTitle
         user.currentSongArtist = player.currentArtist
@@ -269,6 +294,7 @@ class MainViewController: UIViewController {
         nextButton.enabled = true
     }
     
+    /* If the user selects randomise, play random songs */
     @IBAction func randomiseButtonPressed(sender: AnyObject) {
         player.randomised = true
         user.start = false
@@ -293,16 +319,16 @@ class MainViewController: UIViewController {
         nextButton.enabled = true
     }
     
-    
-    
-    
+    /* Set label based on suggestions */
     func setSuggestionLabel() {
+        /* If music hasn't started, no suggestions */
         if user.start == true {
             suggestedSongButton.setTitle("No suggestions", forState: UIControlState.Normal)
             suggestedSongButton.enabled = false
             moreButton.enabled = false
             moreButton.hidden = true
         }
+        /* Otherwise, provide suggestions as desired */
         else {
             player.getSuggestionsByArtist(user.currentSongArtist)
             if player.suggestionsIndices[0] == -1 {
@@ -354,6 +380,8 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    /* Play selected suggestions */
     func playSuggestions(n: Int) {
         user.start = false
         player.pickSong(player.suggestionsIndices[n])
@@ -367,9 +395,11 @@ class MainViewController: UIViewController {
         }
     }
     
+    /* Play a given playlist */
     func playPlaylist1 (n: Int) {
         var count = n
         if (count < 5) {
+            /* Make sure that only one playlist is playing */
             player.playingPlaylist1 = true
             player.playingPlaylist2 = false
             player.playingPlaylist3 = false
@@ -391,6 +421,7 @@ class MainViewController: UIViewController {
             if user.musicSuggestions == true {
                 setSuggestionLabel()
             }
+            /* Play next song in playlist */
             count += 1
             
         }
@@ -514,9 +545,11 @@ class MainViewController: UIViewController {
         
     }
     
+    /* Play the msot played music */
     func playMostPlayed (n: Int) {
         var count = n
         if (count < 5) {
+            /* Make sure playlists aren't playing in the background */
             player.playingMostPlayed = true
             player.playingPlaylist1 = false
             player.playingPlaylist2 = false
@@ -536,37 +569,33 @@ class MainViewController: UIViewController {
             if user.musicSuggestions == true {
                 setSuggestionLabel()
             }
+            /* Keep playing most listen to music */
             count += 1
         }
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "mainToSettings" {
             let destinationVC = segue.destinationViewController as? SettingsViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "mainToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "mainToSuggestBy" {
             let destinationVC = segue.destinationViewController as? SuggestByViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
+            
         else if segue.identifier == "mainToCreatePlaylist" {
             let destinationVC = segue.destinationViewController as? CreatePlaylistViewController
             destinationVC?.user = self.user

@@ -10,24 +10,25 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class musicPlayer: NSObject, AVAudioPlayerDelegate
-{
+class musicPlayer: NSObject, AVAudioPlayerDelegate {
     
     
-    //Database of songs, information
+    /* Songs and their corresponding information */
     var numSongs = 11
     var titles = ["All In", "Beat Pop", "Death of an Orchid", "Eine Kleine Nachtmusik", "Jingle Bells", "Levels of Greatness", "Sandbox Jingle", "Saturday", "Stay", "Symphony 9 2nd Movement", "Tomorrow"]
     var artists = ["The Red Thread", "Scott Holmes", "Scott Holmes", "Mozart", "Scott Holmes", "Scott Holmes", "Scott Holmes", "Maxwell Powers", "Simple CUT", "Beethoven", "Scott Jacobs"]
     var genres = ["Country", "Pop", "Post-Rock", "Classical", "Pop", "Post-Rock", "Pop", "Pop", "Pop", "Classical", "Country"]
     var speedsOfSongs = [188, 95, 70, 144, 220, 100, 145, 100, 95, 150, 71]
-    //Rounds the values in speedsOfSongs to their nearest multiple of ten
+    /* Rounds the values in speedsOfSongs to their nearest multiple of ten */
     var speedsOfSongsTens = [10*Int(188/10), 10*Int(95/10), 10*Int(70/10), 10*Int(144/10), 10*Int(220/10), 10*Int(100/10), 10*Int(145/10), 10*Int(100/10), 10*Int(95/10), 10*Int(150/10), 10*Int(71/10)]
+    /* Locations of songs (all set to Halifax for now */
     var locations = ["Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS", "Halifax, NS"]
+    /* Song file locations */
     var songFile = ["allIn", "beatPop", "deathOfAnOrchid", "eineKleineNachtmusik", "jingleBells", "levelsOfGreatness", "sandboxJingle", "saturday", "stay", "symphony92ndMovement", "tomorrow"]
-    /* to keep track of most frequently listened to songs */
+    /* Keeps track of how many times each song is played */
     var numberOfTimesPlayed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
-    
+    /* Current song information */
     var currentSongTitle=""
     var currentArtist = ""
     var currentGenre = ""
@@ -35,31 +36,37 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var currentIndex = -1
     var currentSongSpeed = 0
     var currentLocation = ""
+    
+    /* Audio player to play music */
     var audioPlayer = AVAudioPlayer()
+    
+    /* Check whether song is playing */
     var songDone = false
     var songPlaying = false
     
-    
+    /* Check whether playlists are playing */
     var playingPlaylist1 = false
     var playingPlaylist2 = false
     var playingPlaylist3 = false
     var playingPlaylist4 = false
     var playingPlaylist5 = false
+    /* Index for currently playing playlist */
     var playlistIndex = -1
     
-    /*indices are selected such that they correspond to the order the songs are in the database
+    /* Indices are selected such that they correspond to the order the songs are in the database
     i.e. If someone's most played song is Jingle Bells, mostPlayedIndices[0] is 4 */
     var playingMostPlayed = false
     var mostPlayedIndices = [-1,-1,-1,-1,-1]
     var mostPlayedSongIndex = -1
     
+    /* Check if music player is in random mode */
     var randomised = false
 
-    //Records the index of the last played song, and if needed the next song to play
+    /* Records the index of the last played song, and if needed the next song to play */
     var prevSongIndex = -1
     var nextSongIndex = -1
     
-    
+    /* Information for suggestion songs */
     var suggestionsIndices = [-1,-1,-1,-1,-1]
     var suggestionsTitles = ["","","","",""]
     var suggestionsArtists = ["","","","",""]
@@ -67,6 +74,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var suggestionsSpeed = [0,0,0,0,0]
     var suggestionsLocations = ["","","","",""]
     
+    /* Information for playlist songs */
     var playlist1Indices = [-1,-1,-1,-1,-1]
     var playlist1Titles = ["","","","",""]
     var playlist1Artists = ["","","","",""]
@@ -102,9 +110,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var playlist5Speed = [0,0,0,0,0]
     var playlist5Locations = ["","","","",""]
     
+    /* Pick song to play from database */
     func pickSong(n: Int) {
-        if(n < titles.count)
-        {
+        if(n < titles.count) {
+            /* Fill info about current song */
             currentSongTitle = titles[n]
             currentArtist = artists[n]
             currentSongFile = songFile[n]
@@ -114,23 +123,24 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             currentIndex = n
             numberOfTimesPlayed[n] += 1
             
+            /* Get song file */
             let songSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(currentSongFile, ofType: "mp3")!)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOfURL: songSound)
             } catch {
                 print("Cannot find audio")
             }
-            audioPlayer.prepareToPlay()
             
+            audioPlayer.prepareToPlay()
         }
     }
     
-    //Plays a random song
+    /* Plays a random song */
     func randomPick(){
         pickSong(randomSong()-1)
     }
     
-    //Returns a random index in the array of songs
+    /* Returns a random index in the array of songs */
     func randomSong() ->Int {
         var randSelection = currentIndex+1
         while randSelection == currentIndex+1 {
@@ -139,13 +149,14 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         return randSelection
     }
     
-    //Controls
+    /* Play music */
     func play()
     {
         audioPlayer.play()
         songPlaying = true
     }
     
+    /* Pause music */
     func pause()
     {
         if songPlaying == true {
@@ -154,9 +165,11 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         }
     }
     
+    /* Find next song */
     func next() {
         prevSongIndex = currentIndex
         
+        /* If playing a playlist, only play songs on that playlist untilt the user leaves the playlist */
         if (playingPlaylist1) {
             if (playlistIndex < 4) {
                 playlistIndex += 1
@@ -212,8 +225,9 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             }
         }
         
-            
+        /* Play randomised songs if the user selects the randomise button */
         else if randomised == true {
+            /* Make sure playlists are disabled so it doesn't play mutliple songs at once */
             playingPlaylist1 = false
             playingPlaylist2 = false
             playingPlaylist3 = false
@@ -223,7 +237,8 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             randomPick()
 
         }
-            
+        
+        /* Play most played songs */
         else if playingMostPlayed == true {
             if (mostPlayedSongIndex < 4) {
                 mostPlayedSongIndex += 1
@@ -249,6 +264,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         
     }
     
+    /* Keep track of previous song so user can go back */
     func prev() {
         nextSongIndex = currentIndex
         if prevSongIndex == -1 {
@@ -258,8 +274,9 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             pickSong(prevSongIndex)
             prevSongIndex = -1
         }
-        
     }
+    
+    /* If user picks suggestions */
     func suggestionPressed() {
         pause()
         prevSongIndex = currentIndex
@@ -267,9 +284,8 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         nextSongIndex = -1
     }
     
-    //Methods for suggestions by different attributes
-    func getSuggestionsByArtist(artist: String)
-    {
+    /* Methods for suggestions by different attributes */
+    func getSuggestionsByArtist(artist: String) {
         reset()
         for i in 0...4 {
             for j in 0...(artists.count-1) {
@@ -285,8 +301,8 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             }
         }
     }
-    func getSuggestionByGenre(genre: String)
-    {
+    
+    func getSuggestionByGenre(genre: String) {
         reset()
         for i in 0...4 {
             for j in 0...(genres.count-1) {
@@ -338,6 +354,8 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         }
 
     }
+    
+    /* Reset suggestion song information */
     func reset() {
         suggestionsIndices = [-1,-1,-1,-1,-1]
         suggestionsTitles = ["","","","",""]
@@ -346,11 +364,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         suggestionsSpeed = [0,0,0,0,0]
         suggestionsLocations = ["","","","",""]
     }
-
     
-    
+    /* If the user selects a playlist, play it */
     func playSelectedPlaylist(playlist: Int) {
-        /* automatically fill first playlist with first 5 songs so we have something to show in demo */
+        /* Automatically fill first playlist with first 5 songs so we have something to show in demo */
         reset()
         if (playlist == 0) {
             for i in 0...4 {
@@ -364,12 +381,9 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
         }
     }
     
- 
-    
-    
-    //The song stopped so play the next one, have to change
+    /* The song stopped so play the next one, have to change song */
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        //Play another random song
+        /* Play another random song */
         let randSelection = Int(arc4random_uniform(UInt32(numSongs)) + 1)
         pickSong(randSelection-1)
         play()

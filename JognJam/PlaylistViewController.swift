@@ -10,18 +10,18 @@ import UIKit
 
 class PlaylistViewController: UIViewController {
 
+    /* Maintain user and music player */
     var user = userProfile()
     var player = musicPlayer()
     
     @IBOutlet weak var profilePictureButton: UIButton!
+    
     @IBOutlet weak var playlist1Button: UIButton!
     @IBOutlet weak var playlist2Button: UIButton!
     @IBOutlet weak var playlist3Button: UIButton!
     @IBOutlet weak var playlist4Button: UIButton!
     @IBOutlet weak var playlist5Button: UIButton!
-    
     @IBOutlet weak var createNewPlaylistButton: UIButton!
-    
     
     var numPlaylists = 0
     
@@ -73,6 +73,7 @@ class PlaylistViewController: UIViewController {
     
     /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "playlistToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
             destinationVC?.user = self.user
