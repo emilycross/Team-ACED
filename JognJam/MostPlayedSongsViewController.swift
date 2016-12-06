@@ -17,7 +17,7 @@ class MostPlayedSongsViewController: UIViewController {
     var numTimes = [0, 0, 0, 0, 0]
     var songIndices = [-1, -1, -1, -1, -1]
 
-    
+    /* Button and corresponding label to show each song and the number of times it was played */
     @IBOutlet weak var song1: UIButton!
     @IBOutlet weak var song1NumTimes: UILabel!
     
@@ -37,21 +37,27 @@ class MostPlayedSongsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* Makes status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        /* Updates profile picture */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
-        
+        /* Number of times all songs in database were played */
         var timesPlayed = player.numberOfTimesPlayed
+        /* Sort the number of times each song was played */
         var sortedTimesPlayed = player.numberOfTimesPlayed.sort()
         
+        /* Find most played song - similar methods for all top 5 songs */
         for i in 0...4 {
             numTimes[i] = sortedTimesPlayed[i]
             if (i == 0) {
                 song1NumTimes.text = "Played " + String(sortedTimesPlayed[10]) + " Times"
                 for j in 0...10 {
+                    /* Songs are sorted in ascending order, so the last song should be first */
                     if (timesPlayed[j] == sortedTimesPlayed[10]) {
                         if !(sortedTimesPlayed[10] == 0) {
                             songIndices[0] = j
+                            /* Display the song */
                             displaySong(song1, num: j)
                         }
                         else {
@@ -122,8 +128,6 @@ class MostPlayedSongsViewController: UIViewController {
                 }
             }
         }
-
-        // Do any additional setup after loading the view.
     }
 
 
@@ -143,20 +147,9 @@ class MostPlayedSongsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    /* segue preparation */
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "songOneToMain" {

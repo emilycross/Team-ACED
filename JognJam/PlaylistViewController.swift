@@ -27,20 +27,24 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                //Makes the status bar visible
+        /* Makes the status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        /* Sets profile picture image */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
+        /* Check how many playlists there are */
         for i in 0...4 {
             if (user.playlists[i] == true) {
                 numPlaylists += 1
             }
         }
         
+        /* Only allow the user to have 5 playlists */
         if (numPlaylists == 5) {
             createNewPlaylistButton.hidden = true
         }
             
+        /* Display buttons for each playlist that currently exists */
         else if (numPlaylists < 5){
             playlist5Button.hidden = true
             if numPlaylists < 4 {
@@ -64,10 +68,11 @@ class PlaylistViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
-    /* segue preparation */
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "playlistToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController

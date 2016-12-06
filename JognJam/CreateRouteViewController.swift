@@ -19,21 +19,23 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var startRouteButton: UIButton!
     @IBOutlet weak var saveRouteButton: UIButton!
     
-    //For route tracking
+    /* Used for route tracking */
     var locManager = CLLocationManager()
     var locations = [CLLocation]()
     var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        /* Set up location management */
         locManager.delegate = self
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.activityType = .Fitness
         locManager.requestAlwaysAuthorization()
         
-         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        /* Makes the status bar visible */
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        /* Set profile picture image */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
     }
 
@@ -41,10 +43,11 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    //For location tracking
     
-    //Called when new location update
+    /* For location tracking:
+       Called when new location update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for loc in locations {
             if loc.horizontalAccuracy < 20 {
@@ -55,6 +58,7 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    /* Start the route */
     @IBAction func startRoutePressed(sender: UIButton) {
         if user.routeStarted == true {
             startRouteButton.setTitle("Start Route", forState: UIControlState.Normal)
@@ -70,20 +74,14 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
             saveRouteButton.hidden = true
         }
     }
+    
+    /* Created a sample route for the demo using preset location data */
     @IBAction func saveRoutePressed(sender: UIButton) {
         locations = [CLLocation(latitude: 48.0658, longitude: -66.3731), CLLocation(latitude: 44.6474, longitude: -63.5806), CLLocation(latitude: 44.6304, longitude: -63.6028), CLLocation(latitude: 44.6233, longitude: -63.5686), CLLocation(latitude: 48.0658, longitude: -66.3731)]
         user.routeLocations[0] = locations
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "createRouteToProfile" {

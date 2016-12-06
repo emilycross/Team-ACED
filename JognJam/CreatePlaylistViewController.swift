@@ -13,9 +13,13 @@ class CreatePlaylistViewController: UIViewController {
     var user = userProfile()
     var player = musicPlayer()
     
+    @IBOutlet weak var profilePictureButton: UIButton!
+    
+    /* Allow user to pick 5 songs, then create playlist */
     var numPicked = 0
     var songsPicked = [12, 12, 12, 12, 12]
     
+    /* Change colour of song when selected */
     var selected = UIColor(red: 127/255, green: 7/255, blue: 153/255, alpha: 1.0)
     var createdPlaylist = false
     
@@ -30,9 +34,6 @@ class CreatePlaylistViewController: UIViewController {
     @IBOutlet weak var song9: UIButton!
     @IBOutlet weak var song10: UIButton!
     @IBOutlet weak var song11: UIButton!
-    
-    
-    @IBOutlet weak var profilePictureButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -52,6 +53,7 @@ class CreatePlaylistViewController: UIViewController {
     }
     
     
+    /* Retrieve the song information */
     func retrieveSongs() {
         displaySong(song1, num: 0)
         displaySong(song2, num: 1)
@@ -66,8 +68,8 @@ class CreatePlaylistViewController: UIViewController {
         displaySong(song11, num: 10)
     }
     
-    func displaySong(button: UIButton, num: Int)
-    {
+    /* For a given song, print out the title and artist if it exists */
+    func displaySong(button: UIButton, num: Int) {
         if player.titles[num] == "" {
             button.setTitle("No song available", forState: UIControlState.Normal)
             button.enabled = false
@@ -79,9 +81,11 @@ class CreatePlaylistViewController: UIViewController {
         
     }
     
-    
+    /* Methods for each song from database for a given song being added 
+       Each method is essentially the same */
     @IBAction func addSong1(sender: AnyObject) {
         if (numPicked < 5) {
+            /* Put song in the right spot in the playlist */
             for i in 0...4 {
                 if(songsPicked[i] == 12 && !songsPicked.contains(0)) {
                     songsPicked[i] = 0
@@ -91,11 +95,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-        
     }
     
     @IBAction func addSong2(sender: AnyObject) {
@@ -109,11 +110,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-        
     }
     
     
@@ -128,11 +126,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-
     }
     
     @IBAction func addSong4(sender: AnyObject) {
@@ -146,11 +141,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-
     }
     
     @IBAction func addSong5(sender: AnyObject) {
@@ -164,9 +156,7 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
     }
     
@@ -181,11 +171,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-
     }
     
     @IBAction func addSong7(sender: AnyObject) {
@@ -217,11 +204,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-
     }
     
     @IBAction func addSong9(sender: AnyObject) {
@@ -235,9 +219,7 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-         
         }
     }
     
@@ -252,11 +234,8 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
-
     }
     
     
@@ -271,12 +250,11 @@ class CreatePlaylistViewController: UIViewController {
                     checkSize()
                     break;
                 }
-                
             }
-            
         }
     }
     
+    /* When 5 songs added, create the playlist */
     func checkSize() {
         if (numPicked == 5) {
             createPlaylist()
@@ -284,9 +262,12 @@ class CreatePlaylistViewController: UIViewController {
     }
     
     func createPlaylist() {
+        /* Figure out what number playlist you're creating */
         for i in 0...4 {
+            /* Create the playlist with the songs the user chose */
             if user.playlists[i] == false && createdPlaylist == false {
                 if i == 0 {
+                    /* Add songs to playlist */
                     for i in 0 ... 4 {
                         player.playlist1Artists[i] = player.artists[songsPicked[i]]
                         player.playlist1Titles[i] = player.titles[songsPicked[i]]
@@ -347,22 +328,14 @@ class CreatePlaylistViewController: UIViewController {
             
         }
         
+        /* Go back to playlist main page so the user can access their playlist(s) */
         performSegueWithIdentifier("createPlaylistToPlaylist", sender: self)
         
         
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "createPlaylistToPlaylist" {
             let destinationVC = segue.destinationViewController as? PlaylistViewController

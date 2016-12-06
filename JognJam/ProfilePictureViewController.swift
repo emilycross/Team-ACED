@@ -22,11 +22,10 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        //Makes the status bar visible
+        /* Makes the status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        /* Set profile picture image */
         imageView.image = user.picture
     }
 
@@ -35,9 +34,10 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
         // Dispose of any resources that can be recreated.
     }
     
-    //Methods from the modal page that is shown after the profile picture is pressed
+    /* Methods from the modal page that is shown after the profile picture is pressed */
     @IBAction func changeProfilePictureCamera(sender: UIButton) {
         
+        /* Uses camera to change profile picture */
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             let imagePick = UIImagePickerController()
             imagePick.delegate = self
@@ -47,6 +47,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
          }
     }
     
+    /* Changes profile picture from photo library */
     @IBAction func changeProfilePictureLibrary(sender: UIButton) {
          if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
             let imagePick = UIImagePickerController()
@@ -63,15 +64,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
         self.dismissViewControllerAnimated(true, completion: nil)
      }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profilePictureToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController

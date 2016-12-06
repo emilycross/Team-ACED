@@ -20,14 +20,18 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        //Makes the status bar visible
+        /* Makes the status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        /* Display username */
         usernameLabel.text = user.username
+        
+        /* Set profile picture image */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         user.numberSteps = (UIApplication.sharedApplication().delegate! as! AppDelegate).nSteps
+        
+        /* Print number of steps from pedometer */
         numberStepsLabel.text = String(user.numberSteps) + " steps"
         
     }
@@ -37,15 +41,7 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profileToProfilePicture" {
             let destinationVC = segue.destinationViewController as? ProfilePictureViewController
