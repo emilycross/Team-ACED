@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class SpecificRouteViewController: UIViewController {
+class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
     
     var user = userProfile()
     var player = musicPlayer()
     
     var routeNumber = 0
-
+    var locations = [CLLocation]()
+    
     @IBOutlet weak var routeNumberLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var profilePictureButton: UIButton!
     
@@ -27,12 +30,50 @@ class SpecificRouteViewController: UIViewController {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
+        locations = user.routeLocations[routeNumber]
+        
         routeNumberLabel.text = "Route " + String(routeNumber)
+        mapView.delegate = self
+        for i in 0...(locations.count-2) {
+            let srcLoc = locations[i]
+            let srcCoor = srcLoc.coordinate
+            let destLoc = locations[i+1]
+            let destCoor = destLoc.coordinate
+            let srcPlacemark = MKPlacemark(coordinate: srcCoor, addressDictionary: nil)
+            let destPlacemark = MKPlacemark(coordinate: destCoor, addressDictionary: nil)
+            let srcMapItem = MKMapItem(placemark: srcPlacemark)
+            let destMapItem = MKMapItem(placemark: destPlacemark)
+            let srcAnnotation = MKPointAnnotation()
+            srcAnnotation.coordinate = srcCoor
+            let destAnnotation = MKPointAnnotation()
+            destAnnotation.coordinate = destCoor
+            self.mapView.showAnnotations([srcAnnotation, destAnnotation], animated: true)
+            let dirRequest = MKDirectionsRequest()
+            dirRequest.source = srcMapItem
+            dirRequest.destination = destMapItem
+            dirRequest.transportType = MKDirectionsTransportType.Walking
+            
+            let dir = MKDirections(request: dirRequest)
+            dir.calculateDirectionsWithCompletionHandler{
+                (response, error) -> Void in
+                guard let response = response else {
+                    if error != nil {
+                        print ("Error with getting directions")
+                    }
+                    return
+                }
+                let route = response.routes[0]
+                self.mapView.addOverlay((route.polyline), level: MKOverlayLevel.AboveRoads)
+                let rect = route.polyline.boundingMapRect
+                self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -51,6 +92,14 @@ class SpecificRouteViewController: UIViewController {
             self.player.pause()
         }
         
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.redColor()
+        renderer.lineWidth = 4.0
+        
+        return renderer
     }
 
 }

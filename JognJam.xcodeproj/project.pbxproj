@@ -22,6 +22,7 @@
 		329D06D61DD52D0400717938 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 329D06D11DD52D0400717938 /* settingsButton.png */; };
 		329D06DC1DD538F300717938 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DB1DD538F300717938 /* UsersDatabase.swift */; };
 		329D06E01DD5413A00717938 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D06DF1DD5413A00717938 /* SettingsViewController.swift */; };
+		32ECF2E01DF6170500CDDC07 /* CreateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECF2DF1DF6170500CDDC07 /* CreateRouteViewController.swift */; };
 		C12348781DF47EDA00D521F6 /* Logo1_Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348721DF47EDA00D521F6 /* Logo1_Circle.png */; };
 		C12348791DF47EDA00D521F6 /* Logo1_Square.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348731DF47EDA00D521F6 /* Logo1_Square.png */; };
 		C123487A1DF47EDA00D521F6 /* Logo1_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C12348741DF47EDA00D521F6 /* Logo1_Transparent.png */; };
@@ -90,6 +91,7 @@
 		329D06D11DD52D0400717938 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsButton.png; path = JognJam/settingsButton.png; sourceTree = SOURCE_ROOT; };
 		329D06DB1DD538F300717938 /* UsersDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDatabase.swift; sourceTree = "<group>"; };
 		329D06DF1DD5413A00717938 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		32ECF2DF1DF6170500CDDC07 /* CreateRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRouteViewController.swift; sourceTree = "<group>"; };
 		C12348721DF47EDA00D521F6 /* Logo1_Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1_Circle.png; sourceTree = "<group>"; };
 		C12348731DF47EDA00D521F6 /* Logo1_Square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1_Square.png; sourceTree = "<group>"; };
 		C12348741DF47EDA00D521F6 /* Logo1_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1_Transparent.png; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				323477361DDB81FF00364743 /* ProfilePictureViewController.swift */,
 				C1520BBD1DCBC55600CBC741 /* AppDelegate.swift */,
 				C1520BC51DCBC55600CBC741 /* Main.storyboard */,
+				32ECF2DF1DF6170500CDDC07 /* CreateRouteViewController.swift */,
 				C1EBE4061DF5D8C4004C6FEC /* CreatePlaylistViewController.swift */,
 				C1C163331DDE4EB00043D195 /* PlaylistViewController.swift */,
 				C1EBE4081DF624B9004C6FEC /* MostPlayedSongsViewController.swift */,
@@ -318,6 +321,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6X2YV4VF7E;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 0;
 							};
@@ -417,6 +423,7 @@
 				C1C163301DDE4E030043D195 /* RouteViewController.swift in Sources */,
 				C1C163321DDE4E320043D195 /* SpecificRouteViewController.swift in Sources */,
 				C16FEC731DD3B50700136830 /* LoginViewController.swift in Sources */,
+				32ECF2E01DF6170500CDDC07 /* CreateRouteViewController.swift in Sources */,
 				3294111E1DD3C077001B1DBB /* ProfileViewController.swift in Sources */,
 				C1520BBE1DCBC55600CBC741 /* AppDelegate.swift in Sources */,
 				3227E9B71DD77A6C007A23E4 /* userProfile.swift in Sources */,
