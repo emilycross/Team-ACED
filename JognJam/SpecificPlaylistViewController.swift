@@ -28,10 +28,12 @@ class SpecificPlaylistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Makes the status bar visible
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        /* Update profile picture */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
+        /* Set label of number of playlist */
         playlistNumberLabel.text = "Playlist " + String(playlistNumber+1)
         
         retrievePlaylist()
@@ -43,7 +45,7 @@ class SpecificPlaylistViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
+    /* Retrieve playlist and display it */
     func retrievePlaylist() {
         player.playSelectedPlaylist(playlistNumber)
         displayPlaylistSong(song1, num: 0)
@@ -53,6 +55,7 @@ class SpecificPlaylistViewController: UIViewController {
         displayPlaylistSong(song5, num: 4)
     }
     
+    /* Display playlist song title and artist if available on button */
     func displayPlaylistSong(button: UIButton, num: Int)
     {
 
@@ -114,7 +117,7 @@ class SpecificPlaylistViewController: UIViewController {
     }
     
     
-    /* segue preparation */
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "songOneToMain" {
             let destinationVC = segue.destinationViewController as? MainViewController

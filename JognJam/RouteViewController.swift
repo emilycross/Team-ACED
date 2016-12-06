@@ -24,12 +24,14 @@ class RouteViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        //Makes the status bar visible
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        /* Update profile picture */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
+        
+        /* Set how many routes are made and display */
         if user.routeLocations[0] == [] {
             route1Button.hidden = true
             route2Button.hidden = true
@@ -82,9 +84,9 @@ class RouteViewController: UIViewController{
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == "routeToProfile" {

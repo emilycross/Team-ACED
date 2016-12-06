@@ -26,7 +26,7 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Makes the status bar visible
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
@@ -34,9 +34,8 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
         
         routeNumberLabel.text = "Route " + String(routeNumber)
         mapView.delegate = self
-        //print(locations)
-        //print(user.routeLocations[0])
         for i in 0...3 {//(locations.count-2) {
+            /* Draw routes between each set of locations */
             let srcLoc = locations[i]
             let srcCoor = srcLoc.coordinate
             let destLoc = locations[i+1]
@@ -46,11 +45,13 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
             let srcMapItem = MKMapItem(placemark: srcPlacemark)
             let destMapItem = MKMapItem(placemark: destPlacemark)
             let srcAnnotation = MKPointAnnotation()
+            /* Annotate each location */
             srcAnnotation.title = "Location "+String(i)
             srcAnnotation.coordinate = srcCoor
             let destAnnotation = MKPointAnnotation()
             destAnnotation.title = "Location "+String(i+1)
             destAnnotation.coordinate = destCoor
+            /* Show annotations and locations on map view */
             self.mapView.showAnnotations([srcAnnotation, destAnnotation], animated: true)
             let dirRequest = MKDirectionsRequest()
             dirRequest.source = srcMapItem
@@ -68,6 +69,7 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
                 }
                 let route = response.routes[0]
                 self.mapView.addOverlay((route.polyline), level: MKOverlayLevel.AboveRoads)
+                /* Draws red line for route */
                 let rect = route.polyline.boundingMapRect
                 self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
             }
@@ -78,7 +80,7 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
+    /* Segue preparation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "specificRouteToRoute" {

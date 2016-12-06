@@ -22,7 +22,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /* Makes the status bar visible */
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         /* Set profile picture image */
@@ -31,13 +31,10 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    /* Methods from the modal page that is shown after the profile picture is pressed */
+    /* Use camera to change profile picture */
     @IBAction func changeProfilePictureCamera(sender: UIButton) {
-        
-        /* Uses camera to change profile picture */
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             let imagePick = UIImagePickerController()
             imagePick.delegate = self
@@ -47,7 +44,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
          }
     }
     
-    /* Changes profile picture from photo library */
+    /* Change profile picture from photo library */
     @IBAction func changeProfilePictureLibrary(sender: UIButton) {
          if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
             let imagePick = UIImagePickerController()
@@ -58,6 +55,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
          }
     }
     
+    /* Change profile picture to picture selected by user */
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         user.picture = image
         imageView.image = image

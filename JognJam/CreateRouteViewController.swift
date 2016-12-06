@@ -33,7 +33,7 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
         locManager.activityType = .Fitness
         locManager.requestAlwaysAuthorization()
         
-        /* Makes the status bar visible */
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         /* Set profile picture image */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
@@ -77,7 +77,7 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
     
     /* Created a sample route for the demo using preset location data */
     @IBAction func saveRoutePressed(sender: UIButton) {
-        locations = [CLLocation(latitude: 48.0658, longitude: -66.3731), CLLocation(latitude: 44.6474, longitude: -63.5806), CLLocation(latitude: 44.6304, longitude: -63.6028), CLLocation(latitude: 44.6233, longitude: -63.5686), CLLocation(latitude: 48.0658, longitude: -66.3731)]
+        locations = [CLLocation(latitude: 44.6366, longitude: -63.5917), CLLocation(latitude: 44.6474, longitude: -63.5806), CLLocation(latitude: 44.6304, longitude: -63.6028), CLLocation(latitude: 44.6233, longitude: -63.5686), CLLocation(latitude: 48.0658, longitude: -66.3731)]
         user.routeLocations[0] = locations
     }
 

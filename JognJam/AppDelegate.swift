@@ -7,12 +7,17 @@
 //
 
 import UIKit
-import CoreMotion //added in
+import CoreMotion
 
-extension NSDate { //added in
+/* Add methods to NSDate class */
+extension NSDate {
+
+    /* Return current date and time */
     class func now() -> NSDate {
         return NSDate()
     }
+    
+    /* Return date and time ten minutes ago */
     class func tenMinutesAgo() -> NSDate {
         return NSDate(timeIntervalSinceNow: -(10 * 60))
     }
@@ -23,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    //added in
+    /* Variables for edometer and number of step */
     lazy var pedometer = CMPedometer()
     var nSteps = 0
 
@@ -35,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        
+        /* Stop updating when application becomes inactive */
         pedometer.stopPedometerUpdates()
     }
 
@@ -49,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        /* Start updating and print labels when application becomes active */
         if CMPedometer.isStepCountingAvailable() {
             pedometer.queryPedometerDataFromDate(NSDate.tenMinutesAgo(), toDate: NSDate.now(), withHandler: {data, error in
                 guard let data = data else {

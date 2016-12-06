@@ -37,9 +37,9 @@ class MostPlayedSongsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /* Makes status bar visible */
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        /* Updates profile picture */
+        /* Update profile picture */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
         /* Number of times all songs in database were played */
@@ -145,7 +145,6 @@ class MostPlayedSongsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     

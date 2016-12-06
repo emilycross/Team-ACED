@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /* Makes the status bar visible */
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         /* Display username */
@@ -38,7 +38,6 @@ class ProfileViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     /* Segue preparation */

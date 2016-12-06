@@ -27,9 +27,9 @@ class PlaylistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /* Makes the status bar visible */
+        /* Make status bar visible */
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        /* Sets profile picture image */
+        /* Set profile picture image */
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
         /* Check how many playlists there are */
@@ -68,7 +68,6 @@ class PlaylistViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
