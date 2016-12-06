@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     var playlistNumber = -1
     var playlistSong = -1
     
+    var mostPlayedSongIndice = -1
+    
     var user = userProfile()
     var player = musicPlayer()
     
@@ -54,7 +56,7 @@ class MainViewController: UIViewController {
         
         //Makes the status bar visible
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
+        print(mostPlayedSongIndice)
         
         if user.start == true {
             currentSongLabel.text = "No song playing"
@@ -67,7 +69,7 @@ class MainViewController: UIViewController {
             nextButton.hidden = true
             nextButton.enabled = false
         }
-        else if fromSuggestions == -1 && (playlistNumber == -1 || playlistSong == -1){
+        else if fromSuggestions == -1 && (playlistNumber == -1 || playlistSong == -1) && mostPlayedSongIndice == -1 {
             currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
             prevButton.hidden = false
             prevButton.enabled = true
@@ -90,14 +92,24 @@ class MainViewController: UIViewController {
             if (playlistNumber == 4) {
                 playPlaylist5(playlistSong)
             }
-            
-                
-                
             prevButton.hidden = false
             prevButton.enabled = true
             nextButton.hidden = false
             nextButton.enabled = true
         }
+        
+        else if mostPlayedSongIndice != -1 {
+            "hello?"
+            playMostPlayed(mostPlayedSongIndice)
+            prevButton.hidden = false
+            prevButton.enabled = true
+            nextButton.hidden = false
+            nextButton.enabled = true
+            
+            
+        }
+            
+        
         else { //fromSuggestions != -1
             playSuggestions(fromSuggestions)
             prevButton.hidden = false
@@ -360,6 +372,12 @@ class MainViewController: UIViewController {
         var count = n
         if (count < 5) {
             player.playingPlaylist1 = true
+            player.playingPlaylist2 = false
+            player.playingPlaylist3 = false
+            player.playingPlaylist4 = false
+            player.playingPlaylist5 = false
+            player.playingMostPlayed = false
+
             player.playlistIndex = count
             
             user.start = false
@@ -384,6 +402,12 @@ class MainViewController: UIViewController {
         var count = n
         if (count < 5) {
             player.playingPlaylist2 = true
+            player.playingPlaylist1 = false
+            player.playingPlaylist3 = false
+            player.playingPlaylist4 = false
+            player.playingPlaylist5 = false
+            player.playingMostPlayed = false
+            
             player.playlistIndex = count
 
             user.start = false
@@ -407,6 +431,12 @@ class MainViewController: UIViewController {
         var count = n
         if (count < 5) {
             player.playingPlaylist3 = true
+            player.playingPlaylist1 = false
+            player.playingPlaylist2 = false
+            player.playingPlaylist4 = false
+            player.playingPlaylist5 = false
+            player.playingMostPlayed = false
+            
             player.playlistIndex = count
 
             user.start = false
@@ -430,7 +460,14 @@ class MainViewController: UIViewController {
         var count = n
         if (count < 5) {
             player.playingPlaylist4 = true
+            player.playingPlaylist1 = false
+            player.playingPlaylist2 = false
+            player.playingPlaylist3 = false
+            player.playingPlaylist5 = false
+            player.playingMostPlayed = false
+            
             player.playlistIndex = count
+            
 
             user.start = false
             player.pickSong(player.playlist4Indices[count])
@@ -453,6 +490,12 @@ class MainViewController: UIViewController {
         var count = n
         if (count < 5) {
             player.playingPlaylist5 = true
+            player.playingPlaylist1 = false
+            player.playingPlaylist2 = false
+            player.playingPlaylist3 = false
+            player.playingPlaylist4 = false
+            player.playingMostPlayed = false
+            
             player.playlistIndex = count
 
             user.start = false
@@ -464,6 +507,34 @@ class MainViewController: UIViewController {
             currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
             isPlayingMusic = true
             player.playSelectedPlaylist(playlistNumber)
+            if user.musicSuggestions == true {
+                setSuggestionLabel()
+            }
+            count += 1
+        }
+        
+    }
+    
+    func playMostPlayed (n: Int) {
+        var count = n
+        if (count < 5) {
+            player.playingMostPlayed = true
+            player.playingPlaylist1 = false
+            player.playingPlaylist2 = false
+            player.playingPlaylist3 = false
+            player.playingPlaylist4 = false
+            player.playingPlaylist5 = false
+            
+            player.mostPlayedSongIndex = count
+            print(count)
+            user.start = false
+            player.pickSong(player.mostPlayedIndices[count])
+            playButton.setImage(pauseImage, forState: UIControlState.Normal)
+            player.play()
+            currentSongLabel.text = player.currentSongTitle + " - " + player.currentArtist
+            user.currentSongSpeed = player.playlist4Speed[count]
+            currentSpeedLabel.text = String(user.currentSongSpeed) + " bpm"
+            isPlayingMusic = true
             if user.musicSuggestions == true {
                 setSuggestionLabel()
             }

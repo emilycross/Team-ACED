@@ -47,6 +47,12 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     var playingPlaylist5 = false
     var playlistIndex = -1
     
+    /*indices are selected such that they correspond to the order the songs are in the database
+    i.e. If someone's most played song is Jingle Bells, mostPlayedIndices[0] is 4 */
+    var playingMostPlayed = false
+    var mostPlayedIndices = [-1,-1,-1,-1,-1]
+    var mostPlayedSongIndex = -1
+    
     var randomised = false
 
     //Records the index of the last played song, and if needed the next song to play
@@ -171,7 +177,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             }
         }
             
-        if (playingPlaylist3) {
+        else if (playingPlaylist3) {
             if (playlistIndex < 4) {
                 playlistIndex += 1
                 pickSong(playlist3Indices[(playlistIndex)])
@@ -182,7 +188,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             }
         }
             
-        if (playingPlaylist4) {
+        else if (playingPlaylist4) {
             if (playlistIndex < 4) {
                 playlistIndex += 1
                 pickSong(playlist4Indices[(playlistIndex)])
@@ -193,7 +199,7 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             }
         }
             
-        if (playingPlaylist5) {
+        else if (playingPlaylist5) {
             if (playlistIndex < 4) {
                 playlistIndex += 1
                 pickSong(playlist5Indices[(playlistIndex)])
@@ -213,6 +219,19 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
             playingPlaylist5 = false
             randomPick()
 
+        }
+            
+        else if playingMostPlayed == true {
+            if (mostPlayedSongIndex < 4) {
+                mostPlayedSongIndex += 1
+                pickSong(mostPlayedIndices[mostPlayedSongIndex])
+                
+            }
+            else {
+                pickSong(mostPlayedIndices[0])
+                mostPlayedSongIndex = 0
+            }
+            
         }
             
         else if nextSongIndex == -1 {

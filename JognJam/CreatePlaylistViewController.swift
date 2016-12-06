@@ -83,9 +83,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong1(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(0)) {
                     songsPicked[i] = 0
                     song1.setTitleColor(selected, forState: UIControlState.Normal)
+                    song1.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -100,9 +101,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong2(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(1)) {
                     songsPicked[i] = 1
                     song2.setTitleColor(selected, forState: UIControlState.Normal)
+                    song2.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -118,9 +120,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong3(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(2)) {
                     songsPicked[i] = 2
                     song3.setTitleColor(selected, forState: UIControlState.Normal)
+                    song3.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -135,9 +138,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong4(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(3)) {
                     songsPicked[i] = 3
                     song4.setTitleColor(selected, forState: UIControlState.Normal)
+                    song4.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -152,9 +156,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong5(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(4)) {
                     songsPicked[i] = 4
                     song5.setTitleColor(selected, forState: UIControlState.Normal)
+                    song5.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -168,9 +173,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong6(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(5)) {
                     songsPicked[i] = 5
                     song6.setTitleColor(selected, forState: UIControlState.Normal)
+                    song6.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -185,9 +191,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong7(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(6)) {
                     songsPicked[i] = 6
                     song7.setTitleColor(selected, forState: UIControlState.Normal)
+                    song7.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -202,9 +209,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong8(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(7)) {
                     songsPicked[i] = 7
                     song8.setTitleColor(selected, forState: UIControlState.Normal)
+                    song8.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -219,9 +227,10 @@ class CreatePlaylistViewController: UIViewController {
     @IBAction func addSong9(sender: AnyObject) {
         if (numPicked < 5) {
             for i in 0...4 {
-                if(songsPicked[i] == 12) {
+                if(songsPicked[i] == 12 && !songsPicked.contains(8)) {
                     songsPicked[i] = 8
                     song9.setTitleColor(selected, forState: UIControlState.Normal)
+                    song9.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -233,11 +242,12 @@ class CreatePlaylistViewController: UIViewController {
     }
     
     @IBAction func addSong10(sender: AnyObject) {
-        if (numPicked < 5) {
+        if (numPicked < 5 && !songsPicked.contains(9)) {
             for i in 0...4 {
                 if(songsPicked[i] == 12) {
                     songsPicked[i] = 9
                     song10.setTitleColor(selected, forState: UIControlState.Normal)
+                    song10.enabled = false
                     numPicked += 1
                     checkSize()
                     break;
@@ -256,6 +266,7 @@ class CreatePlaylistViewController: UIViewController {
                 if(songsPicked[i] == 12) {
                     songsPicked[i] = 10
                     song11.setTitleColor(selected, forState: UIControlState.Normal)
+                    song11.enabled = false
                     numPicked += 1
                     checkSize()
                     break;

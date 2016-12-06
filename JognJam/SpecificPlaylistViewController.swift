@@ -57,6 +57,8 @@ class SpecificPlaylistViewController: UIViewController {
     {
         
         print(player.playlist1Titles)
+        print(player.playlist2Titles)
+        print(player.playlist3Titles)
 
         if playlistNumber == 0 {
                 
