@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1412,6 +1412,15 @@
                                     <segue destination="Ubk-Yr-2fi" kind="show" identifier="playlistToCreatePlaylist" id="XGB-w2-k6m"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo6-Ce-OaT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="703-4V-yAM" kind="show" identifier="playlistToLogin" id="Yfq-1Y-Jso"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INe-QC-jX4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1420,15 +1429,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="sAh-Ai-XaP" kind="show" identifier="playlistToMostPlayedSongs" id="7X5-rE-iRD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo6-Ce-OaT">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="703-4V-yAM" kind="show" identifier="playlistToLogin" id="Yfq-1Y-Jso"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1447,7 +1447,9 @@
                             <constraint firstItem="dp8-Ud-g8D" firstAttribute="centerX" secondItem="mcn-LS-u5e" secondAttribute="centerX" id="MJf-wH-zNc"/>
                             <constraint firstItem="vNi-kJ-aju" firstAttribute="top" secondItem="dp8-Ud-g8D" secondAttribute="bottom" constant="26" id="Owu-hU-x9o"/>
                             <constraint firstItem="xo6-Ce-OaT" firstAttribute="trailing" secondItem="mcn-LS-u5e" secondAttribute="trailingMargin" id="YEP-uV-v5z"/>
-                            <constraint firstItem="INe-QC-jX4" firstAttribute="top" secondItem="dLe-06-5YW" secondAttribute="bottom" constant="54" id="adT-6i-TwD"/>
+                            <constraint firstItem="INe-QC-jX4" firstAttribute="top" secondItem="dLe-06-5YW" secondAttribute="bottom" constant="54" id="adT-6i-TwD">
+                                <variation key="widthClass=compact" constant="53"/>
+                            </constraint>
                             <constraint firstItem="SH0-1T-k3f" firstAttribute="top" secondItem="mG2-OX-8U7" secondAttribute="bottom" constant="8" symbolic="YES" id="dDa-d4-NiF"/>
                             <constraint firstItem="8mH-FO-Es5" firstAttribute="leading" secondItem="dLe-06-5YW" secondAttribute="leading" id="dfm-H5-Sb2"/>
                             <constraint firstItem="5Vl-42-QLW" firstAttribute="top" secondItem="vt4-uQ-pgb" secondAttribute="bottom" constant="17" id="e7Z-AK-CZD"/>
@@ -1472,8 +1474,8 @@
                                 <exclude reference="8mH-FO-Es5"/>
                                 <exclude reference="dLe-06-5YW"/>
                                 <exclude reference="Cfo-j4-XiR"/>
-                                <exclude reference="INe-QC-jX4"/>
                                 <exclude reference="xo6-Ce-OaT"/>
+                                <exclude reference="INe-QC-jX4"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="e7Z-AK-CZD"/>
@@ -1511,8 +1513,8 @@
                                 <include reference="8mH-FO-Es5"/>
                                 <include reference="dLe-06-5YW"/>
                                 <include reference="Cfo-j4-XiR"/>
-                                <include reference="INe-QC-jX4"/>
                                 <include reference="xo6-Ce-OaT"/>
+                                <include reference="INe-QC-jX4"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="e7Z-AK-CZD"/>
@@ -4551,15 +4553,14 @@
         <image name="settingsButton.png" width="79" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pi8-DD-xs4"/>
-        <segue reference="kGs-J7-P0z"/>
-        <segue reference="PF1-xV-XGk"/>
-        <segue reference="Geu-Rn-oeq"/>
-        <segue reference="ne4-5E-SZa"/>
-        <segue reference="0ax-nz-mnI"/>
+        <segue reference="xi0-qf-l5K"/>
+        <segue reference="KdX-Pm-2aG"/>
+        <segue reference="5Yd-ak-zXc"/>
         <segue reference="SS8-un-z5l"/>
-        <segue reference="aRV-2U-GCT"/>
         <segue reference="XGB-w2-k6m"/>
+        <segue reference="Yfq-1Y-Jso"/>
         <segue reference="hLy-K3-RxR"/>
+        <segue reference="kGs-J7-P0z"/>
+        <segue reference="Geu-Rn-oeq"/>
     </inferredMetricsTieBreakers>
 </document>

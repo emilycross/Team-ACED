@@ -34,8 +34,8 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
         
         routeNumberLabel.text = "Route " + String(routeNumber)
         mapView.delegate = self
-        print(locations)
-        print(user.routeLocations[0])
+        //print(locations)
+        //print(user.routeLocations[0])
         for i in 0...3 {//(locations.count-2) {
             let srcLoc = locations[i]
             let srcCoor = srcLoc.coordinate
