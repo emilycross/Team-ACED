@@ -56,7 +56,6 @@ class MainViewController: UIViewController {
         
         //Makes the status bar visible
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        print(mostPlayedSongIndice)
         
         if user.start == true {
             currentSongLabel.text = "No song playing"
@@ -526,7 +525,6 @@ class MainViewController: UIViewController {
             player.playingPlaylist5 = false
             
             player.mostPlayedSongIndex = count
-            print(count)
             user.start = false
             player.pickSong(player.mostPlayedIndices[count])
             playButton.setImage(pauseImage, forState: UIControlState.Normal)

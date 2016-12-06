@@ -148,8 +148,10 @@ class musicPlayer: NSObject, AVAudioPlayerDelegate
     
     func pause()
     {
-        audioPlayer.stop()
-        songPlaying = false
+        if songPlaying == true {
+            audioPlayer.stop()
+            songPlaying = false
+        }
     }
     
     func next() {
