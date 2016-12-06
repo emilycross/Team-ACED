@@ -59,19 +59,20 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
         if user.routeStarted == true {
             startRouteButton.setTitle("Start Route", forState: UIControlState.Normal)
             user.routeStarted = false
-            locations.removeAll(keepCapacity: false)
-            locManager.startUpdatingLocation()
+            /*locations.removeAll(keepCapacity: false)
+            locManager.startUpdatingLocation()*/
             saveRouteButton.hidden = false
         }
         else {
             startRouteButton.setTitle("End Route", forState: UIControlState.Normal)
             user.routeStarted = true
-            locManager.stopUpdatingLocation()
+            //locManager.stopUpdatingLocation()
             saveRouteButton.hidden = true
         }
     }
     @IBAction func saveRoutePressed(sender: UIButton) {
-        user.routeLocations[routeNum] = locations
+        locations = [CLLocation(latitude: 48.0658, longitude: -66.3731), CLLocation(latitude: 44.6474, longitude: -63.5806), CLLocation(latitude: 44.6304, longitude: -63.6028), CLLocation(latitude: 44.6233, longitude: -63.5686), CLLocation(latitude: 48.0658, longitude: -66.3731)]
+        user.routeLocations[0] = locations
     }
 
     /*
@@ -87,20 +88,19 @@ class CreateRouteViewController: UIViewController, CLLocationManagerDelegate {
         
         if segue.identifier == "createRouteToProfile" {
             let destinationVC = segue.destinationViewController as? ProfileViewController
-            self.user.routeLocations[routeNum] = self.locations
+            self.user.routeLocations[0] = self.locations
             destinationVC?.user = self.user
             destinationVC?.player = self.player
-            destinationVC
         }
             
         else if segue.identifier == "createRouteToRoutes" {
             let destinationVC = segue.destinationViewController as? RouteViewController
-            self.user.routeLocations[routeNum] = self.locations
+            self.user.routeLocations[0] = self.locations
             destinationVC?.user = self.user
             destinationVC?.player = self.player
         }
         else if segue.identifier == "createRouteToLogin" {
-            self.user.routeLocations[routeNum] = self.locations
+            self.user.routeLocations[0] = self.locations
             self.user.start = true
             self.player.pause()
         }

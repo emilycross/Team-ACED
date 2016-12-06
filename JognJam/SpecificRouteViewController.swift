@@ -30,11 +30,13 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         profilePictureButton.setImage(user.picture, forState: UIControlState.Normal)
         
-        locations = user.routeLocations[routeNumber]
+        locations = user.routeLocations[0]
         
         routeNumberLabel.text = "Route " + String(routeNumber)
         mapView.delegate = self
-        for i in 0...(locations.count-2) {
+        print(locations)
+        print(user.routeLocations[0])
+        for i in 0...3 {//(locations.count-2) {
             let srcLoc = locations[i]
             let srcCoor = srcLoc.coordinate
             let destLoc = locations[i+1]
@@ -44,8 +46,10 @@ class SpecificRouteViewController: UIViewController, MKMapViewDelegate {
             let srcMapItem = MKMapItem(placemark: srcPlacemark)
             let destMapItem = MKMapItem(placemark: destPlacemark)
             let srcAnnotation = MKPointAnnotation()
+            srcAnnotation.title = "Location "+String(i)
             srcAnnotation.coordinate = srcCoor
             let destAnnotation = MKPointAnnotation()
+            destAnnotation.title = "Location "+String(i+1)
             destAnnotation.coordinate = destCoor
             self.mapView.showAnnotations([srcAnnotation, destAnnotation], animated: true)
             let dirRequest = MKDirectionsRequest()

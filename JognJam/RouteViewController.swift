@@ -131,7 +131,7 @@ class RouteViewController: UIViewController{
             let destinationVC = segue.destinationViewController as? CreateRouteViewController
             destinationVC?.user = self.user
             destinationVC?.player = self.player
-            destinationVC?.routeNum = routeUpTo - 1
+            destinationVC?.routeNum = routeUpTo
         }
         else if segue.identifier == "routeToLogin" {
             self.user.start = true
